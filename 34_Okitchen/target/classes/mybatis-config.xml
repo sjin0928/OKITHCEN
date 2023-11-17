@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="com.spring.biz.vo.AddressVO" alias="address"/>
+		<typeAlias type="com.spring.biz.vo.AdminVO" alias="admin"/>
+		<typeAlias type="com.spring.biz.vo.AskAnsVO" alias="askAns"/>
+		<typeAlias type="com.spring.biz.vo.AskVO" alias="ask"/>
+		<typeAlias type="com.spring.biz.vo.CartVO" alias="cart"/>
+		<typeAlias type="com.spring.biz.vo.CommunityPickedVO" alias="communityPicked"/>
+		<typeAlias type="com.spring.biz.vo.CommunityVO" alias="community"/>
+		<typeAlias type="com.spring.biz.vo.FAQVO" alias="FAQ"/>
+		<typeAlias type="com.spring.biz.vo.InquiryAnsVO" alias="inquiryAns"/>
+		<typeAlias type="com.spring.biz.vo.InquiryVO" alias="inquiry"/>
+		<typeAlias type="com.spring.biz.vo.NoticeVO" alias="notice"/>
+		<typeAlias type="com.spring.biz.vo.OptionsVO" alias="option"/>
+		<typeAlias type="com.spring.biz.vo.OrderDetailVO" alias="orderDetail"/>
+		<typeAlias type="com.spring.biz.vo.OrdersVO" alias="orders"/>
+		<typeAlias type="com.spring.biz.vo.PickedVO" alias="picked"/>
+		<typeAlias type="com.spring.biz.vo.ProductImageVO" alias="productImage"/>
+		<typeAlias type="com.spring.biz.vo.ProductVO" alias="product"/>
+		<typeAlias type="com.spring.biz.vo.RecipeInfoVO" alias="recipeInfo"/>
+		<typeAlias type="com.spring.biz.vo.ReviewVO" alias="review"/>
+		<typeAlias type="com.spring.biz.seller.SellerVO" alias="seller"/>
+		<typeAlias type="com.spring.biz.vo.UsersVO" alias="user"/>
+	</typeAliases>
+  
+</configuration>
+
+
+
+
+

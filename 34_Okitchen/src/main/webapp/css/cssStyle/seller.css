@@ -1,0 +1,89 @@
+@charset "UTF-8";
+	#footer {
+	    display: flex;
+	    justify-content: center;
+	}
+	.footerInBox{
+		margin: 0px 50px;
+		min-width: 500px;
+	}
+	
+	/* 기타 seller css 하단에 추가 */
+	.sellerSignIn {
+		text-align: left;
+		border: 2px solid rgb(231, 129, 17, 0.5);
+		border-radius: 10px;
+		padding: 20px;
+		margin-bottom: 10px;
+	}
+	#sellerSignInfirstBox {
+		margin-top: 10px;
+	}
+	
+	.SignIninputBox {
+		max-width: 530px; 
+		color: #c0c0c023112917;
+	}
+	.SLinput {
+		justify-content: center;
+	}
+	.signIn-text {
+		height:45px;
+		width: 170px;
+	}
+	.login-text {
+		height:45px;
+		width: 130px;
+	}
+	#sellerLoginBtn {
+		background-color: rgb(231, 129, 17); 
+		color: white; 
+		width: 150px;
+	}
+	#loginBox {
+		padding: 61px 0px 20px;
+		text-align:center;
+	}
+	#sellerSignIn, #sellerFind {
+		background-color: rgb(231, 129, 17);
+		color: white;
+		width: 200px;
+		display: inline;
+		margin: 0px 20px 20px 20px;
+	}
+	#sellerSignInBox {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+	}
+	.SIinput {
+		padding-left: 130px;
+	}
+	#sellerIdConfirmBtn, #sellerPwConfirmBtn, #sellerRegistConfirmBtn {
+		background-color: rgb(231, 129, 17); 
+		color: white; 
+		height: 45px;
+		width: 101px;
+	}
+	.typeLabel {
+		font-size: 15px;
+		margin: 0px 10px 0px 20px;
+		padding-top: 13px;
+	}
+	#corporation, #individual{
+		max-width:18px;		 
+	}
+	.Xmessage {color: #d20000;}
+	.Omessage {color: #0000d0;}
+	
+	#messageBox{
+		text-align: left;
+	}
+	
+	.mb-3 {
+		margin-top: 1rem !important;
+	}
+	#id, #password {
+		max-width:500px;
+	}
