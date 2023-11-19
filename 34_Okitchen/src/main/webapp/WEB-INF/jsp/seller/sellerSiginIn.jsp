@@ -60,6 +60,7 @@
 		
 	}
 	function registNumCheck(){
+		console.log($("#registNum").val(),$("#openDate").val(), $("#representName").val());
 		var data = {
 			"businesses": [{
 				"b_no": $("#registNum").val(),
@@ -146,12 +147,6 @@
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
-					<span class="input-group-text signIn-text">&nbsp상호명</span>
-				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" name="companyName" >
-			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp대표자명</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="대표자명을 입력해주세요" id="representName" name="representative" >
@@ -168,6 +163,12 @@
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(숫자로  10자리 입력해주세요  '-' 제외)" id="registNum" name="registrationNum" >
 				<button class="btn" id="sellerRegistConfirmBtn" type="button" onclick="registNumCheck()">확인</button>
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend SIinput">
+					<span class="input-group-text signIn-text">&nbsp상호명</span>
+				</div>
+				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" name="companyName" >
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
