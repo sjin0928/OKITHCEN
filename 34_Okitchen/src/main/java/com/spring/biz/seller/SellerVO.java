@@ -18,5 +18,4 @@ public class SellerVO {
 	private String registrationNum;
 	private String sellerPassword;
 	private String sellerType;
-	private Date openDate;
 }

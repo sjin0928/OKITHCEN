@@ -14,15 +14,16 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	function idCheck() {
+
 		$.ajax({
 			url: "sellerIdCheck.do",
 			type: "post",
 			dataType: "json",
 			data: {"sellerId" : $("#sellerId").val()},
 			success: function(result){
-				console.log("result : " + result)
-				if($("#sellerId").length < 10){
-					$("#checkMessage").html("아이디는 10자리 이상 입력해주세요.");
+				
+				if($("#sellerId").val().length < 5){
+					$("#checkMessage").html("아이디는 5자리 이상 입력해주세요.");
 					$("#checkMessage").addClass("Xmessage");
 				} else if(result == 1) {
 					$("#checkMessage").html("사용중인 아이디입니다. 다른 아이디를 입력해주세요.");
@@ -75,9 +76,9 @@
 		  success: function(result) {
 				console.log(result.data[0].b_stt);
 				if(result.data[0].b_stt == "계속사업자") {
-					var html = result.data[0].b_stt + "가입 가능합니다.";
+					var html = result.data[0].b_stt + " : 가입 가능합니다.";
 				} else {
-					var html = result.data[0].b_stt + "가입 불가능합니다. 휴업이신 경우 등록 상태를 변경하신 후 진행 해주세요.;
+					"가입 불가능합니다. 휴업이신 경우 등록 상태를 변경하신 후 진행 해주세요.";
 				}
 				$("#registCheckMessage").html(html);
 		  },
@@ -86,6 +87,10 @@
 		      $("#registCheckMessage").html("담당자에게 문의하세요");
 		  }
 		});
+	}
+	
+	function sellerCancle() {
+		location.href = "../sellerLogin.jsp";
 	}
 </script>
 <body>
@@ -101,7 +106,7 @@
 		- 사업자등록증 사본 1부(사업자등록증은 최근 1년 이내 발급)<br>
 		- 대표자 혹은 사업자 명의 통장(또는 계좌개설 확인서, 온라인 통장 표지) 사본 1부<br>
 		- 통신판매업 신고증 사본 1부<br>
-		(가입 후 okitchen@okitchen.com으로 파일 첨부 및  제목에 상호명, 아이디 기재하여 메일 송부 부탁드립니다.)<br>
+		 (가입 후 okitchen@okitchen.com으로 파일 첨부 및  제목에 상호명, 아이디 기재하여 메일 송부 부탁드립니다.)<br>
 	</div>
 	<div class="sellerSignIn" >
 	<h6>법인 사업자</h6>
@@ -111,7 +116,7 @@
 		(가입 후 okitchen@okitchen.com으로 파일 첨부 및  제목에 상호명, 아이디 기재하여 메일 송부 부탁드립니다.)<br>
 	</div>
 	<br><br>
-	<form action="sellerSignIn.do" method="post">
+	<form method="post">
 		<div class="container" id="sellerSignInBox">
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">
@@ -124,8 +129,6 @@
 			<div id="messageBox">
 				<span id="checkMessage"></span>
 			</div>	
-			
-				
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
@@ -162,7 +165,7 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp상호명</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" name="companyName" >
+				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName" >
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
@@ -175,9 +178,16 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요"name="customerEmail" >
+				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" >
 			</div>
-			<input type="submit" class="btn" id="sellerLoginBtn" value="회원가입">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend SIinput">
+					<span class="input-group-text signIn-text">&nbsp대표 연락처</span>
+				</div>
+				<input type="text" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요" id="customerCenter" name="customerCenter" >
+			</div>
+			<input type="submit" class="btn" id="sellerLoginBtn" onclick="allCheck()" value="회원가입">
+			<button type="button" class="btn" id="sellerCancle" onclick="sellerCancle()" value="취소"></button>
 		</div>
 	</form>
 </div>
@@ -185,6 +195,46 @@
 <!-- footer -->
 <%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>
 
+<script>
+function allCheck() {
+	/* 회원가입 시  ajax 사용하여 응답 후 실행
+	*/
+	$.ajax({
+		url: "sellerSignIn.do",
+		type: "post",
+		dataType: "json",
+		data: {"sellerId" : $("#sellerId").val()},
+		success: function(result){
+			
+		},
+		error: function(result) {
+		      console.log(result.responseText); //responseText의 에러메세지 확인
+		      if($("#sellerId").val() == "") {
+					alert("아이디를 입력해주세요.");
+				} else if ($("#checkMessage").html() != "사용 가능한 아이디입니다.") {
+					alert("아이디 중복확인을 해주세요.");
+				} else if ($("#sellerPassword").val() == "") {
+					alert("비밀번호를 입력해주세요.");
+				} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
+					alert ("비밀번호 확인 버튼을 클릭해주세요.");
+				} else if($("#registCheckMessage").html() != "계속사업자 : 가입 가능합니다.") {
+					alert ("사업자등록번호 확인 버튼을 클릭해주세요.");
+				} else if($("#representName").val() == "") {
+					alert ("사업자명을 입력해주세요.");
+				} else if($("#companyName").val() == "") {
+					alert ("상호명을 입력해주세요.");
+				} else if($("#corporation").val() == "" && $("#individual").val() == "") {
+					alert ("사업자 유형을 선택해주세요.");
+				} else if($("#customerEmail").val() == "") {
+					alert ("이메일을 입력해주세요.");
+				} else if($("#customerCenter").val() == "") {
+					alert ("대표 연락처를 입력해주세요.");
+				}
+				 $("#sellerId").val($("#sellerId").val());
+		  }
+		});
+	}
+</script>
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>

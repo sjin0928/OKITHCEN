@@ -74,6 +74,7 @@ public class SellerController {
 	}
 	@RequestMapping("/sellerSignIn.do")
 	public String sellerSignIn () {
+		
 		return "seller/sellerSiginIn";
 	}
 }
