@@ -60,19 +60,9 @@
 		
 	}
 	function registNumCheck(){
-		console.log($("#registNum").val(),$("#openDate").val(), $("#representName").val());
+		console.log($("#registNum").val());
 		var data = {
-			"businesses": [{
-				"b_no": $("#registNum").val(),
-				"start_dt": $("#openDate").val(),
-				"p_nm": $("#representName").val(),
-				"p_nm2": "",
-				"b_nm": "",
-				"corp_no": "",
-				"b_sector": "",
-				"b_type": "",
-				"b_adr": ""
-			}]
+			"b_no": [$("#registNum").val()]
 		}; 
 		 console.log(data);
 		$.ajax({
@@ -83,10 +73,17 @@
 		  contentType: "application/json",
 		  accept: "application/json",
 		  success: function(result) {
-		      console.log(result);
+				console.log(result.data[0].b_stt);
+				if(result.data[0].b_stt == "계속사업자") {
+					var html = result.data[0].b_stt + "가입 가능합니다.";
+				} else {
+					var html = result.data[0].b_stt + "가입 불가능합니다. 휴업이신 경우 등록 상태를 변경하신 후 진행 해주세요.;
+				}
+				$("#registCheckMessage").html(html);
 		  },
 		  error: function(result) {
 		      console.log(result.responseText); //responseText의 에러메세지 확인
+		      $("#registCheckMessage").html("담당자에게 문의하세요");
 		  }
 		});
 	}
@@ -147,22 +144,19 @@
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
-					<span class="input-group-text signIn-text">&nbsp대표자명</span>
-				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="대표자명을 입력해주세요" id="representName" name="representative" >
-			</div>			
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
-					<span class="input-group-text signIn-text">&nbsp개업일자</span>
-				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="개업일자를 입력해주세요" id="openDate" name="openDate" >
-			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp사업자등록번호</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(숫자로  10자리 입력해주세요  '-' 제외)" id="registNum" name="registrationNum" >
 				<button class="btn" id="sellerRegistConfirmBtn" type="button" onclick="registNumCheck()">확인</button>
+			</div>
+			<div id="messageBox">
+				<span id="registCheckMessage"></span>
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend SIinput">
+					<span class="input-group-text signIn-text">&nbsp대표자명</span>
+				</div>
+				<input type="text" class="form-control SignIninputBox" placeholder="대표자명을 입력해주세요" id="representName" name="representative" >
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
