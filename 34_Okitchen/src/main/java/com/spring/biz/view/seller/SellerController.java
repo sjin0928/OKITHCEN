@@ -66,15 +66,30 @@ public class SellerController {
 		
 		return result;
 	}
-	// 아이디 비번 오류 발생 후 페이지 이동
+	// 로그인 페이지로 이동
 	@GetMapping("/sellerLogin.do")
 	public String sellerLogin () {
 		
 		return "../../sellerLogin";
 	}
-	@RequestMapping("/sellerSignIn.do")
+	// 회원가입 페이지로 이동
+	@GetMapping("/sellerSignIn.do")
 	public String sellerSignIn () {
-		
-		return "seller/sellerSiginIn";
+		return "seller/sellerSignIn";
 	}
+	// 회원가입
+	@PostMapping("/sellerSignIn.do")
+	public String sellerSignIn (SellerVO vo) {
+		System.out.println(">> 회원가입 진행");
+		sellerService.insertSeller(vo);
+		System.out.println(vo);
+		return "../../sellerLogin";
+	}
+	// 아이디/비밀번호 찾기 페이지로 이동
+	@GetMapping("/sellerFind.do")
+	public String sellerFind () {
+		
+		return "seller/sellerFind";
+	}
+
 }

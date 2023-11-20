@@ -22,4 +22,8 @@ public class SellerDAO {
 	public int sellerIdCheck(SellerVO vo) {
 		return mybatis.selectOne("sellerDAO.sellerIdCheck", vo);
 	}
+	
+	public void insertSeller(SellerVO vo) {
+		mybatis.insert("sellerDAO.insertSeller", vo);
+	}
 }

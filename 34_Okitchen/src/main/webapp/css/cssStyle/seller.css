@@ -13,8 +13,8 @@
 		text-align: left;
 		border: 2px solid rgb(231, 129, 17, 0.5);
 		border-radius: 10px;
-		padding: 20px;
-		margin-bottom: 10px;
+		padding: 20px 40px;
+		margin: 0px 50px 10px;
 	}
 	#sellerSignInfirstBox {
 		margin-top: 10px;
@@ -40,7 +40,8 @@
 		color: white; 
 		width: 150px;
 	}
-	#loginBox {
+
+	#loginBox, #sellerSignContainer, #sellerFindContainer {
 		padding: 61px 0px 20px;
 		text-align:center;
 	}
@@ -86,4 +87,15 @@
 	}
 	#id, #password {
 		max-width:500px;
+	}
+	#sellerSigninBtn, #sellerCancle {
+		background-color: rgb(231, 129, 17); 
+		color: white; 
+		width: 150px;
+		margin: 20px 10px; 
+	}
+	#sellerCancleBox {
+		display: flex;
+		justify-content: flex-end;
+		margin-right: 50px;
 	}

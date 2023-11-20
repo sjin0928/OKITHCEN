@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>SellerLogin</title>
 <!-- 메뉴바 외 코드 -->
-	<link href="../css/cssStyle/style.css" rel="stylesheet" />
-	<link href="../css/cssStyle/seller.css" rel="stylesheet" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cssStyle/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cssStyle/seller.css">
 	<!-- 메뉴바 부트스트랩 템플릿 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
 </head>
@@ -43,10 +43,10 @@
 	}
 	function passwordCheck(){
 		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
-			$("#pwCheckMessage").html("비밀번호를 입력해주세요");
+			$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
-		} else if ($("#sellerPassword").length < 8){
+		} else if ($("#sellerPassword").val().length < 8){
 			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.");
 			$("#pwCheckMessage").addClass("Omessage");
 			
@@ -54,7 +54,7 @@
 			$("#pwCheckMessage").html("비밀번호가 일치합니다.");
 			$("#pwCheckMessage").addClass("Omessage");
 			
-		} else {
+		} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
 			$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
 			$("#pwCheckMessage").addClass("Xmessage");
 		}
@@ -77,8 +77,11 @@
 				console.log(result.data[0].b_stt);
 				if(result.data[0].b_stt == "계속사업자") {
 					var html = result.data[0].b_stt + " : 가입 가능합니다.";
+					$("#registNum").prop("disabled", true);
+					$("#registCheckMessage").addClass("Omessage");
 				} else {
-					"가입 불가능합니다. 휴업이신 경우 등록 상태를 변경하신 후 진행 해주세요.";
+					var html = "가입 불가능합니다. 휴업이신 경우 등록 상태를 변경하신 후 진행 해주세요.";
+					$("#registCheckMessage").addClass("Xmessage");
 				}
 				$("#registCheckMessage").html(html);
 		  },
@@ -88,18 +91,46 @@
 		  }
 		});
 	}
-	
-	function sellerCancle() {
-		location.href = "../sellerLogin.jsp";
+	function allCheck() {
+  
+		var sellerId = $("#sellerId").val();
+		if($("#sellerId").val() == "") {
+			alert("아이디를 입력해주세요.");
+		} else if ($("#checkMessage").html() != "사용 가능한 아이디입니다.") {
+			alert("아이디 중복확인을 해주세요.");
+		} else if ($("#sellerPassword").val() == "") {
+			alert("비밀번호를 입력해주세요.");
+		} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
+			alert ("비밀번호 확인 버튼을 클릭해주세요.");
+		} else if($("#registNum").val() == "") {
+			alert ("사업자등록번호를 입력해주세요.");
+		} else if($("#registCheckMessage").html() != "계속사업자 : 가입 가능합니다.") {
+			alert ("사업자등록번호 확인 버튼을 클릭해주세요.");
+		} else if($("#representName").val() == "") {
+			alert ("대표자명을 입력해주세요.");
+		} else if($("#companyName").val() == "") {
+			alert ("상호명을 입력해주세요.");
+		} else if($("input[name='sellerType']:checked").val() == "") {
+			alert ("사업자 유형을 선택해주세요.");
+		} else if($("#customerEmail").val() == "") {
+			alert ("이메일을 입력해주세요.");
+		} else if($("#customerCenter").val() == "") {
+			alert ("대표 연락처를 입력해주세요.");
+		} else {
+			$("#registNum").prop("disabled", false);
+			$("#signIn").submit();
+		}
+			
 	}
+	
 </script>
 <body>
 <!-- header -->
-<%@ include file="../../../../css/headerFooter/sellerHeader.jsp" %>
+<%@ include file="../../../../css/headerFooter/sellerLoginHeader.jsp" %>
 
 <!-- 각자 main에 들어갈 내용 작성 -->
 
-<div class="container" style="text-align:center">
+<div class="container" style="text-align:center" id="sellerSignContainer">
 	<h2>파트너 회원가입</h2>
 	<div class="sellerSignIn" id="sellerSignInfirstBox">
 	<h6>개인 사업자</h6>
@@ -116,7 +147,7 @@
 		(가입 후 okitchen@okitchen.com으로 파일 첨부 및  제목에 상호명, 아이디 기재하여 메일 송부 부탁드립니다.)<br>
 	</div>
 	<br><br>
-	<form method="post">
+	<form id="signIn" method="post" action="sellerSignIn.do">
 		<div class="container" id="sellerSignInBox">
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">
@@ -186,55 +217,24 @@
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요" id="customerCenter" name="customerCenter" >
 			</div>
-			<input type="submit" class="btn" id="sellerLoginBtn" onclick="allCheck()" value="회원가입">
-			<button type="button" class="btn" id="sellerCancle" onclick="sellerCancle()" value="취소"></button>
+			<input type="button" class="btn" id="sellerSigninBtn" onclick="allCheck()" value="회원가입">
 		</div>
 	</form>
+	<div id="sellerCancleBox">
+	<button class="btn" id="sellerCancle">취소</button>
+	</div>
 </div>
-
+<script>
+	$(document).ready(function() {
+	    $("#sellerCancle").on("click", function() {
+	    	location.href = "../sellerLogin.jsp";
+	    });
+	});
+</script>
 <!-- footer -->
 <%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>
 
-<script>
-function allCheck() {
-	/* 회원가입 시  ajax 사용하여 응답 후 실행
-	*/
-	$.ajax({
-		url: "sellerSignIn.do",
-		type: "post",
-		dataType: "json",
-		data: {"sellerId" : $("#sellerId").val()},
-		success: function(result){
-			
-		},
-		error: function(result) {
-		      console.log(result.responseText); //responseText의 에러메세지 확인
-		      if($("#sellerId").val() == "") {
-					alert("아이디를 입력해주세요.");
-				} else if ($("#checkMessage").html() != "사용 가능한 아이디입니다.") {
-					alert("아이디 중복확인을 해주세요.");
-				} else if ($("#sellerPassword").val() == "") {
-					alert("비밀번호를 입력해주세요.");
-				} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
-					alert ("비밀번호 확인 버튼을 클릭해주세요.");
-				} else if($("#registCheckMessage").html() != "계속사업자 : 가입 가능합니다.") {
-					alert ("사업자등록번호 확인 버튼을 클릭해주세요.");
-				} else if($("#representName").val() == "") {
-					alert ("사업자명을 입력해주세요.");
-				} else if($("#companyName").val() == "") {
-					alert ("상호명을 입력해주세요.");
-				} else if($("#corporation").val() == "" && $("#individual").val() == "") {
-					alert ("사업자 유형을 선택해주세요.");
-				} else if($("#customerEmail").val() == "") {
-					alert ("이메일을 입력해주세요.");
-				} else if($("#customerCenter").val() == "") {
-					alert ("대표 연락처를 입력해주세요.");
-				}
-				 $("#sellerId").val($("#sellerId").val());
-		  }
-		});
-	}
-</script>
+
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>

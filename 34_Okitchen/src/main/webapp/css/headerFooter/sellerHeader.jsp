@@ -4,16 +4,16 @@
 	<div class="container" style="height: 50px;">
 		<br>
 		<div class="css-t79vuj e15sbxqa2" style="height: 50px;">
-		<!-- 로그인 부분 start -->
+		<!-- 로그아웃 부분 start -->
 			<div class="css-fexq9b eo7pjfk4">
-				<a class="css-xygizb eo7pjfk2">회원가입</a>
+				<a class="css-xygizb eo7pjfk2" href="sellerSignIn.do">회원가입</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
-				<a class="css-oyffzd eo7pjfk2">로그인</a>
+				<a class="css-oyffzd eo7pjfk2" href="logout.do">로그아웃</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
 				<div class="css-1qolcqm eo7pjfk3"></div>
 			</div>
 		</div>
-		<!-- 로그인 부분 end -->
+		<!-- 로그아웃 부분 end -->
 	</div>
 	<!-- 로고 -->
 	<div class="css-r7wmjj e15sbxqa3" style="display: block; height: 200px;">

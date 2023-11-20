@@ -28,12 +28,12 @@ public class SellerServiceImpl implements SellerService {
 		return sellerDAO.sellerIdCheck(vo);
 	}
 	
-/*
+
 	@Override
 	public void insertSeller(SellerVO vo) {
-		
+		sellerDAO.insertSeller(vo);
 	}
-
+	/*
 	@Override
 	public void updateSeller(SellerVO vo) {
 		// TODO Auto-generated method stub

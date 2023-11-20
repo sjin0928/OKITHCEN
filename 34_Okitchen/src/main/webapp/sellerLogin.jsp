@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>sellerLogin</title>
 <!-- 메뉴바 외 코드 -->
-	<link href="css/cssStyle/style.css" rel="stylesheet" />
-	<link href="css/cssStyle/seller.css" rel="stylesheet" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cssStyle/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cssStyle/seller.css">
 	<!-- 메뉴바 부트스트랩 템플릿 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
 </head>
