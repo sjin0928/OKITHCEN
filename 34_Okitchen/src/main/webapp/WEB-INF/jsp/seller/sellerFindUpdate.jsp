@@ -42,12 +42,25 @@ function check() {
 	} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
 		alert ("비밀번호 확인 버튼을 클릭해주세요.");
 	} else {
-		$("#passwordUpdate").submit();
+		$.ajax ("sellerPwUpdate.do", {
+			type: "post", 
+			dataType: "json",
+			success: function(sellerId) {
+				let dispTag = "<div><p>" + sellerId + "님 : 비밀번호 변경되었습니다.</p></div><br><br>";
+				$("#disp").html(dispTag);
+			},
+			error: function(){
+				let dispTag = "<div><p>변경 실패 : 담당자에게 문의하세요.</p></div><br><br>";
+				$("#disp").html(dispTag);
+			}
+		});
+		
+		/* $("#registNum").prop("disabled", false);
+		$("#passwordUpdate").submit(); */
 	}
 		
 }
 
-</script>
 </script>
 </head>
 <body>
@@ -56,11 +69,18 @@ function check() {
 
 <!-- 각자 main에 들어갈 내용 작성 -->
 
-<div class="container" style="text-align:center">
+<div class="container" style="text-align:center" id="disp">
 	<br><br>
 	<div>
-		<p>비밀번호를 변경해주세요</p>
+		
 		<form id="passwordUpdate" method="post" action="sellerPwUpdate.do">
+			<div class="input-group mb-3 ">
+				<div class="input-group-prepend SIinput">
+				<span class="input-group-text signIn-text">&nbsp아이디</span>
+				</div>
+			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${sellerId }" disabled="true">
+			</div>
+			<p>변경하실 비밀번호를 입력해주세요</p>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>

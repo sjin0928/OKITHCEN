@@ -39,5 +39,10 @@
 		VALUES (#{sellerId}, #{companyName}, #{representative}, #{customerCenter}, #{customerEmail},
 				#{registrationNum}, #{sellerPassword}, #{sellerType})
 	</insert>
+	<update id="updatePwSeller" parameterType="seller">
+		UPDATE SELLER
+		SET SELLER_PASSWORD = #{sellerPassword}
+		WHERE SELLER_ID = #{sellerId}
+	</update>
 	
 </mapper>

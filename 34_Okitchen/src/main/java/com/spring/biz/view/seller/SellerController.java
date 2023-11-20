@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.spring.biz.seller.SellerService;
@@ -14,16 +16,19 @@ import com.spring.biz.seller.SellerVO;
 
 @Controller
 @RequestMapping("seller")
+@SessionAttributes("sellerVO")
 public class SellerController {
 	
 	@Autowired
 	private SellerService sellerService;
+
 	
 	public SellerController() {
 		System.out.println("--------SellerController() 실행");
 	}
 	// 아이디 비번 입력
 	@PostMapping("/sellerLogin.do")
+
 	public String sellerLogin (SellerVO vo, Model model) {
 		System.out.println("login");
 		System.out.println("입력정보 : " + vo);
@@ -114,12 +119,22 @@ public class SellerController {
 		} else if (vo.getSellerId() != null) {
 			SellerVO findVO = sellerService.findPwSeller(vo);
 			if(findVO.getSellerPassword() != null) {
+				
+				model.addAttribute("sellerId", findVO.getSellerId());
+				
 				return "seller/sellerFindUpdate";
-			} else {
-				return "seller/sellerFind";
 			}
-			
 		}
+		return "seller/sellerFind";
+	}
+	@PostMapping("/sellerPwUpdate.do")
+	public String sellerPwUpdate (SellerVO vo, Model model) {
+		System.out.println(">> 비밀번호 찾기 후 변경 중");
+		System.out.println("vo : " + vo);
+				
+		sellerService.updatePwSeller(vo);
+		model.addAttribute("sellerId", vo.getSellerId());
+		return "seller/sellerFindResult";
 	}
 
 }
