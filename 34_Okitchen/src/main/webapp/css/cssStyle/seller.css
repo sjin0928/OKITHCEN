@@ -99,3 +99,10 @@
 		justify-content: flex-end;
 		margin-right: 50px;
 	}
+	#findInputComName, #findInputEmail, #findInputRegistNum, #findInputId {
+		padding: 0px;
+		
+	}
+	.findInput {
+		justify-content: center;
+	}

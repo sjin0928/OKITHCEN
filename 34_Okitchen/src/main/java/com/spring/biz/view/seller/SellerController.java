@@ -43,7 +43,7 @@ public class SellerController {
 			model.addAttribute("sellerVO", sellerVO);
 
 			// 상품 리스트 페이지로 이동 (나중에 추가)
-			return "seller/seller";
+			return "seller/productList";
 		} else {
 			System.out.println(">> 로그인 실패");
 			return "../../sellerLogin";
@@ -83,13 +83,43 @@ public class SellerController {
 		System.out.println(">> 회원가입 진행");
 		sellerService.insertSeller(vo);
 		System.out.println(vo);
-		return "../../sellerLogin";
+		return "redirect:/sellerLogin.jsp";
 	}
 	// 아이디/비밀번호 찾기 페이지로 이동
 	@GetMapping("/sellerFind.do")
 	public String sellerFind () {
 		
 		return "seller/sellerFind";
+	}
+	@PostMapping("/sellerFind.do")
+	public String sellerFindIdPw (SellerVO vo, Model model) {
+		System.out.println(">> 아이디, 비밀번호 찾기 중");
+		System.out.println("vo : " + vo);
+		//아이디 찾기
+		if(vo.getSellerId() == null || vo.getSellerId() == "") {
+			SellerVO findVO = sellerService.findIdSeller(vo);
+			
+			StringBuilder sellerId = new StringBuilder(findVO.getSellerId().substring(0, 3));
+			System.out.println(sellerId);
+			int length = findVO.getSellerId().length();
+			System.out.println(length);
+			for(int i = 4; i <= length; i++) {
+				sellerId.append("*");
+			}
+			
+			model.addAttribute("sellerId", sellerId);
+			
+			return "seller/sellerFindResult";
+		// 비밀번호 찾기
+		} else if (vo.getSellerId() != null) {
+			SellerVO findVO = sellerService.findPwSeller(vo);
+			if(findVO.getSellerPassword() != null) {
+				return "seller/sellerFindUpdate";
+			} else {
+				return "seller/sellerFind";
+			}
+			
+		}
 	}
 
 }

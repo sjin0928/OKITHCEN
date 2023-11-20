@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface SellerService {
 	SellerVO getSeller (SellerVO vo);
+	SellerVO findPwSeller (SellerVO vo);
+	SellerVO findIdSeller (SellerVO vo);
 	int sellerIdCheck(SellerVO vo);
 	void insertSeller (SellerVO vo);
 	/*

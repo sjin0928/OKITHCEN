@@ -10,6 +10,22 @@
 		WHERE SELLER_ID = #{sellerId}
 		AND SELLER_PASSWORD = #{sellerPassword}
 	</select>
+	<select id="findPwSeller" parameterType="seller"
+	 resultType="seller">
+		SELECT * 
+		FROM SELLER
+		WHERE SELLER_ID = #{sellerId}
+		AND COMPANY_NAME = #{companyName}
+		AND REGISTRATION_NUM = #{registrationNum}
+	</select>
+	
+	<select id="findIdSeller" parameterType="seller"
+	 resultType="seller">
+		SELECT * 
+		FROM SELLER
+		WHERE COMPANY_NAME = #{companyName}
+		AND REGISTRATION_NUM = #{registrationNum}
+	</select>
 	
 	<select id="sellerIdCheck" parameterType="seller"
 	 resultType="int">

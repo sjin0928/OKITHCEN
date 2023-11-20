@@ -21,9 +21,12 @@
 			dataType: "json",
 			data: {"sellerId" : $("#sellerId").val()},
 			success: function(result){
-				
-				if($("#sellerId").val().length < 5){
-					$("#checkMessage").html("아이디는 5자리 이상 입력해주세요.");
+				var regex = /^[A-Za-z0-9]+$/;
+				if (!regex.test($("#sellerId").val())) {
+					$("#checkMessage").html("영어와 숫자만 입력하세요.");
+					$("#checkMessage").addClass("Xmessage");
+				} else if($("#sellerId").val().length < 5 || $("#sellerId").val().length > 20){
+					$("#checkMessage").html("아이디는 5자리 이상 20자리 이하로 입력해주세요.");
 					$("#checkMessage").addClass("Xmessage");
 				} else if(result == 1) {
 					$("#checkMessage").html("사용중인 아이디입니다. 다른 아이디를 입력해주세요.");
@@ -39,7 +42,7 @@
 			error: function () {
 				alert("서버 요청 실패 : 담당자에게 문의하세요");
 		    }
-		})
+		});
 	}
 	function passwordCheck(){
 		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
@@ -47,8 +50,12 @@
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val().length < 8){
-			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.");
-			$("#pwCheckMessage").addClass("Omessage");
+			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
+			$("#pwCheckMessage").addClass("Xmessage");
+			
+		} else if ($("#sellerPassword").val().length > 20){
+			$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
+			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
 			$("#pwCheckMessage").html("비밀번호가 일치합니다.");
@@ -94,8 +101,11 @@
 	function allCheck() {
   
 		var sellerId = $("#sellerId").val();
+		var regex = /^[A-Za-z0-9]+$/;
 		if($("#sellerId").val() == "") {
-			alert("아이디를 입력해주세요.");
+			alert("아이디를 입력해주세요.(영어+숫자)");
+		} else if (!regex.test($("#sellerId").val())) {
+			alert("아이디는 영어 or 영어+숫자로 입력해주세요.");
 		} else if ($("#checkMessage").html() != "사용 가능한 아이디입니다.") {
 			alert("아이디 중복확인을 해주세요.");
 		} else if ($("#sellerPassword").val() == "") {
@@ -126,7 +136,7 @@
 </script>
 <body>
 <!-- header -->
-<%@ include file="../../../../css/headerFooter/sellerLoginHeader.jsp" %>
+<%@ include file="../../../../css/headerFooter/sellerHeader.jsp" %>
 
 <!-- 각자 main에 들어갈 내용 작성 -->
 
@@ -149,11 +159,11 @@
 	<br><br>
 	<form id="signIn" method="post" action="sellerSignIn.do">
 		<div class="container" id="sellerSignInBox">
-			<div class="input-group mb-3 SIinput">
-				<div class="input-group-prepend">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId">
+				<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요(영어+숫자)" id="sellerId" name="sellerId">
 				<!-- <input type="submit" class="btn" id="sellerIdConfirmBtn" value="중복 확인" onclick="idCheck()"> -->
 				<button class="btn" id="sellerIdConfirmBtn" type="button" onclick="idCheck()">중복확인</button><br>
 			</div>
@@ -164,7 +174,7 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요" id="sellerPassword"name="sellerPassword" >
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword" >
 			</div>
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">
@@ -227,15 +237,12 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href = "../sellerLogin.jsp";
+	    	location.href="${pageContext.request.contextPath}/sellerLogin.jsp"
 	    });
 	});
 </script>
 <!-- footer -->
 <%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>
 
-
-<!-- 부트스트랩 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

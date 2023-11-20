@@ -43,7 +43,7 @@
       <div class="sticky-top">
    <nav class="navbar navbar-expand-lg bg-light border-0" data-bs-theme="light">
   <div class="container-fluid">
-    <div class="collapse navbar-collapse d-flex justify-content-center"" id="navbarColor03">
+    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarColor03">
       <ul class="navbar-nav ms-auto">
          <li class="nav-item dropdown" style="margin-right: 120px;">
           <a class="nav-link dropdown-toggle" style="font-size: 14px;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">카테고리</a>

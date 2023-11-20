@@ -22,6 +22,14 @@ public class SellerServiceImpl implements SellerService {
 	public SellerVO getSeller(SellerVO vo) {
 		return sellerDAO.getSeller(vo);
 	}
+	@Override
+	public SellerVO findPwSeller(SellerVO vo) {
+		return sellerDAO.findPwSeller(vo);
+	}
+	@Override
+	public SellerVO findIdSeller(SellerVO vo) {
+		return sellerDAO.findIdSeller(vo);
+	}
 	
 	@Override
 	public int sellerIdCheck(SellerVO vo) {

@@ -17,27 +17,21 @@
 function idFind() {
 	alert("idFind");
 	var html = "";
-	$("#id").html(html);
+	$("#sellerIdFind").html(html);
 }
 function pwFind() {
 	alert("pwFind");
-    var html = '<div class="input-group-prepend" >'
-					+'<div class="input-group mb-3 SIinput">'
-						+'<div class="input-group-prepend">'
-							+'<span class="input-group-text signIn-text">&nbsp아이디</span>'
-						+'</div>'
-					+'<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId">'
-					+'</div>'
-				+'</div>';
-	$("#id").html(html);
+    var html = '<div class="input-group-prepend SIinput" id="findInputId">'
+					+'<span class="input-group-text signIn-text">&nbsp아이디</span>'
+				+'</div>'
+				+'<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId">';
+	$("#sellerIdFind").html(html);
 }
 function sellerCancle() {
-    // 취소 버튼을 눌렀을 때의 동작을 여기에 추가
-    alert("취소 버튼이 클릭되었습니다.");
-
+	window.history.back();
 }
 
-function allCheck() {
+function sellerFind() {
 	var sellerId = $("#sellerId").val();
 	if($("#sellerId").val() == "") {
 		alert("아이디를 입력해주세요.");
@@ -45,44 +39,43 @@ function allCheck() {
 		alert ("상호명을 입력해주세요.");
 	} else if($("#customerEmail").val() == "") {
 		alert ("이메일을 입력해주세요.");
-	} else if($("#customerCenter").val() == "") {
-		alert ("대표 연락처를 입력해주세요.");
+	} else if($("#registNum").val() == "") {
+		alert ("사업자등록번호를 입력해주세요.");
 	} else {
 		$("#sellerFind").submit();
 	}
 }
 </script>
 <!-- header -->
-<%@ include file="../../../../css/headerFooter/sellerLoginHeader.jsp" %>
+<%@ include file="../../../../css/headerFooter/sellerHeader.jsp" %>
 <div class="container" style="text-align:center" id="sellerFindContainer">
 	<h2>파트너 아이디 / 비밀번호 찾기</h2>
 	<button class="btn" id="sellerSigninBtn" onclick="idFind()">아이디 찾기</button>
 	<button class="btn" id="sellerSigninBtn" onclick="pwFind()">비밀번호 찾기</button>
+	
 	<form id="sellerFind" method="post" action="sellerFind.do">
 		<div class="container" id="sellerSignInBox">
-			<div class="input-group mb-3 SIinput" id="id">
-				
-					
-				
+			<div class="input-group mb-3 findInput" id="sellerIdFind">
+			<%-- 비밀번호 찾기 시 아이디 입력창 추가  --%>	
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 findInput">
+				<div class="input-group-prepend SIinput" id="findInputComName">
 					<span class="input-group-text signIn-text">&nbsp상호명</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName" >
 			</div>
 
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 findInput">
+				<div class="input-group-prepend SIinput" id="findInputEmail">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" >
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
-					<span class="input-group-text signIn-text">&nbsp대표 연락처</span>
+			<div class="input-group mb-3 findInput">
+				<div class="input-group-prepend SIinput" id="findInputRegistNum">
+					<span class="input-group-text signIn-text">&nbsp사업자등록번호</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요" id="customerCenter" name="customerCenter" >
+				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(숫자로  10자리 입력해주세요  '-' 제외)" id="registNum" name="registrationNum" >
 			</div>
 			<input type="button" class="btn" id="sellerSigninBtn" onclick="sellerFind()" value="찾기">
 		</div>
@@ -93,10 +86,6 @@ function allCheck() {
 </div>
 <!-- footer -->
 <%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>
-
-
-<!-- 부트스트랩 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </body>
 </html>

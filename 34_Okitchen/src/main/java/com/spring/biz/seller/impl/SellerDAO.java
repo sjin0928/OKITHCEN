@@ -19,6 +19,16 @@ public class SellerDAO {
 		return mybatis.selectOne("sellerDAO.getSeller", vo);
 	}
 
+	public SellerVO findPwSeller(SellerVO vo) {
+		return mybatis.selectOne("sellerDAO.findPwSeller", vo);
+	}
+	
+	public SellerVO findIdSeller(SellerVO vo) {
+		System.out.println(vo);
+		return mybatis.selectOne("sellerDAO.findIdSeller", vo);
+		
+	}
+	
 	public int sellerIdCheck(SellerVO vo) {
 		return mybatis.selectOne("sellerDAO.sellerIdCheck", vo);
 	}
@@ -26,4 +36,5 @@ public class SellerDAO {
 	public void insertSeller(SellerVO vo) {
 		mybatis.insert("sellerDAO.insertSeller", vo);
 	}
+
 }

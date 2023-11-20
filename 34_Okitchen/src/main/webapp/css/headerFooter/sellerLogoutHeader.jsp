@@ -8,7 +8,7 @@
 			<div class="css-fexq9b eo7pjfk4">
 				<a class="css-xygizb eo7pjfk2" href="sellerSignIn.do">회원가입</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
-				<a class="css-oyffzd eo7pjfk2" href="../sellerLogin.jsp">로그인</a>
+				<a class="css-oyffzd eo7pjfk2" href="logout.do">로그아웃</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
 				<div class="css-1qolcqm eo7pjfk3"></div>
 			</div>
@@ -22,7 +22,7 @@
 		</div>	
 	</div>
 
-<!--     <div class="container" style="display: block;">
+    <div class="container" style="display: block;">
 	<nav class="navbar navbar-expand-lg bg-light border-0" data-bs-theme="light">
   <div>
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarColor03">
@@ -46,4 +46,4 @@
     </div>
   </div>
 </nav>
-</div> -->
+</div>
