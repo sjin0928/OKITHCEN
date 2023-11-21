@@ -37,8 +37,8 @@ public class SellerDAO {
 		mybatis.insert("sellerDAO.insertSeller", vo);
 	}
 
-	public int updatePwSeller(SellerVO vo) {
-		return mybatis.update("sellerDAO.updatePwSeller", vo);
+	public void updatePwSeller(SellerVO vo) {
+		mybatis.update("sellerDAO.updatePwSeller", vo);
 		
 	}
 

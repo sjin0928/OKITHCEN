@@ -16,23 +16,33 @@
 function passwordCheck(){
 	if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
 		$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
+		$("#pwCheckMessage").removeClass("Omessage");
 		$("#pwCheckMessage").addClass("Xmessage");
+		$("#sellerPassword").prop("disabled", false);
 		
 	} else if ($("#sellerPassword").val().length < 8){
 		$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
+		$("#pwCheckMessage").removeClass("Omessage");
 		$("#pwCheckMessage").addClass("Xmessage");
+		$("#sellerPassword").prop("disabled", false);
 		
 	} else if ($("#sellerPassword").val().length > 20){
 		$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
+		$("#pwCheckMessage").removeClass("Omessage");
 		$("#pwCheckMessage").addClass("Xmessage");
+		$("#sellerPassword").prop("disabled", false);
 		
 	} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
 		$("#pwCheckMessage").html("비밀번호가 일치합니다.");
+		$("#pwCheckMessage").removeClass("Xmessage");
 		$("#pwCheckMessage").addClass("Omessage");
+		$("#sellerPassword").prop("disabled", true);
 		
 	} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
 		$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
+		$("#pwCheckMessage").removeClass("Omessage");
 		$("#pwCheckMessage").addClass("Xmessage");
+		$("#sellerPassword").prop("disabled", false);
 	}
 }
 
@@ -42,21 +52,9 @@ function check() {
 	} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
 		alert ("비밀번호 확인 버튼을 클릭해주세요.");
 	} else {
-		$.ajax ("sellerPwUpdate.do", {
-			type: "post", 
-			dataType: "json",
-			success: function(sellerId) {
-				let dispTag = "<div><p>" + sellerId + "님 : 비밀번호 변경되었습니다.</p></div><br><br>";
-				$("#disp").html(dispTag);
-			},
-			error: function(){
-				let dispTag = "<div><p>변경 실패 : 담당자에게 문의하세요.</p></div><br><br>";
-				$("#disp").html(dispTag);
-			}
-		});
-		
-		/* $("#registNum").prop("disabled", false);
-		$("#passwordUpdate").submit(); */
+		$("#sellerPassword").prop("disabled", false);
+		$("#registNum").prop("disabled", false);
+		$("#passwordUpdate").submit();
 	}
 		
 }
@@ -78,7 +76,7 @@ function check() {
 				<div class="input-group-prepend SIinput">
 				<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
-			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${sellerId }" disabled="true">
+			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${findVO.sellerId }" disabled="true">
 			</div>
 			<p>변경하실 비밀번호를 입력해주세요</p>
 			<div class="input-group mb-3">
@@ -109,7 +107,7 @@ function check() {
 <script>
 	$(document).ready(function() {
 	    $("#sellerLoginBtn").on("click", function() {
-	    	window.history.back();
+	    	location.href="sellerFindPwGo.do"
 	    });
 	});
 </script>

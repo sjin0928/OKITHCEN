@@ -1,5 +1,8 @@
 package com.spring.biz.view.seller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -91,42 +93,73 @@ public class SellerController {
 		return "redirect:/sellerLogin.jsp";
 	}
 	// 아이디/비밀번호 찾기 페이지로 이동
-	@GetMapping("/sellerFind.do")
-	public String sellerFind () {
-		
-		return "seller/sellerFind";
+	@GetMapping("/sellerFindIdGo.do")
+	public String sellerFindIdGo () {
+
+		return "seller/sellerIdFind";
 	}
-	@PostMapping("/sellerFind.do")
-	public String sellerFindIdPw (SellerVO vo, Model model) {
+	@GetMapping("/sellerFindPwGo.do")
+	public String sellerFindPwGo () {
+		
+		return "seller/sellerPwFind";
+	}
+	// 아이디 찾기
+	@PostMapping("/sellerFindId.do")
+	public String sellerFindId (SellerVO vo, Model model) {
 		System.out.println(">> 아이디, 비밀번호 찾기 중");
 		System.out.println("vo : " + vo);
-		//아이디 찾기
-		if(vo.getSellerId() == null || vo.getSellerId() == "") {
-			SellerVO findVO = sellerService.findIdSeller(vo);
-			
-			StringBuilder sellerId = new StringBuilder(findVO.getSellerId().substring(0, 3));
+
+		model.addAttribute("sellerId", null);
+		SellerVO findVO = sellerService.findIdSeller(vo);
+		StringBuilder sellerId = null;
+		if(findVO != null) {
+			System.out.println(">> 아이디 찾기 중");
+			System.out.println("findVO : " + findVO);
+			sellerId = new StringBuilder(findVO.getSellerId().substring(0, 3));
 			System.out.println(sellerId);
 			int length = findVO.getSellerId().length();
 			System.out.println(length);
 			for(int i = 4; i <= length; i++) {
 				sellerId.append("*");
 			}
-			
 			model.addAttribute("sellerId", sellerId);
 			
 			return "seller/sellerFindResult";
-		// 비밀번호 찾기
-		} else if (vo.getSellerId() != null) {
+		} else {
+			System.out.println();
+			model.addAttribute("findVO", findVO);
+			
+			return "seller/sellerFindResult";
+		}
+			
+	}
+	// 비밀번호 찾기
+		@PostMapping("/sellerFindPw.do")
+		public String sellerFindPw (SellerVO vo, Model model) {
+			System.out.println(">> 아이디, 비밀번호 찾기 중");
+			System.out.println("vo : " + vo);
+			//아이디 찾기
 			SellerVO findVO = sellerService.findPwSeller(vo);
-			if(findVO.getSellerPassword() != null) {
+			if (vo.getSellerId() != null) {
+				System.out.println(">> 비밀번호 찾기 중");
+				System.out.println("vo.getSellerId() : " + vo.getSellerId());
 				
-				model.addAttribute("sellerId", findVO.getSellerId());
+				System.out.println("findVO : " + findVO);
 				
-				return "seller/sellerFindUpdate";
+				if(findVO != null) {
+					model.addAttribute("findVO", findVO);
+					return "seller/sellerFindUpdate";
+					
+				} else {
+					model.addAttribute("findVO", findVO);
+					return "seller/sellerFindResult";
+				}
+			} else {
+				model.addAttribute("findVO", findVO);
+				return "seller/sellerFindResult";
 			}
 		}
-		return "seller/sellerFind";
-	}
+	// 비밀번호 찾기 후 변경
 	@PostMapping("/sellerPwUpdate.do")
 	public String sellerPwUpdate (SellerVO vo, Model model) {
 		System.out.println(">> 비밀번호 찾기 후 변경 중");
@@ -134,7 +167,44 @@ public class SellerController {
 				
 		sellerService.updatePwSeller(vo);
 		model.addAttribute("sellerId", vo.getSellerId());
-		return "seller/sellerFindResult";
+		return "seller/sellerFindUpResult";
 	}
-
+	// 로그아웃
+	@GetMapping("/sellerLogout.do")
+	public String sellerLogout (SessionStatus session) {
+				
+		session.setComplete();
+		
+		return "../../sellerLogin";
+	}
+	// 회원 정보 수정 전 비밀번호 확인 페이지 이동
+	@GetMapping ("/sellerUpPwCheck.do")
+	public String sellerUpPwCheck () {
+		return "seller/sellerUpPwCheck";
+	}
+	@PostMapping ("/sellerUpPwCheck.do")
+	public String sellerUpPwCheck (SellerVO vo, HttpServletRequest request) {
+		HttpSession httpSession = request.getSession(false);
+		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO"); 
+		String inPw = vo.getSellerPassword();
+		String inId = vo.getSellerId();
+		String sessionPw = sessionVO.getSellerPassword();
+		String sessionId = sessionVO.getSellerId();
+		
+		if(inId.equals(sessionId) && inPw.equals(sessionPw)) {
+			return "seller/sellerUpdate";
+		}
+		
+		return "seller/sellerUpPwCheck";
+	}
+	// 회원 정보 수정 
+	@PostMapping ("/sellerUpdate.do")
+	public String sellerMypage () {
+		return "seller/sellerUpdate";
+	}
+	// 회원 탈퇴 페이지 이동
+	@GetMapping ("/sellerWithdrawal.do")
+	public String sellerWithdrawal () {
+		return "seller/sellerWithdrawal";
+	}
 }

@@ -16,6 +16,7 @@
 		FROM SELLER
 		WHERE SELLER_ID = #{sellerId}
 		AND COMPANY_NAME = #{companyName}
+		AND CUSTOMER_EMAIL = #{customerEmail}
 		AND REGISTRATION_NUM = #{registrationNum}
 	</select>
 	
@@ -24,6 +25,7 @@
 		SELECT * 
 		FROM SELLER
 		WHERE COMPANY_NAME = #{companyName}
+		AND CUSTOMER_EMAIL = #{customerEmail}
 		AND REGISTRATION_NUM = #{registrationNum}
 	</select>
 	

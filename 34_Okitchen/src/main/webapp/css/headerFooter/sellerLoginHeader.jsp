@@ -8,7 +8,7 @@
 			<div class="css-fexq9b eo7pjfk4">
 				<a class="css-xygizb eo7pjfk2" href="seller/sellerSignIn.do">회원가입</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
-				<a class="css-oyffzd eo7pjfk2" href="sellerLogin.jsp">로그인</a>
+				<a class="css-oyffzd eo7pjfk2" href="${pageContext.request.contextPath}/sellerLogin.jsp">로그인</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
 				<div class="css-1qolcqm eo7pjfk3"></div>
 			</div>

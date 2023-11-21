@@ -20,7 +20,7 @@
 	<div class="container" id="loginBox">
 		<h2>파트너 로그인</h2>
 
-		<form action="seller/sellerLogin.do" method="post">
+		<form action="${pageContext.request.contextPath}/seller/sellerLogin.do" method="post">
 			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text login-text">
@@ -42,10 +42,10 @@
 	
 	<div class="container" id="sellerSignInBox">
 
-		<form action="seller/sellerSignIn.do" method="get">
+		<form action="${pageContext.request.contextPath}/seller/sellerSignIn.do" method="get">
 			<input type="submit" class="btn" id="sellerSignIn" value="회원가입">
 		</form>
-		<form action="seller/sellerFind.do" method="get">
+		<form action="${pageContext.request.contextPath}/seller/sellerFindIdGo.do" method="get">
 			<input type="submit" class="btn" id="sellerFind" value="아이디/비밀번호 찾기">
 		</form>
 	</div>

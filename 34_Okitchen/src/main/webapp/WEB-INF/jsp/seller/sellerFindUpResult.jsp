@@ -22,24 +22,18 @@
 <div class="container" style="text-align:center">
 	<br><br>
 	<div>
-		<c:if test="${!empty sellerId }">
-			<p>조회하신 ID 입니다.</p>
-			<p>id : ${sellerId}</p>
-		</c:if>
-		<c:if test="${empty sellerId }">
-			<p>일치하는 정보가 없습니다.</p>
-			<p>정보를 확인하신 후 다시 입력해주세요.</p>
-		</c:if>
+		<p>${sellerId} 님</p>
+		<p>비밀번호가 변경되었습니다. 로그인 페이지에서 로그인해주세요</p>
 	</div>
 	<br><br>
 	<div>
-	<button class="btn" id="sellerLoginBtn">이전</button>
+	<button class="btn" id="sellerLoginBtn">로그인</button>
 	</div>
 </div>
 <script>
 	$(document).ready(function() {
 	    $("#sellerLoginBtn").on("click", function() {
-	    	window.history.back();
+	    	location.href="../sellerLogin.jsp";
 	    });
 	});
 </script>

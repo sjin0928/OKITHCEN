@@ -15,20 +15,13 @@
 <body>
 <script>
 function idFind() {
-	alert("idFind");
-	var html = "";
-	$("#sellerIdFind").html(html);
+	location.href="sellerFindIdGo.do";
 }
 function pwFind() {
-	alert("pwFind");
-    var html = '<div class="input-group-prepend SIinput" id="findInputId">'
-					+'<span class="input-group-text signIn-text">&nbsp아이디</span>'
-				+'</div>'
-				+'<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId">';
-	$("#sellerIdFind").html(html);
+	location.href="sellerFindPwGo.do";
 }
 function sellerCancle() {
-	window.history.back();
+	location.href="sellerLogin.do";
 }
 
 function sellerFind() {
@@ -53,10 +46,13 @@ function sellerFind() {
 	<button class="btn" id="sellerSigninBtn" onclick="idFind()">아이디 찾기</button>
 	<button class="btn" id="sellerSigninBtn" onclick="pwFind()">비밀번호 찾기</button>
 	
-	<form id="sellerFind" method="post" action="sellerFind.do">
+	<form id="sellerFind" method="post" action="sellerFindPw.do">
 		<div class="container" id="sellerSignInBox">
 			<div class="input-group mb-3 findInput" id="sellerIdFind">
-			<%-- 비밀번호 찾기 시 아이디 입력창 추가  --%>	
+				<div class="input-group-prepend SIinput" id="findInputId">
+					<span class="input-group-text signIn-text">&nbsp아이디</span>
+				</div>
+				<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId">
 			</div>
 			<div class="input-group mb-3 findInput">
 				<div class="input-group-prepend SIinput" id="findInputComName">

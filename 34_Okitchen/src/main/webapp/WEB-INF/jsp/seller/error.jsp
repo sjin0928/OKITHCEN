@@ -11,11 +11,11 @@
 	$(document).ready(function() {
 		if("${sellerVO.sellerId}" === ""){
 			alert("아이디를 입력해주세요");
-			window.history.back();
+			location.href="../sellerLogin.jsp";
 		}
 		if("${sellerVO.sellerPassword}" === ""){
 			alert("비밀번호를 입력해주세요");
-			window.history.back();
+			location.href="../sellerLogin.jsp";
 		}
 	});
 </script>

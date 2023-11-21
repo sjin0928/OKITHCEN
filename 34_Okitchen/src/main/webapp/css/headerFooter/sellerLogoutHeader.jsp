@@ -6,9 +6,8 @@
 		<div class="css-t79vuj e15sbxqa2" style="height: 50px;">
 		<!-- 로그아웃 부분 start -->
 			<div class="css-fexq9b eo7pjfk4">
-				<a class="css-xygizb eo7pjfk2" href="sellerSignIn.do">회원가입</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
-				<a class="css-oyffzd eo7pjfk2" href="logout.do">로그아웃</a>
+				<a class="css-oyffzd eo7pjfk2" href="sellerLogout.do">로그아웃</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
 				<div class="css-1qolcqm eo7pjfk3"></div>
 			</div>
@@ -41,6 +40,13 @@
           <a class="nav-link active" href="#" style="font-size: 14px; width: auto;">문의관리
             <span class="visually-hidden"></span>
           </a>
+        </li>
+              	<li class="nav-item dropdown" style="margin-right: 50px;">
+          <a class="nav-link dropdown-toggle" style="font-size: 14px; width: auto;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="sellerUpPwCheck.do">회원 정보 수정</a>
+            <a class="dropdown-item" href="sellerWithdrawal.do">회원탈퇴</a>
+          </div>
         </li>
       </ul>
     </div>
