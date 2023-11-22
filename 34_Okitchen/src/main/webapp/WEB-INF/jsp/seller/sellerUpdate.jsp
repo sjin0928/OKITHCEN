@@ -14,29 +14,40 @@
 <body>
 <!-- header -->
 <%@ include file="../../../../css/headerFooter/sellerLogoutHeader.jsp" %>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+	window.onload = function() {
+		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+			alert("세션만료 : 다시 로그인 해주세요.")
+			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
+		}
+	}
 	function passwordCheck(){
 		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val().length < 8){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val().length > 20){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
+			$("#pwCheckMessage").removeClass("Xmessage");
 			$("#pwCheckMessage").html("비밀번호가 일치합니다.");
 			$("#pwCheckMessage").addClass("Omessage");
 			
 		} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
 			$("#pwCheckMessage").addClass("Xmessage");
 		}
-		
 	}
 
 	function allCheck() {
@@ -50,19 +61,42 @@
 		} else if($("#customerCenter").val() == "") {
 			alert ("대표 연락처를 입력해주세요.");
 		} else {
-			$("#sellerUpdate").submit();
-		}
-			
+			console.log($("#sellerPassword").val(), $("#customerEmail").val(),$("#customerCenter").val());
+			var data = {
+				sellerId: "${sellerVO.sellerId}",
+				sellerPassword : $("#sellerPassword").val(),
+				customerEmail : $("#customerEmail").val(),
+				customerCenter : $("#customerCenter").val()
+			}
+			console.log(data);
+			$.ajax({
+				url: "sellerUpdate.do",
+				type: "POST",
+				data: JSON.stringify(data),
+				contentType: "application/json",
+				success: function (response) {
+					alert("정보 수정 되었습니다.");
+					location.href="sellerUpdateGo.do";
+					
+				},
+				error: function (jqXHR, textStatus, errorThrown){
+					console.log("HTTP 상태 코드: " + jqXHR.status);
+			        console.log("서버 응답 내용: " + jqXHR.responseText);
+			        console.log("에러 종류: " + textStatus);
+			        console.log("에러 객체: ", errorThrown);
+					alert("정보 수정 오류 : 담당자에게 문의주세요.");
+				}			
+			});
+		}		
 	}
 	
 </script>
 <body>
 
 <!-- 각자 main에 들어갈 내용 작성 -->
-\${sellerVO } : ${sellerVO }
 <div class="container" style="text-align:center" id="sellerSignContainer">
 	<h2>파트너 회원 정보 수정</h2>
-
+	<h6>[사업자 정보 수정은 사업자등록증을 okithcen@ockithen.com으로 메일 발송 후 연락부탁드립니다.]</h6>
 	<form id="sellerUpdate" method="post" action="sellerUpdate.do">
 		<div class="container" id="sellerSignInBox">
 			<div class="input-group mb-3">
@@ -78,13 +112,13 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword" >
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword">
 			</div>
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호 확인</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" name="confirmPassword"  id="confirmPassword">
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" id="confirmPassword" name="confirmPassword">
 				<button class="btn" id="sellerPwConfirmBtn" type="button" onclick="passwordCheck()">확인</button>
 			</div>
 			<div id="messageBox">
@@ -125,7 +159,7 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail"
+				<input type="email" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail"
 						value="${sellerVO.customerEmail }">
 			</div>
 			<div class="input-group mb-3">
@@ -145,7 +179,7 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="/productList.jsp"
+	    	location.href="productList.do";
 	    });
 	});
 </script>

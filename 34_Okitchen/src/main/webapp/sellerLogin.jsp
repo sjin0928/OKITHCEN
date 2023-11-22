@@ -12,8 +12,45 @@
 	<!-- 메뉴바 부트스트랩 템플릿 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
 </head>
+
 <body>
-	<!-- header -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+function login() {
+	
+	if($("#sellerIdIn").val() === "") {
+		alert("아이디를 입력해주세요.");
+	} else if ($("#sellerPwIn").val() === "") {
+		alert("비밀번호를 입력해주세요.");
+	} else {
+
+		var data = {
+			sellerId : $("#sellerIdIn").val(),
+			sellerPassword : $("#sellerPwIn").val()
+		}; 
+		$.ajax({
+			url: "${pageContext.request.contextPath}/seller/sellerLogin.do", 
+			type: "POST",
+			data: JSON.stringify(data), // json 을 string으로 변환하여 전송
+			contentType: "application/json",
+			success: function(response) {
+				console.log(response);
+				if(response){
+					alert("${sellerVO.sellerId}" + "님 환영합니다.");
+					location.href = "${pageContext.request.contextPath}/seller/productList.do";
+				}
+	  			alert("회원 정보가 없습니다.");
+
+			}, 
+			error: function() {
+		 		alert("로그인 실패 : 아이디와 비밀번호를 확인 후 입력해주세요.");
+			}
+		});
+	}
+}
+
+</script>
+<!-- header -->
 	<%@ include file="css/headerFooter/sellerLoginHeader.jsp" %>
 
 	<!-- 각자 main에 들어갈 내용 작성 -->
@@ -27,16 +64,16 @@
 					<i class="material-icons" style="font-size:20px;">account_box</i>&nbsp아이디
 					</span>
 				</div>
-				<input type="text" class="form-control" placeholder="id" id="id" name="sellerId">
+				<input type="text" class="form-control" placeholder="id" id="sellerIdIn" name="sellerId">
 			</div>
 			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text login-text">
 					<i class="material-icons" style="font-size:20px;">lock</i>&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control" placeholder="password" id="password" name="sellerPassword" >
+				<input type="password" class="form-control" placeholder="password" id="sellerPwIn" name="sellerPassword" >
 			</div>
-			<input type="submit" class="btn" id="sellerLoginBtn" value="로그인">
+			<input type="button" class="btn" id="sellerLoginBtn" value="로그인" onclick="login()">
 		</form>
 	</div>
 	

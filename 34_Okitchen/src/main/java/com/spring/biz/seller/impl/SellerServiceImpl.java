@@ -47,35 +47,22 @@ public class SellerServiceImpl implements SellerService {
 	public void updatePwSeller(SellerVO vo) {
 		sellerDAO.updatePwSeller(vo);
 	}
-	/*
+
 	@Override
 	public void updateSeller(SellerVO vo) {
-		// TODO Auto-generated method stub
+		sellerDAO.updateSeller(vo);
+	}
+
+	@Override
+	public void updateSellerStatus(SellerVO vo) {
+		sellerDAO.updateSellerStatus(vo);
 		
 	}
 
 	@Override
-	public void deleteSeller(SellerVO vo) {
-		// TODO Auto-generated method stub
-		
+	public SellerVO getSellerList() {
+
+		return sellerDAO.getSellerList();
 	}
-
-
-
-	@Override
-	public List<SellerVO> getSellerList(SellerVO vo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-
-	@Override
-	public void insertSeller(SellerVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-	*/
-
-
 
 }

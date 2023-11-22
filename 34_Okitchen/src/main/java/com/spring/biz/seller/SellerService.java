@@ -9,11 +9,9 @@ public interface SellerService {
 	SellerVO findPwSeller (SellerVO vo);
 	SellerVO findIdSeller (SellerVO vo);
 	void updatePwSeller (SellerVO vo);
-	/*
-	void updateSeller (SellerVO vo);
-	void deleteSeller (SellerVO vo);
+	void updateSeller(SellerVO vo);
+	void updateSellerStatus(SellerVO vo);
+	SellerVO getSellerList();
 	
-	List<SellerVO> getSellerList (SellerVO vo);
-	*/
 
 }

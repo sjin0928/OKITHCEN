@@ -17,24 +17,28 @@
 
 		$.ajax({
 			url: "sellerIdCheck.do",
-			type: "post",
-			dataType: "json",
+			type: "POST",
 			data: {"sellerId" : $("#sellerId").val()},
 			success: function(result){
 				var regex = /^[A-Za-z0-9]+$/;
 				if (!regex.test($("#sellerId").val())) {
+					$("#checkMessage").removeClass("Omessage");
 					$("#checkMessage").html("영어와 숫자만 입력하세요.");
 					$("#checkMessage").addClass("Xmessage");
 				} else if($("#sellerId").val().length < 5 || $("#sellerId").val().length > 20){
+					$("#checkMessage").removeClass("Omessage");
 					$("#checkMessage").html("아이디는 5자리 이상 20자리 이하로 입력해주세요.");
 					$("#checkMessage").addClass("Xmessage");
 				} else if(result == 1) {
+					$("#checkMessage").removeClass("Omessage");
 					$("#checkMessage").html("사용중인 아이디입니다. 다른 아이디를 입력해주세요.");
 					$("#checkMessage").addClass("Xmessage");
 				} else if (result == 0) {
+					$("#checkMessage").removeClass("Xmessage");
 					$("#checkMessage").html("사용 가능한 아이디입니다.");
 					$("#checkMessage").addClass("Omessage");
 				} else if (result == -1) {
+					$("#checkMessage").removeClass("Omessage");
 					$("#checkMessage").html("아이디를 입력해주세요.");
 					$("#checkMessage").addClass("Xmessage");
 				}
@@ -46,22 +50,27 @@
 	}
 	function passwordCheck(){
 		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val().length < 8){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val().length > 20){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
 			$("#pwCheckMessage").addClass("Xmessage");
 			
 		} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
+			$("#pwCheckMessage").removeClass("Xmessage");
 			$("#pwCheckMessage").html("비밀번호가 일치합니다.");
 			$("#pwCheckMessage").addClass("Omessage");
 			
 		} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
+			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
 			$("#pwCheckMessage").addClass("Xmessage");
 		}
@@ -77,7 +86,6 @@
 		  url: "https://api.odcloud.kr/api/nts-businessman/v1/status?serviceKey=4M1CU2qRmz5HF8MFRnYeN7eWnlxOsAfb7jSRFHHwwHfp00QQ4d74%2Fxkx%2BihFQbredQ8iBL2VAFQuHoLvUs0Q1w%3D%3D",  // serviceKey 값을 xxxxxx에 입력
 		  type: "POST",
 		  data: JSON.stringify(data), // json 을 string으로 변환하여 전송
-		  dataType: "JSON",
 		  contentType: "application/json",
 		  accept: "application/json",
 		  success: function(result) {
@@ -130,7 +138,6 @@
 			$("#registNum").prop("disabled", false);
 			$("#signIn").submit();
 		}
-			
 	}
 	
 </script>
@@ -219,7 +226,7 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" >
+				<input type="email" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요()" id="customerEmail" name="customerEmail" >
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend SIinput">

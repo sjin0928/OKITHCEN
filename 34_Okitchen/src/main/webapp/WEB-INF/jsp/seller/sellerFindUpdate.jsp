@@ -13,51 +13,51 @@
 </head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-function passwordCheck(){
-	if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
-		$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
-		$("#pwCheckMessage").removeClass("Omessage");
-		$("#pwCheckMessage").addClass("Xmessage");
-		$("#sellerPassword").prop("disabled", false);
-		
-	} else if ($("#sellerPassword").val().length < 8){
-		$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
-		$("#pwCheckMessage").removeClass("Omessage");
-		$("#pwCheckMessage").addClass("Xmessage");
-		$("#sellerPassword").prop("disabled", false);
-		
-	} else if ($("#sellerPassword").val().length > 20){
-		$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
-		$("#pwCheckMessage").removeClass("Omessage");
-		$("#pwCheckMessage").addClass("Xmessage");
-		$("#sellerPassword").prop("disabled", false);
-		
-	} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
-		$("#pwCheckMessage").html("비밀번호가 일치합니다.");
-		$("#pwCheckMessage").removeClass("Xmessage");
-		$("#pwCheckMessage").addClass("Omessage");
-		$("#sellerPassword").prop("disabled", true);
-		
-	} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
-		$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
-		$("#pwCheckMessage").removeClass("Omessage");
-		$("#pwCheckMessage").addClass("Xmessage");
-		$("#sellerPassword").prop("disabled", false);
+	function passwordCheck(){
+		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
+			$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
+			$("#pwCheckMessage").removeClass("Omessage");
+			$("#pwCheckMessage").addClass("Xmessage");
+			$("#sellerPassword").prop("disabled", false);
+			
+		} else if ($("#sellerPassword").val().length < 8){
+			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
+			$("#pwCheckMessage").removeClass("Omessage");
+			$("#pwCheckMessage").addClass("Xmessage");
+			$("#sellerPassword").prop("disabled", false);
+			
+		} else if ($("#sellerPassword").val().length > 20){
+			$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
+			$("#pwCheckMessage").removeClass("Omessage");
+			$("#pwCheckMessage").addClass("Xmessage");
+			$("#sellerPassword").prop("disabled", false);
+			
+		} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
+			$("#pwCheckMessage").html("비밀번호가 일치합니다.");
+			$("#pwCheckMessage").removeClass("Xmessage");
+			$("#pwCheckMessage").addClass("Omessage");
+			$("#sellerPassword").prop("disabled", true);
+			
+		} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
+			$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
+			$("#pwCheckMessage").removeClass("Omessage");
+			$("#pwCheckMessage").addClass("Xmessage");
+			$("#sellerPassword").prop("disabled", false);
+		}
 	}
-}
-
-function check() {
-	if ($("#sellerPassword").val() == "") {
-		alert("비밀번호를 입력해주세요.");
-	} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
-		alert ("비밀번호 확인 버튼을 클릭해주세요.");
-	} else {
-		$("#sellerPassword").prop("disabled", false);
-		$("#registNum").prop("disabled", false);
-		$("#passwordUpdate").submit();
-	}
-		
-}
+	
+	function check() {
+		if ($("#sellerPassword").val() == "") {
+			alert("비밀번호를 입력해주세요.");
+		} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
+			alert ("비밀번호 확인 버튼을 클릭해주세요.");
+		} else {
+			$("#sellerPassword").prop("disabled", false);
+			$("#registNum").prop("disabled", false);
+			$("#passwordUpdate").submit();
+		}
+			
+	}	
 
 </script>
 </head>

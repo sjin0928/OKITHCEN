@@ -1,5 +1,7 @@
 package com.spring.biz.view.seller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -29,32 +33,31 @@ public class SellerController {
 		System.out.println("--------SellerController() 실행");
 	}
 	// 아이디 비번 입력
-	@PostMapping("/sellerLogin.do")
-
-	public String sellerLogin (SellerVO vo, Model model) {
+	@RequestMapping("/sellerLogin.do")
+	@ResponseBody
+	public boolean sellerLogin (@RequestBody SellerVO vo, Model model) {
 		System.out.println("login");
 		System.out.println("입력정보 : " + vo);
-		if(vo.getSellerId() == null || vo.getSellerId().contentEquals("")) {
-			return "seller/error";
-			
-		} else if(vo.getSellerPassword() == null || vo.getSellerPassword().contentEquals("")) {
-			
-			return "seller/error";
-		}
 
 		SellerVO sellerVO = sellerService.getSeller(vo);
-		System.out.println("db정보 : " + sellerVO);
+				System.out.println("db정보 : " + sellerVO);
 		
 		if(sellerVO != null) {
-			System.out.println(">> 로그인 성공");
-			model.addAttribute("sellerVO", sellerVO);
+			if(sellerVO.getSellerStatus().equals("회원")) {
+				
+				System.out.println(">> 로그인 성공");
+				model.addAttribute("sellerVO", sellerVO);
+							
+				return true;
+			} else if(sellerVO.getSellerStatus().equals("정지")) {
+				
+				return false;
+			}
 
-			// 상품 리스트 페이지로 이동 (나중에 추가)
-			return "seller/productList";
-		} else {
-			System.out.println(">> 로그인 실패");
-			return "../../sellerLogin";
-		}
+		} 
+		System.out.println(">> 로그인 실패");
+		return false;
+		
 	}
 	// 아이디 비번 오류 발생 후 페이지 이동
 	@ResponseBody
@@ -88,6 +91,7 @@ public class SellerController {
 	@PostMapping("/sellerSignIn.do")
 	public String sellerSignIn (SellerVO vo) {
 		System.out.println(">> 회원가입 진행");
+		vo.setSellerStatus("회원");
 		sellerService.insertSeller(vo);
 		System.out.println(vo);
 		return "redirect:/sellerLogin.jsp";
@@ -175,36 +179,83 @@ public class SellerController {
 				
 		session.setComplete();
 		
-		return "../../sellerLogin";
+		return "redirect:/sellerLogin.jsp";
 	}
 	// 회원 정보 수정 전 비밀번호 확인 페이지 이동
 	@GetMapping ("/sellerUpPwCheck.do")
 	public String sellerUpPwCheck () {
 		return "seller/sellerUpPwCheck";
 	}
-	@PostMapping ("/sellerUpPwCheck.do")
-	public String sellerUpPwCheck (SellerVO vo, HttpServletRequest request) {
+	@RequestMapping ("/sellerUpPwCheck.do")
+	@ResponseBody
+	public boolean sellerUpPwCheck (@RequestBody SellerVO vo, HttpServletRequest request) {
 		HttpSession httpSession = request.getSession(false);
+		
 		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO"); 
 		String inPw = vo.getSellerPassword();
 		String inId = vo.getSellerId();
 		String sessionPw = sessionVO.getSellerPassword();
 		String sessionId = sessionVO.getSellerId();
-		
-		if(inId.equals(sessionId) && inPw.equals(sessionPw)) {
-			return "seller/sellerUpdate";
+		boolean result = inId.equals(sessionId) && inPw.equals(sessionPw);
+		if(result) {
+			return result;
 		}
-		
-		return "seller/sellerUpPwCheck";
+		return result;
 	}
-	// 회원 정보 수정 
-	@PostMapping ("/sellerUpdate.do")
-	public String sellerMypage () {
+	
+	//회원 정보 수정
+	@RequestMapping ("/sellerUpdate.do")
+	@ResponseBody
+	public boolean sellerUpdate (@RequestBody(required = false) SellerVO vo, Model model) {
+		
+		System.out.println("입력 받은 데이터 : " + vo);
+		sellerService.updateSeller(vo);
+		
+		SellerVO sellerVO = sellerService.getSeller(vo);
+		model.addAttribute("sellerVO", sellerVO);
+		
+		boolean response = true;
+		
+		return response;
+	}
+	
+	// 회원 정보 수정 이동
+	@GetMapping ("/sellerUpdateGo.do")
+	public String sellerUpdate () {
 		return "seller/sellerUpdate";
 	}
+	
 	// 회원 탈퇴 페이지 이동
 	@GetMapping ("/sellerWithdrawal.do")
 	public String sellerWithdrawal () {
 		return "seller/sellerWithdrawal";
+	}
+	@RequestMapping ("/sellerWithdrawal.do")
+	@ResponseBody
+	public void sellerWithdrawal (@RequestBody SellerVO vo, HttpServletRequest request, SessionStatus session) {
+		HttpSession httpSession = request.getSession(false);
+		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO");
+		String sessionId = sessionVO.getSellerId();
+		String sessionPw = sessionVO.getSellerPassword();
+		String InId = vo.getSellerId();
+		String InPw = vo.getSellerPassword();
+		if(sessionId.equals(InId) && sessionPw.equals(InPw)) {
+			vo.setSellerStatus("정지");
+			sellerService.updateSellerStatus(vo);
+			session.setComplete();
+		}
+	}
+	
+	// 상품리스트 페이지로 이동 (중복시 삭제)
+	@GetMapping ("/productList.do")
+	public String productList () {
+		return "seller/productList";
+	}
+	
+	@GetMapping ("/adminSellerGo.do")
+	public String getSellerList () {
+		SellerVO list = sellerService.getSellerList();
+		
+		return "admin/adminSellerList";
 	}
 }

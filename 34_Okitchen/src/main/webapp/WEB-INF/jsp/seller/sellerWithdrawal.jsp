@@ -16,15 +16,40 @@
 <%@ include file="../../../../css/headerFooter/sellerLogoutHeader.jsp" %>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-
+	window.onload = function() {
+		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+			alert("세션만료 : 다시 로그인 해주세요.")
+			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
+		}
+	}
 	function allCheck() {
+  		console.log($("#sellerPassword").val());
   		
 		if($("#sellerPassword").val() == "") {
 			alert("비밀번호를 입력해주세요.");
-		} else {
-			$("#sellerWithdrawal").submit();
-		}
 			
+		} else {
+			$("#sellerId").prop("disabled", false);
+			
+			var data = {
+				sellerId : $("#sellerId").val(),
+				sellerPassword : $("#sellerPassword").val()
+			}; 
+			$.ajax({
+				url: "sellerWithdrawal.do", 
+				type: "POST",
+				data: JSON.stringify(data), // json 을 string으로 변환하여 전송
+				contentType: "application/json",
+				success: function() {
+					alert("회원 탈퇴 되었습니다. 감사합니다.");
+					location.href = "${pageContext.request.contextPath}/sellerLogin.jsp";
+				}, 
+				error: function() {
+					$("#sellerId").prop("disabled", true);
+			 		alert("비밀번호 오류 : 비밀번호를 확인 후 입력해주세요.");
+				}
+			});
+		}
 	}
 	
 </script>
@@ -62,7 +87,7 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="/productList.jsp"
+	    	location.href="productList.do"
 	    });
 	});
 </script>
