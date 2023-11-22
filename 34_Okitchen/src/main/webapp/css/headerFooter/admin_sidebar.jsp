@@ -4,7 +4,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - 로고와 네임 클릭시 메인페이지로 이동 -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminIndex.jsp">
                 <div class="sidebar-brand-icon rotate-n-15">
 	            	<!-- 오늘의 식탁 로고 이미지로 수정해야됨 -->
                     <i class="fas fa-laugh-wink"></i>
@@ -54,22 +54,10 @@
             
             <!-- Nav Item - 판매자관리 Menu -->
             <li class="nav-item">
-<!-- 상위메뉴 클릭시 이동하는 경우 href 수정해야됨 -->
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeller"
-                    aria-expanded="true" aria-controls="collapseSeller">
+			<!-- 상위메뉴 클릭시 이동하는 경우 href 수정해야됨 -->
+                <a class="nav-link collapsed" href="seller/adminSellerGo.do" >
                     <span>판매자관리</span>
                 </a>
-<!-- 세부 메뉴가 필요한 경우 수정하세요 -->
-<!-- 
-                <div id="collapseSeller" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                    </div>
-                </div> 
--->
             </li>
 
             <!-- Divider -->

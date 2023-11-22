@@ -11,6 +11,15 @@
 	<!-- 메뉴바 부트스트랩 템플릿 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
 </head>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+	window.onload = function() {
+		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+			alert("세션만료 : 다시 로그인 해주세요.")
+			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
+		}
+	}
+</script>
 <body>
 <!-- header -->
 <%@ include file="../../../../css/headerFooter/sellerLogoutHeader.jsp" %>

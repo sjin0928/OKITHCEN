@@ -1,7 +1,5 @@
 package com.spring.biz.seller;
 
-import java.sql.Date;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,4 +16,5 @@ public class SellerVO {
 	private String registrationNum;
 	private String sellerPassword;
 	private String sellerType;
+	private String sellerStatus;
 }

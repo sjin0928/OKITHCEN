@@ -46,5 +46,22 @@
 		SET SELLER_PASSWORD = #{sellerPassword}
 		WHERE SELLER_ID = #{sellerId}
 	</update>
+	<update id="updateSeller" parameterType="seller">
+		UPDATE SELLER
+		SET SELLER_PASSWORD = #{sellerPassword}, 
+			CUSTOMER_EMAIL = #{customerEmail},
+			CUSTOMER_CENTER = #{customerCenter}
+		WHERE SELLER_ID = #{sellerId}
+	</update>
+	<update id="updateSellerStatus" parameterType="seller">
+		UPDATE SELLER
+		SET SELLER_STATUS = #{sellerStatus}
+		WHERE SELLER_ID = #{sellerId}
+		AND SELLER_PASSWORD = #{sellerPassword}
+	</update>
+	<select id="getSellerList" resultType="seller">
+		SELECT *
+		FROM SELLER
+	</select>
 	
 </mapper>

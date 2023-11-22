@@ -1,5 +1,7 @@
 package com.spring.biz.seller.impl;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -40,6 +42,20 @@ public class SellerDAO {
 	public void updatePwSeller(SellerVO vo) {
 		mybatis.update("sellerDAO.updatePwSeller", vo);
 		
+	}
+
+	public void updateSeller(SellerVO vo) {
+		mybatis.update("sellerDAO.updateSeller", vo);
+		
+	}
+
+	public void updateSellerStatus(SellerVO vo) {
+		mybatis.update("sellerDAO.updateSellerStatus", vo);
+		
+	}
+
+	public SellerVO getSellerList() {
+		return mybatis.selectList("sellerDAO.getSellerList");
 	}
 
 }

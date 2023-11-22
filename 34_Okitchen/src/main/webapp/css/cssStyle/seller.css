@@ -85,7 +85,7 @@
 	.mb-3 {
 		margin-top: 1rem !important;
 	}
-	#id, #password {
+	#sellerIdIn, #sellerPwIn {
 		max-width:500px;
 	}
 	#sellerSigninBtn, #sellerCancle {
@@ -105,6 +105,4 @@
 	}
 	.findInput {
 		justify-content: center;
-	}
-	#sellerId{
 	}
