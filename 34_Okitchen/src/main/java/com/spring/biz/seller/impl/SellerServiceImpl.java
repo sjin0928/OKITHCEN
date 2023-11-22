@@ -60,7 +60,7 @@ public class SellerServiceImpl implements SellerService {
 	}
 
 	@Override
-	public SellerVO getSellerList() {
+	public List<SellerVO> getSellerList() {
 
 		return sellerDAO.getSellerList();
 	}

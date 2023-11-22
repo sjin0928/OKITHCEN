@@ -253,8 +253,10 @@ public class SellerController {
 	}
 	
 	@GetMapping ("/adminSellerGo.do")
-	public String getSellerList () {
-		SellerVO list = sellerService.getSellerList();
+	public String getSellerList (Model model) {
+		List<SellerVO> list = sellerService.getSellerList();
+		System.out.println("list : " + list);
+		model.addAttribute("list", list);
 		
 		return "admin/adminSellerList";
 	}

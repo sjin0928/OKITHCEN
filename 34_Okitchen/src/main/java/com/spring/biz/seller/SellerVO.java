@@ -17,4 +17,7 @@ public class SellerVO {
 	private String sellerPassword;
 	private String sellerType;
 	private String sellerStatus;
+	private String sellerRegdate;
+	private String sellerChangeDate;
+	
 }

@@ -11,7 +11,7 @@ public interface SellerService {
 	void updatePwSeller (SellerVO vo);
 	void updateSeller(SellerVO vo);
 	void updateSellerStatus(SellerVO vo);
-	SellerVO getSellerList();
+	List<SellerVO> getSellerList();
 	
 
 }

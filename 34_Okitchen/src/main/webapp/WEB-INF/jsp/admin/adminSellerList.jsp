@@ -21,7 +21,8 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/cssStyle/sb-admin-2.min.css" rel="stylesheet">
-
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
 
 <body id="page-top">
@@ -50,8 +51,8 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for ID"
+                                aria-label="Search" aria-describedby="basic-addon2" name="">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -206,10 +207,10 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - 관리자명(예시) -->
+                        <!-- Nav Item - 관리자모드(예시) -->
 						<li class="nav-item no-arrow">
 						    <span class="nav-link">
-						        <span class="mr-2 d-none d-lg-inline text-gray-600 small">관리자명</span>
+						        <span class="mr-2 d-none d-lg-inline text-gray-600 small">관리자모드</span>
 						    </span>
 						</li>
                     </ul>
@@ -227,22 +228,38 @@
 								<h6 class="m-0 font-weight-bold text-primary">파트너 리스트</h6>
 							</div>
 							<div class="card-body">
-								<table>
-									<tr class="m-0 font-weight-bold text-primary">
-										<th>ID</th>
-										<th>상호명</th>
-										<th>사업자등록번호</th>
-										<th>대표자명</th>
-										<th>사업자 유형</th>
-										<th>이메일</th>
-										<th>대표 연락처</th>
-										<th>회원 상태</th>
-									</tr>
-									<tr class="card-body">
-										<td></td>
-										<td></td>
-									</tr>
-									
+								<table class="table">
+									<thead class="thead">
+										<tr class="m-0 font-weight-bold text-primary" style="text-align: center;">
+											<th>ID</th>
+											<th>상호명</th>
+											<th>사업자등록번호</th>
+											<th>대표자명</th>
+											<th>사업자 유형</th>
+											<th>이메일</th>
+											<th>대표 연락처</th>
+											<th>회원 상태</th>
+											<th>가입일</th>
+											<th>변경일</th>
+										</tr>
+									</thead>
+									<tbody  style="text-align: center;">
+										<c:forEach var="vo" items="${list }">
+											<tr class="card-body">
+												<td>${vo.sellerId }</td>
+												<td>${vo.companyName }</td>
+												<td>${vo.registrationNum }</td>
+												<td>${vo.representative }</td>
+												<td>${vo.sellerType }</td>
+												<td>${vo.customerEmail }</td>
+												<td>${vo.customerCenter }</td>
+												<td>${vo.sellerStatus }</td>
+												<td>${vo.sellerRegdate }</td>
+												<td>${vo.sellerChangeDate }</td>
+											</tr>
+										</c:forEach>
+										
+									</tbody>
 								</table>
 							</div>
 						</div>

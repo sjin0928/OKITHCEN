@@ -54,7 +54,7 @@ public class SellerDAO {
 		
 	}
 
-	public SellerVO getSellerList() {
+	public List<SellerVO> getSellerList() {
 		return mybatis.selectList("sellerDAO.getSellerList");
 	}
 
