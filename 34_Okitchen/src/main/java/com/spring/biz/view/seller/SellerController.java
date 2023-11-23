@@ -1,6 +1,8 @@
 package com.spring.biz.view.seller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.spring.biz.seller.Paging;
 import com.spring.biz.seller.SellerService;
 import com.spring.biz.seller.SellerVO;
 
@@ -35,7 +38,7 @@ public class SellerController {
 	// 아이디 비번 입력
 	@RequestMapping("/sellerLogin.do")
 	@ResponseBody
-	public boolean sellerLogin (@RequestBody SellerVO vo, Model model) {
+	public boolean sellerLogin (@RequestBody SellerVO vo, Model model, SessionStatus session) {
 		System.out.println("login");
 		System.out.println("입력정보 : " + vo);
 
@@ -50,12 +53,13 @@ public class SellerController {
 							
 				return true;
 			} else if(sellerVO.getSellerStatus().equals("정지")) {
-				
+				session.setComplete();
 				return false;
 			}
 
 		} 
 		System.out.println(">> 로그인 실패");
+		session.setComplete();
 		return false;
 		
 	}
@@ -251,13 +255,85 @@ public class SellerController {
 	public String productList () {
 		return "seller/productList";
 	}
-	
+	// 파트너 리스트 첫 페이지
 	@GetMapping ("/adminSellerGo.do")
 	public String getSellerList (Model model) {
-		List<SellerVO> list = sellerService.getSellerList();
-		System.out.println("list : " + list);
-		model.addAttribute("list", list);
+		Map<String, Integer> pMap = new HashMap<>();
 		
+		// 전체 회원 수
+		int totalRecord = sellerService.getSellerCount();
+		
+		// 전체 페이지 수 구하기
+		Paging pvo = new Paging();
+		pvo.setTotalRecord(totalRecord);
+		pvo.setTotalPage();
+		
+		// 전체 블록 개수 구하기
+		pvo.setTotalBlock();
+		
+		// 현재 블록의 시작, 끝 페이지 번호 구하기
+		pvo.setBeginPage();
+		pvo.setEndPage();
+		
+		// 현재 페이지 회원의 시작, 끝 번호
+		pvo.setBegin();
+		pvo.setEnd();
+		pMap.put("begin", pvo.getBegin());
+		pMap.put("end", pvo.getEnd());
+		
+		List<SellerVO> list = sellerService.getSellerList(pMap);		
+		
+		System.out.println("list : " + list);
+		System.out.println("page : " + pvo);
+		model.addAttribute("list", list);
+		model.addAttribute("pvo", pvo);
+				
 		return "admin/adminSellerList";
 	}
+	
+	// 파트너 리스트 선택 페이지
+	@RequestMapping ("/adminSellerGo.do")
+	@ResponseBody
+	public Map<String, Object> clickSellerList (@RequestBody  Map<String, Integer> requestMap) {
+		Map<String, Integer> pMap = new HashMap<>();
+		Map<String, Object> result = new HashMap<>();
+		System.out.println("pageNum" + requestMap.get("pageNum"));
+		int pageNum = requestMap.get("pageNum");
+		
+		// 전체 회원 수
+		int totalRecord = sellerService.getSellerCount();
+		
+		// 전체 페이지 수 구하기
+		Paging pvo = new Paging();
+		pvo.setTotalRecord(totalRecord);
+		pvo.setTotalPage();
+		
+		// 선택된 페이지 입력
+		pvo.setNowPage(pageNum);
+		
+		// 전체 블록 개수 구하기
+		pvo.setTotalBlock();
+		
+		// 현재 블록의 시작, 끝 페이지 번호 구하기
+		pvo.setBeginPage();
+		pvo.setEndPage();
+		
+		// 현재 페이지 회원의 시작, 끝 번호
+		pvo.setBegin();
+		pvo.setEnd();
+		pMap.put("begin", pvo.getBegin());
+		pMap.put("end", pvo.getEnd());
+		
+		List<SellerVO> list = sellerService.getSellerList(pMap);		
+		
+		System.out.println("list : " + list);
+		System.out.println("page : " + pvo);
+		
+		result.put("list", list);
+		result.put("pvo", pvo);		
+		
+		
+		return result;
+	}
+	
 }

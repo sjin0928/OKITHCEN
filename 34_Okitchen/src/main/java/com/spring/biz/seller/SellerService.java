@@ -1,6 +1,7 @@
 package com.spring.biz.seller;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SellerService {
 	SellerVO getSeller (SellerVO vo);
@@ -11,7 +12,8 @@ public interface SellerService {
 	void updatePwSeller (SellerVO vo);
 	void updateSeller(SellerVO vo);
 	void updateSellerStatus(SellerVO vo);
-	List<SellerVO> getSellerList();
-	
-
+	List<SellerVO> getSellerList(Map<String, Integer> pMap);
+	int getSellerCount();
+	//--------(cho)
+	SellerVO selectOneSel(String sellerId) throws Exception; //판매자 정보 가져오기
 }

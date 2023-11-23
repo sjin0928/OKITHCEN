@@ -37,7 +37,7 @@
 			<c:forEach var="product" items="${productList}">
 				<li class="product-item">
 					<div class="product-code">${product.productId}</div>
-					<a href="productDetail.do?productId=${product.productId}">
+					<a href="prodDetail.do?productId=${product.productId}">
 						<div class="product-center">
 							<div class="product-img">
 								<img src="${pageContext.request.contextPath}/productImage/title/${product.image}" alt="product" />

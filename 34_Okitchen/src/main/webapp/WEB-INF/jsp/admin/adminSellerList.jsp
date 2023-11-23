@@ -21,9 +21,49 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/cssStyle/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/cssStyle/seller.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
+<script>
+	function pageGo(pageNum){
+		$.ajax ({
+			url: "adminSellerGo.do",
+			type: "POST",
+			data: JSON.stringify({pageNum : pageNum}),
+			contentType: "application/json",
+			success: function(response){
+				console.log(response.list[0].sellerId);
+				let dispTag = "";
+				for(let i = 0; i < response.list.length; i++ ){
+					vo = response.list[i];
+					console.log(vo);
+					dispTag += "<td>" + vo.sellerId + "</td>"
+					dispTag += "<td>" + vo.companyName + "</td>"
+					dispTag += "<td>" + vo.registrationNum + "</td>"
+					dispTag += "<td>" + vo.representative + "</td>"
+					dispTag += "<td>" + vo.sellerType + "</td>"
+					dispTag += "<td>" + vo.customerEmail + "</td>"
+					dispTag += "<td>" + vo.customerCenter + "</td>"
+					dispTag += "<td>" + vo.sellerStatus + "</td>"
+					dispTag += "<td>" + vo.sellerRegdate + "</td>"
+					dispTag += "<td>" + vo.sellerChangeDate + "</td>";
+				}
+				console.log(response.pvo);
+				
+				
+				$("#ajaxtable").html(dispTag);
+				
+				//$("#pageContainer").html(dispTag);
+			},
+			error: function(){
+				alert("서버 오류 : 담당자에게 문의하세요.");
+			}
+			
+		});
+		
+	}
+</script>
 
 <body id="page-top">
 
@@ -240,12 +280,21 @@
 											<th>대표 연락처</th>
 											<th>회원 상태</th>
 											<th>가입일</th>
-											<th>변경일</th>
+											<th>탈퇴일</th>
 										</tr>
 									</thead>
 									<tbody  style="text-align: center;">
+									<c:choose>
+									<c:when test="${empty list }">
+										<tr>
+											<td colspan="7">
+											<h2>현재 등록된 파트너가 없습니다.</h2>
+											</td>
+										</tr>
+									</c:when>
+									<c:otherwise>
 										<c:forEach var="vo" items="${list }">
-											<tr class="card-body">
+											<tr class="card-body" id="ajaxtable">
 												<td>${vo.sellerId }</td>
 												<td>${vo.companyName }</td>
 												<td>${vo.registrationNum }</td>
@@ -258,9 +307,48 @@
 												<td>${vo.sellerChangeDate }</td>
 											</tr>
 										</c:forEach>
-										
+										</c:otherwise>
+									</c:choose>
 									</tbody>
 								</table>
+								<div class="container" id="pageContainer">
+									<%--[이전으로]에 대한 사용여부 처리 --%>
+						
+									<c:if test="${pvo.beginPage == 1 }">
+										<button class="btn btn-link" disabled>
+											<i class="fa fa-angle-left" style="font-size:24px"></i>
+										</button>
+									</c:if>
+									<c:if test="${pvo.beginPage != 1 }">
+										<li>
+											<button class="btn btn-link" onclick="pageGo(${pvo.beginPage - 1 })">
+											<i class="fa fa-angle-left" style="font-size:24px"></i>
+											</button>
+										</li>
+									</c:if>	
+									<c:forEach var="pageNo" begin="${pvo.beginPage }" end="${pvo.endPage }">
+										
+										<c:if test="${pageNo == pvo.nowPage }">
+											<button class="now btn btn-primary">${pageNo }</button>
+										</c:if>	
+										<c:if test="${pageNo != pvo.nowPage }">
+											<button class="btn btn-link" onclick="pageGo(${pageNo })">${pageNo }</button>
+										</c:if>		
+											
+									</c:forEach>
+									<%--[다음으로]에 대한 사용여부 처리 --%>
+									<c:if test="${pvo.endPage >= pvo.totalPage }">
+										<button class="btn btn-link" disabled>
+											<i class="fa fa-angle-right" style="font-size:24px"></i>
+										</button>
+									</c:if>
+									<c:if test="${pvo.endPage < pvo.totalPage }">
+										
+										<button class="btn btn-link" onclick="pageGo(${pvo.endPage + 1 })">
+											<i class="fa fa-angle-right" style="font-size:24px"></i>
+										</button>
+									</c:if>	
+								</div>
 							</div>
 						</div>
 
@@ -284,7 +372,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="../css/vendor/jquery/jquery.min.js"></script>
     <script src="../css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <!-- Core plugin JavaScript-->
     <script src="../css/vendor/jquery-easing/jquery.easing.min.js"></script>
 

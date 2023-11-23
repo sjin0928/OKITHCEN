@@ -7,7 +7,7 @@
 		<!-- 로그아웃 부분 start -->
 			<div class="css-fexq9b eo7pjfk4">
 				<div class="css-1qgm48u eo7pjfk0"></div>
-				<a class="css-oyffzd eo7pjfk2" href="sellerLogout.do">로그아웃</a>
+				<a class="css-oyffzd eo7pjfk2" href="${pageContext.request.contextPath}/seller/sellerLogout.do">로그아웃</a>
 				<div class="css-1qgm48u eo7pjfk0"></div>
 				<div class="css-1qolcqm eo7pjfk3"></div>
 			</div>
@@ -29,8 +29,8 @@
       	<li class="nav-item dropdown" style="margin-right: 50px;">
           <a class="nav-link dropdown-toggle" style="font-size: 14px; width: auto;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">상품관리</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList.do">상품목록</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/product/registerProduct.do">상품등록</a>
             <a class="dropdown-item" href="#">Something else here</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
@@ -44,8 +44,8 @@
               	<li class="nav-item dropdown" style="margin-right: 50px;">
           <a class="nav-link dropdown-toggle" style="font-size: 14px; width: auto;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="sellerUpPwCheck.do">회원 정보 수정</a>
-            <a class="dropdown-item" href="sellerWithdrawal.do">회원탈퇴</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/seller/sellerUpPwCheck.do">회원 정보 수정</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/seller/sellerWithdrawal.do">회원탈퇴</a>
           </div>
         </li>
       </ul>
