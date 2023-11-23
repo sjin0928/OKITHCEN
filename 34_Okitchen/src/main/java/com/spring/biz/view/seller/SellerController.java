@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -272,8 +273,24 @@ public class SellerController {
 		pvo.setTotalBlock();
 		
 		// 현재 블록의 시작, 끝 페이지 번호 구하기
-		pvo.setBeginPage();
-		pvo.setEndPage();
+		int nowPage =  pvo.getNowPage();
+		int endPage =  pvo.getEndPage();
+		System.out.println("nowPage" + nowPage + "endPage" + endPage);
+		
+		
+		pvo.setBeginPage((pvo.getNowBlock() - 1) * pvo.getPagePerBlock() + 1);
+		pvo.setEndPage(pvo.getNowBlock() * pvo.getPagePerBlock());
+		
+		if(nowPage > endPage) {
+			pvo.setBeginPage(endPage + 1);
+		}
+
+		if(nowPage > endPage) {
+			pvo.setEndPage(pvo.getBeginPage() + 1);
+		}
+		if(endPage > pvo.getTotalPage()) {
+			endPage = pvo.getTotalPage();
+		}
 		
 		// 현재 페이지 회원의 시작, 끝 번호
 		pvo.setBegin();
@@ -292,13 +309,19 @@ public class SellerController {
 	}
 	
 	// 파트너 리스트 선택 페이지
-	@RequestMapping ("/adminSellerGo.do")
+	@RequestMapping ("/adminSellerList.do")
 	@ResponseBody
-	public Map<String, Object> clickSellerList (@RequestBody  Map<String, Integer> requestMap) {
-		Map<String, Integer> pMap = new HashMap<>();
+	public Map<String, Object> clickSellerList (@RequestParam int pageNum) {
+		//System.out.println(requestMap.get("pageNum"));
+		System.out.println(pageNum);
 		Map<String, Object> result = new HashMap<>();
-		System.out.println("pageNum" + requestMap.get("pageNum"));
-		int pageNum = requestMap.get("pageNum");
+
+		// 현재 페이지 구하기
+		
+		Map<String, Integer> pMap = new HashMap<>();
+		
+		//System.out.println("pageNum" + requestMap.get("pageNum"));
+		//int pageNum = requestMap.get("pageNum");
 		
 		// 전체 회원 수
 		int totalRecord = sellerService.getSellerCount();
@@ -314,9 +337,32 @@ public class SellerController {
 		// 전체 블록 개수 구하기
 		pvo.setTotalBlock();
 		
-		// 현재 블록의 시작, 끝 페이지 번호 구하기
-		pvo.setBeginPage();
-		pvo.setEndPage();
+		
+		
+		int nowPage =  pvo.getNowPage();
+		int endPage =  pvo.getEndPage();
+		int nowblock = pvo.getNowBlock();
+		// 현재 블록 구하기
+		if(nowPage > endPage) {
+			pvo.setNowBlock(nowblock + 1);
+		}
+		System.out.println("pvo.getNowBlock()" + pvo.getNowBlock());
+				// 현재 블록의 시작, 끝 페이지 번호 구하기
+		pvo.setBeginPage((pvo.getNowBlock() - 1) * pvo.getPagePerBlock() + 1);
+		if(nowPage > endPage) {
+			pvo.setBeginPage(endPage + 1);
+		}
+
+		pvo.setEndPage(pvo.getNowBlock() * pvo.getPagePerBlock());
+		
+		if(nowPage > endPage) {
+			pvo.setEndPage(pvo.getNowBlock() * pvo.getPagePerBlock());
+		}
+		if(endPage > pvo.getTotalPage()) {
+			pvo.setEndPage(pvo.getTotalPage());
+		}
+		
+		
 		
 		// 현재 페이지 회원의 시작, 끝 번호
 		pvo.setBegin();
@@ -327,10 +373,17 @@ public class SellerController {
 		List<SellerVO> list = sellerService.getSellerList(pMap);		
 		
 		System.out.println("list : " + list);
+		/*
+		for (SellerVO sellVO : list) {
+			if(sellVO.getSellerChangeDate().equals(null)) {
+				sellVO.setSellerChangeDate("");
+			}
+		}
+		*/
 		System.out.println("page : " + pvo);
 		
 		result.put("list", list);
-		result.put("pvo", pvo);		
+		result.put("pvo", pvo);	
 		
 		
 		return result;

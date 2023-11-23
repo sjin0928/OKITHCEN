@@ -21,8 +21,8 @@ public class Paging {
 	private int begin = 0; //현재 페이지상의 시작 번호
 	private int end = 0; //현재 페이지상의 마지막 번호
 	
-	private int beginPage = 0; //현재 블록의 시작 페이지 번호
-	private int endPage = 0; //현재 블록의 끝 페이지 번호
+	private int beginPage = 1; //현재 블록의 시작 페이지 번호
+	private int endPage = 5; //현재 블록의 끝 페이지 번호
 	
 	//전체 페이지 갯수 구하기
 	//totalRecord 값을 페이지당 표시할 글의 개수 값을 나누고,
@@ -41,10 +41,5 @@ public class Paging {
 	public void setTotalBlock() {
 		totalBlock = totalPage / pagePerBlock;
 	}
-	public void setBeginPage() {
-		beginPage = (nowBlock - 1) * pagePerBlock + 1;
-	}
-	public void setEndPage() {
-		endPage = nowBlock * pagePerBlock;
-	}
+	
 }

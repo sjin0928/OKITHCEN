@@ -887,8 +887,8 @@ img, legend {
     margin: 0;
 }
 .custom-margin {
-  margin-left: 380px; /* 원하는 좌측 간격 크기 */
-  margin-right: 380px; /* 원하는 우측 간격 크기 */	
+  width: 1060px;
+  margin: 0 auto;
 }
 .css-9ipg3 {
     display: block;
