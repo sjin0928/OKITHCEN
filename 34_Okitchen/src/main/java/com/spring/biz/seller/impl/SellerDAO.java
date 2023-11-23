@@ -1,6 +1,7 @@
 package com.spring.biz.seller.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,8 +55,20 @@ public class SellerDAO {
 		
 	}
 
-	public List<SellerVO> getSellerList() {
-		return mybatis.selectList("sellerDAO.getSellerList");
+	public List<SellerVO> getSellerList(Map<String, Integer> pMap) {
+		return mybatis.selectList("sellerDAO.getSellerList", pMap);
+	}
+	public int getSellerCount() {
+		return mybatis.selectOne("sellerDAO.getSellerCount");
+	}
+	
+	//판매자 정보 조회(cho)
+	public SellerVO selectOneSel(String sellerId) {
+		System.out.println("===> Mybatis로 selectOneSel() 실행");
+		
+		SellerVO vo = mybatis.selectOne("sellerDAO.selectOneSel", sellerId);
+		
+		return vo;
 	}
 
 }

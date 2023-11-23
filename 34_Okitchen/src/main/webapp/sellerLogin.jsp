@@ -37,10 +37,10 @@ function login() {
 				console.log(response);
 				if(response){
 					alert("${sellerVO.sellerId}" + "님 환영합니다.");
-					location.href = "${pageContext.request.contextPath}/seller/productList.do";
+					location.href = "${pageContext.request.contextPath}/product/productList.do";
+				} else {
+					alert("회원 정보가 없습니다.");
 				}
-	  			alert("회원 정보가 없습니다.");
-
 			}, 
 			error: function() {
 		 		alert("로그인 실패 : 아이디와 비밀번호를 확인 후 입력해주세요.");

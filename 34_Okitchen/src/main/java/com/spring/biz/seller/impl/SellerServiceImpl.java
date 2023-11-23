@@ -1,6 +1,7 @@
 package com.spring.biz.seller.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,9 +61,18 @@ public class SellerServiceImpl implements SellerService {
 	}
 
 	@Override
-	public List<SellerVO> getSellerList() {
+	public List<SellerVO> getSellerList(Map<String, Integer> pMap) {
 
-		return sellerDAO.getSellerList();
+		return sellerDAO.getSellerList(pMap);
 	}
-
+	@Override
+	public int getSellerCount() {
+		return sellerDAO.getSellerCount();
+	}
+	
+	//---cho ---
+	@Override
+	public SellerVO selectOneSel(String sellerId) throws Exception {
+		return sellerDAO.selectOneSel(sellerId);
+	}
 }

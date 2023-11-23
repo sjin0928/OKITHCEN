@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productDAO">
+	
+	<!-- 전시 가능한 모든 상품리스트 조회하기 (관리자에서 사용?) -->
+	<select id="selectAllList" resultType="registerProd">
+		SELECT * 
+		FROM PRODUCT
+		WHERE APPROVAL_STATUS = '승인'
+		AND PRODUCT_STATUS = '전시'
+		AND STOCK > 0
+	</select>
+	
+	<!-- 최근 등록순으로 조회하기 -->
+	<select id="selectAcceptList" resultType="registerProd">
+		SELECT * 
+		FROM PRODUCT
+		WHERE APPROVAL_STATUS = '승인'
+		AND PRODUCT_STATUS = '전시'
+		AND STOCK > 0
+		ORDER BY ACCEPT_DATE DESC
+	</select>
+	
+	<!-- 낮은 가격순으로 조회하기 -->
+	<select id="selectLowPriceList" resultType="registerProd">
+		SELECT * 
+		FROM PRODUCT
+		WHERE APPROVAL_STATUS = '승인'
+		AND PRODUCT_STATUS = '전시'
+		AND STOCK > 0
+		ORDER BY PRICE
+	</select>
+	
+	<!-- 할인율 높은순으로 조회하기 -->
+	<select id="selectDiscList" resultType="registerProd">
+		SELECT * 
+		FROM PRODUCT
+		WHERE APPROVAL_STATUS = '승인'
+		AND PRODUCT_STATUS = '전시'
+		AND STOCK > 0
+		AND DISCOUNT_RATE > 0
+		ORDER BY DISCOUNT_RATE DESC
+	</select>
+
+	<!-- 1만원대 판매량 많은 제품 조회하기 -->
+	
+	
+	<!-- 판매량 많은 순으로 조회하기 -->
+	
+	
+	<!-- 찜수 많은 순으로 조회하기 -->
+	
+	
+</mapper>

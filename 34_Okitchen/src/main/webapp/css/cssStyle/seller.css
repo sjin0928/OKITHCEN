@@ -106,3 +106,7 @@
 	.findInput {
 		justify-content: center;
 	}
+	#pageContainer{
+		display: flex;
+		justify-content: center;
+	}

@@ -37,9 +37,9 @@
 	</select>
 	<insert id="insertSeller" parameterType="seller">
 		INSERT INTO SELLER (SELLER_ID, COMPANY_NAME, REPRESENTATIVE, CUSTOMER_CENTER, CUSTOMER_EMAIL, 
-							REGISTRATION_NUM, SELLER_PASSWORD, SELLER_TYPE)
+							REGISTRATION_NUM, SELLER_PASSWORD, SELLER_TYPE, SELLER_CHANGE_DATE)
 		VALUES (#{sellerId}, #{companyName}, #{representative}, #{customerCenter}, #{customerEmail},
-				#{registrationNum}, #{sellerPassword}, #{sellerType})
+				#{registrationNum}, #{sellerPassword}, #{sellerType}, SYSDATE)
 	</insert>
 	<update id="updatePwSeller" parameterType="seller">
 		UPDATE SELLER
@@ -55,13 +55,28 @@
 	</update>
 	<update id="updateSellerStatus" parameterType="seller">
 		UPDATE SELLER
-		SET SELLER_STATUS = #{sellerStatus}
+		SET SELLER_STATUS = #{sellerStatus},
+			SELLER_CHANGE_DATE = SYSDATE
 		WHERE SELLER_ID = #{sellerId}
 		AND SELLER_PASSWORD = #{sellerPassword}
 	</update>
-	<select id="getSellerList" resultType="seller">
+	<select id="getSellerList" parameterType="Map" resultType="seller">
 		SELECT *
+		FROM (SELECT ROWNUM RNUM, SELL.*
+		        FROM (SELECT  *
+		                FROM SELLER
+		                ORDER BY SELLER_REGDATE DESC) SELL)
+		WHERE RNUM BETWEEN #{begin} AND #{end}
+	</select>
+	<select id="getSellerCount" resultType="int">
+		SELECT COUNT(*)
 		FROM SELLER
 	</select>
 	
+	<!-- 판매자 정보 가져오기 (cho)-->
+	<select id="selectOneSel" parameterType="registerProd" resultType="seller">
+		SELECT * 
+		FROM SELLER
+		WHERE SELLER_ID = #{sellerId}
+	</select>
 </mapper>
