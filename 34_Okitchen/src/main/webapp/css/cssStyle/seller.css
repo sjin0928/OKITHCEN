@@ -106,7 +106,7 @@
 	.findInput {
 		justify-content: center;
 	}
-	#pageContainer{
+	#pageContainer, #pageNumContainer{
 		display: flex;
 		justify-content: center;
 	}
