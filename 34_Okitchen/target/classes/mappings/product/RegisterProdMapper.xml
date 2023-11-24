@@ -24,14 +24,6 @@
 	
 	</insert>
 	
-	<!-- 옵션테이블에 추가하기 -->
-	<insert id="insertOption" parameterType="registerProd">
-		INSERT INTO OPTIONS (
-			OPTION_ID, PRODUCT_ID, OPTION_NAME, OPTION_PRICE, OPTION_STOCK)
-		VALUES (
-			OPTIONS_SEQ.NEXTVAL, #{productId}, #{optionName}, #{optionPrice}, #{optionStock})
-	</insert>
-
 	<!-- 상품사진테이블에 추가하기 -->
 	<insert id="insertProdImage" parameterType="registerProd">
 		INSERT INTO PRODUCT_IMAGE (
@@ -43,16 +35,10 @@
 	<!-- 판매자의 내 상품목록 조회하기 -->
 	<select id="selectListSelProd" parameterType="Object" resultType="registerProd">
 	SELECT 
-	    P.*, 
-	    O.OPTION_ID, 
-	    O.OPTION_NAME, 
-	    O.OPTION_PRICE, 
-	    O.OPTION_STOCK, 
+	    P.*,
 	    PIP.PRODUCT_ID
 	FROM 
 	    PRODUCT P
-	JOIN 
-	    OPTIONS O ON P.PRODUCT_ID = O.PRODUCT_ID
 	JOIN 
 	    (SELECT PI.PRODUCT_ID
 	     FROM PRODUCT_IMAGE PI
@@ -65,18 +51,9 @@
 	
 	<!-- 판매자의 내 상품 상세보기 (대표이미지만 가져오기) -->
 	<select id="selectOneProd" parameterType="int" resultType="registerProd">
-	SELECT 
-	    P.*, 
-	    O.OPTION_ID, 
-	    O.OPTION_NAME, 
-	    O.OPTION_PRICE, 
-	    O.OPTION_STOCK
-	FROM 
-	    PRODUCT P
-	JOIN 
-	    OPTIONS O ON P.PRODUCT_ID = O.PRODUCT_ID
-	WHERE 
-		P.PRODUCT_ID = #{productId}
+	SELECT *
+	FROM PRODUCT
+	WHERE PRODUCT_ID = #{productId}
 	</select>
 	
 	<!-- 상세이미지 가져오기 -->

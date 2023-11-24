@@ -249,9 +249,9 @@
 									<tbody style="text-align: center;" id="ajaxtable">
 									<c:choose>
 									<c:when test="${empty list }">
-										<tr>
-											<td colspan="7">
-											<h2>현재 등록된 파트너가 없습니다.</h2>
+										<tr class="card-body" >
+											<td colspan="10">
+											<h4>현재 등록된 파트너가 없습니다.</h4>
 											</td>
 										</tr>
 									</c:when>
@@ -283,29 +283,29 @@
 										</button>
 									</c:if>
 									<c:if test="${pvo.beginPage != 1 }">
-											<button class="btn btn-link pageGo" data-pagenum="${pvo.beginPage - 1 }">
+											<button class="btn btn-link" onclick="pageGo(${pvo.beginPage - 1 })">
 											<i class="fa fa-angle-left" style="font-size:24px"></i>
 											</button>
 									</c:if>	
 									<c:forEach var="pageNo" begin="${pvo.beginPage }" end="${pvo.endPage }">
 										
 										<c:if test="${pageNo == pvo.nowPage }">
-											<button class="now btn btn-link pageGo">${pageNo }</button>
+											<button class="now btn btn-link" onclick="pageGo(${pageNo })">${pageNo }</button>
 										</c:if>	
 										<c:if test="${pageNo != pvo.nowPage }">
-											<button class="btn btn-link pageGo" data-pagenum="${pageNo }">${pageNo }</button>
+											<button class="btn btn-link pageGo" onclick="pageGo(${pageNo })">${pageNo }</button>
 										</c:if>		
 											
 									</c:forEach>
 									<%--[다음으로]에 대한 사용여부 처리 --%>
 									<c:if test="${pvo.endPage >= pvo.totalPage }">
-										<button class="btn btn-link pageGo" disabled>
+										<button class="btn btn-link" disabled>
 											<i class="fa fa-angle-right" style="font-size:24px"></i>
 										</button>
 									</c:if>
 									<c:if test="${pvo.endPage < pvo.totalPage }">
 										
-										<button class="btn btn-link pageGo" data-pagenum="${pvo.endPage + 1 }">
+										<button class="btn btn-link" onclick="pageGo(${pvo.endPage + 1 })">
 											<i class="fa fa-angle-right" style="font-size:24px"></i>
 										</button>
 									</c:if>	
@@ -349,16 +349,8 @@
     <script src="../css/js/demo/chart-area-demo.js"></script>
     <script src="../css/js/demo/chart-pie-demo.js"></script>
     <script>
-    $(document).ready(function () {
+   
         // '페이지 이동' 버튼에 클릭 이벤트 리스너 등록
-        $(".pageGo").click(function () {
-            // 클릭 시 실행될 함수 호출
-            pageNum = $(this).data('pagenum');
-            console.log(pageNum);
-            pageGo(pageNum);
-            
-        });
-    });
 		function pageGo(pageNum){
 			$.ajax ({
 				url: "adminSellerList.do",
@@ -402,26 +394,26 @@
 							pageDispTag += "<i class='fa fa-angle-left' style='font-size:24px'></i></button>";
 						}
 						if(response.pvo.beginPage != 1){
-							pageDispTag += "<button class='btn btn-link pageGo' data-pagenum='" + (response.pvo.beginPage - 1) + "'>";
+							pageDispTag += "<button class='btn btn-link' onclick=\"pageGo(" + (response.pvo.beginPage - 1) + ")\">";
 							pageDispTag += "<i class='fa fa-angle-left' style='font-size:24px'></i></button>";
 						}
 						<%-- 숫자버튼 나열 --%>
 						for(let i = response.pvo.beginPage; i <= response.pvo.endPage; i++ ){
 							if(i == response.pvo.nowPage){
-								pageDispTag += "<button class='now btn btn-link pageGo'>"+ i + "</button>"
+								pageDispTag += "<button class='now btn btn-link' onclick=\"pageGo(" + i + ")\">" + i + "</button>"
 							}
 							if(i != response.pvo.nowPage){
-								pageDispTag += "<button class='btn btn-link pageGo' data-pagenum='" + i + "'>" + i + "</button>"
+								pageDispTag += "<button class='btn btn-link'  onclick=\"pageGo(" + i + ")\">" + i + "</button>"
 							}
 						}
 						
 						<%--[다음으로]에 대한 사용여부 처리 --%>
 						if(response.pvo.endPage >= response.pvo.totalPage){
-							pageDispTag += "<button class='btn btn-link pageGo' disabled>";
+							pageDispTag += "<button class='btn btn-link' disabled>";
 							pageDispTag += "<i class='fa fa-angle-right' style='font-size:24px'></i></button>";
 						}
 						if(response.pvo.endPage < response.pvo.totalPage){
-							pageDispTag += "<button class='btn btn-link pageGo' data-pagenum='" + (response.pvo.beginPage - 1) + "'>";
+							pageDispTag += "<button class='btn btn-link' onclick=\"pageGo(" + (response.pvo.endPage + 1) + ")\">";
 							pageDispTag += "<i class='fa fa-angle-right' style='font-size:24px'></i></button>";
 						}
 						

@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.spring.biz.product.ProductImageVO;
+import com.spring.biz.product.RegisterProdVO;
 import com.spring.biz.seller.Paging;
 import com.spring.biz.seller.SellerService;
 import com.spring.biz.seller.SellerVO;
@@ -36,10 +38,10 @@ public class SellerController {
 	public SellerController() {
 		System.out.println("--------SellerController() 실행");
 	}
-	// 아이디 비번 입력
+	// 로그인 - 아이디 비번 입력
 	@RequestMapping("/sellerLogin.do")
 	@ResponseBody
-	public boolean sellerLogin (@RequestBody SellerVO vo, Model model, SessionStatus session) {
+	public String sellerLogin (@RequestBody SellerVO vo, Model model, SessionStatus session) {
 		System.out.println("login");
 		System.out.println("입력정보 : " + vo);
 
@@ -52,16 +54,16 @@ public class SellerController {
 				System.out.println(">> 로그인 성공");
 				model.addAttribute("sellerVO", sellerVO);
 							
-				return true;
+				return sellerVO.getSellerId();
 			} else if(sellerVO.getSellerStatus().equals("정지")) {
 				session.setComplete();
-				return false;
+				return null;
 			}
 
 		} 
 		System.out.println(">> 로그인 실패");
 		session.setComplete();
-		return false;
+		return null;
 		
 	}
 	// 아이디 비번 오류 발생 후 페이지 이동
@@ -268,6 +270,7 @@ public class SellerController {
 		Paging pvo = new Paging();
 		pvo.setTotalRecord(totalRecord);
 		pvo.setTotalPage();
+		int totalPage = pvo.getTotalPage();
 		
 		// 전체 블록 개수 구하기
 		pvo.setTotalBlock();
@@ -285,12 +288,19 @@ public class SellerController {
 			pvo.setBeginPage(endPage + 1);
 		}
 
+		pvo.setEndPage(pvo.getNowBlock() * pvo.getPagePerBlock());
+		
 		if(nowPage > endPage) {
-			pvo.setEndPage(pvo.getBeginPage() + 1);
+			pvo.setEndPage(pvo.getNowBlock() * pvo.getPagePerBlock());
 		}
-		if(endPage > pvo.getTotalPage()) {
-			endPage = pvo.getTotalPage();
+		if(pvo.getEndPage() > totalPage) {
+			System.out.println("4.pvo.getTotalPage() : " + pvo.getTotalPage());
+			pvo.setEndPage(pvo.getTotalPage());
 		}
+		
+		// 현재 블록의 시작, 끝 페이지 번호 구하기
+				pvo.setBeginPage((pvo.getNowBlock() - 1) * pvo.getPagePerBlock() + 1);
+				
 		
 		// 현재 페이지 회원의 시작, 끝 번호
 		pvo.setBegin();
@@ -299,7 +309,13 @@ public class SellerController {
 		pMap.put("end", pvo.getEnd());
 		
 		List<SellerVO> list = sellerService.getSellerList(pMap);		
-		
+		if(list != null) {
+			for(SellerVO vo : list) {
+				if(vo.getSellerChangeDate() == "" ||vo.getSellerChangeDate() == null ) {
+					vo.setSellerChangeDate("-");
+				}
+			}
+		}
 		System.out.println("list : " + list);
 		System.out.println("page : " + pvo);
 		model.addAttribute("list", list);
@@ -313,7 +329,7 @@ public class SellerController {
 	@ResponseBody
 	public Map<String, Object> clickSellerList (@RequestParam int pageNum) {
 		//System.out.println(requestMap.get("pageNum"));
-		System.out.println(pageNum);
+		System.out.println("1.pageNum : " + pageNum);
 		Map<String, Object> result = new HashMap<>();
 
 		// 현재 페이지 구하기
@@ -330,15 +346,15 @@ public class SellerController {
 		Paging pvo = new Paging();
 		pvo.setTotalRecord(totalRecord);
 		pvo.setTotalPage();
+		System.out.println("2.pvo.getTotalPage() : " + pvo.getTotalPage());
+		int totalPage = pvo.getTotalPage();
 		
 		// 선택된 페이지 입력
 		pvo.setNowPage(pageNum);
 		
 		// 전체 블록 개수 구하기
 		pvo.setTotalBlock();
-		
-		
-		
+				
 		int nowPage =  pvo.getNowPage();
 		int endPage =  pvo.getEndPage();
 		int nowblock = pvo.getNowBlock();
@@ -346,8 +362,9 @@ public class SellerController {
 		if(nowPage > endPage) {
 			pvo.setNowBlock(nowblock + 1);
 		}
-		System.out.println("pvo.getNowBlock()" + pvo.getNowBlock());
-				// 현재 블록의 시작, 끝 페이지 번호 구하기
+		System.out.println("3.pvo.getNowBlock()" + pvo.getNowBlock());
+		
+		// 현재 블록의 시작, 끝 페이지 번호 구하기
 		pvo.setBeginPage((pvo.getNowBlock() - 1) * pvo.getPagePerBlock() + 1);
 		if(nowPage > endPage) {
 			pvo.setBeginPage(endPage + 1);
@@ -358,11 +375,10 @@ public class SellerController {
 		if(nowPage > endPage) {
 			pvo.setEndPage(pvo.getNowBlock() * pvo.getPagePerBlock());
 		}
-		if(endPage > pvo.getTotalPage()) {
+		if(pvo.getEndPage() > totalPage) {
+			System.out.println("4.pvo.getTotalPage() : " + pvo.getTotalPage());
 			pvo.setEndPage(pvo.getTotalPage());
 		}
-		
-		
 		
 		// 현재 페이지 회원의 시작, 끝 번호
 		pvo.setBegin();
@@ -370,7 +386,16 @@ public class SellerController {
 		pMap.put("begin", pvo.getBegin());
 		pMap.put("end", pvo.getEnd());
 		
-		List<SellerVO> list = sellerService.getSellerList(pMap);		
+		List<SellerVO> list = sellerService.getSellerList(pMap);
+		
+		if(list != null) {
+			for(SellerVO vo : list) {
+				if(vo.getSellerChangeDate() == "" ||vo.getSellerChangeDate() == null ) {
+					vo.setSellerChangeDate("-");
+				}
+					
+			}
+		}
 		
 		System.out.println("list : " + list);
 		/*
@@ -387,6 +412,15 @@ public class SellerController {
 		
 		
 		return result;
+	}
+	
+	// 231124- 상품 수정(박수진)
+	@GetMapping("/sellerProductUpdate.do")
+	public String sellerProductUpdate (RegisterProdVO vo, Model model, HttpSession session) {
+		System.out.println(vo);
+		SellerVO sellVO = (SellerVO)session.getAttribute("sellerVO");
+		System.out.println(sellVO);
+		return "/seller/sellerProductUpdate";
 	}
 	
 }

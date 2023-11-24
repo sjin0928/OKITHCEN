@@ -47,7 +47,7 @@ public class ProductDAO {
 		  return productList;
 	  }
 	  
-	  //상품상세보기(대표이미지만 가져오기)
+	//상품상세보기(대표이미지만 가져오기)
 	  public RegisterProdVO selectOneProd(int productId) {
 		  System.out.println("===> Mybatis로 selectOneProd() 실행");
 		  
@@ -69,14 +69,14 @@ public class ProductDAO {
 		  return list;
 	  }
 	  
-	  //모든 상품 가져오기
+	//모든 상품 가져오기
 	  public List<RegisterProdVO> selectAllList() {
 		  System.out.println("===> Mybatis로 selectAllList() 실행");
 		  
 		  List<RegisterProdVO> list = mybatis.selectList("productDAO.selectAllList");
 		  return list;
 	  }
-	  
+
 	  //최근 등록순으로 조회하기
 	  public List<RegisterProdVO> selectAcceptList() {
 		  System.out.println("===> Mybatis로 selectAcceptList() 실행");
@@ -99,4 +99,10 @@ public class ProductDAO {
 		  List<RegisterProdVO> list = mybatis.selectList("productDAO.selectDiscList");
 		  return list;
 	  }
+	  
+	  //통합 검색-----------------------------------
+	  public List<RegisterProdVO> selectSearchList(String keyword){
+		  return mybatis.selectList("productDAO.searchList", keyword);
+	  }
+	  
 }

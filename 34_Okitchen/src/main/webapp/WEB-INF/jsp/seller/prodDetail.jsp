@@ -14,6 +14,14 @@
 \${vo } : ${vo } <hr>
 \${sellerVO} : ${sellerVO } <hr>
 \${productImageList } : ${productImageList } <hr>
+<script>
+	window.onload = function() {
+		if("${sellerVO}" == ("") || "${sellerVO}" == (null)){
+			alert("세션만료 : 다시 로그인 해주세요.")
+			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
+		}
+	}
+</script>
 	<div id="container">
 		<h1>상세보기 [prodDetail.jsp]</h1>
 		<hr>
@@ -186,7 +194,7 @@
                     <button class="update_status" id="sendBtn">등록</button>
 		          </div> -->
 		          <div class="update_button">
-		          	<button class="update_prod">수정</button>
+		          	<button class="update_prod" onclick="update(${vo.productId })">수정</button>
                     <button class="update_status">상태변경</button>
 		          </div>
 		          <!-- 버튼 컨트롤러에 연결해야됨~~ -->
@@ -202,6 +210,11 @@
       
      </div>
 	 <!-- End of top -->
-	          
+</div> 
+<script>
+	function update(productId){
+		location.href="${pageContext.request.contextPath}/seller/sellerProductUpdate.do?productId="+ productId;
+	}
+</script>        
 </body>
 </html>

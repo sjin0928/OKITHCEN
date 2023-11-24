@@ -106,7 +106,37 @@
 	.findInput {
 		justify-content: center;
 	}
-	#pageContainer, #pageNumContainer{
+	#pageContainer, #pageNumContainer, #center{
 		display: flex;
 		justify-content: center;
+	}
+	#categoryBox {
+		display: flex;
+		justify-content: center;
+	}
+	.countText {
+		text-align: right;
+		font-size: 0.9em;
+		
+	}
+	#imgInput {
+		display: flex;
+		align-items: center;
+	}
+	#title-path {
+		text-align: left;
+	}
+	#priceBox, #stockBox {
+		background-color: #f7f7f9;
+	    background-clip: padding-box;
+	    border: 0px solid #ced4da;
+	    color: #55595c;
+		width: 240px;
+		padding: 12px 24px;
+	}
+	.inputTitle {
+		width: 120px;
+	}
+	.ladioBox {
+		padding: 12px 24px;
 	}

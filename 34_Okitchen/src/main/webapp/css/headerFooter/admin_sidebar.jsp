@@ -56,7 +56,7 @@
             <li class="nav-item">
 			<!-- 상위메뉴 클릭시 이동하는 경우 href 수정해야됨 -->
                 <a class="nav-link collapsed" href="${pageContext.request.contextPath}/seller/adminSellerGo.do" >
-                    <span>판매자관리</span>
+                    <span>파트너관리</span>
                 </a>
             </li>
 

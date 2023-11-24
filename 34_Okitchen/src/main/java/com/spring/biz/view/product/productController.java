@@ -25,7 +25,6 @@ import com.spring.biz.seller.SellerVO;
 @Controller
 @RequestMapping("/product")
 public class productController {
-	
 	private ProductService productService;
 	private SellerService sellerService;
 	
@@ -55,7 +54,7 @@ public class productController {
 		
 		return roundedPrice;
 	}
-	
+
 	//상품관리페이지로 이동
 	@RequestMapping("/productList.do")
 	private String productList(HttpSession session, RegisterProdVO vo, Model model) throws Exception {
@@ -74,6 +73,7 @@ public class productController {
 		return "seller/productList";
 	}
 	
+
 	//상품등록하기
 	@RequestMapping("/insertProduct.do")
 	public String insertProduct(HttpSession session, RegisterProdVO vo, @RequestParam("productPhotoFiles") List<MultipartFile> productPhotoFiles, HttpServletRequest request) 
@@ -156,6 +156,7 @@ public class productController {
         return "redirect:/product/productList.do"; //판매자의 내 상품 조회하기 페이지로 이동
 	}
 	
+	
 	//[상품등록하기] 클릭시 화면전환
 	@GetMapping("/registerProduct.do")
 	private String registerProduct() {
@@ -204,5 +205,5 @@ public class productController {
 		
 	}
 	
-	
+
 }

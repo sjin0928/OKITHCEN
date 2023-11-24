@@ -30,14 +30,9 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-function submitForm() {
-	alert("등록버튼 클릭됨");
-}
-
-
 	$(document).ready(function(){
 		
-		//옵션 라디오 버튼 변경 이벤트 리스너
+		/* //옵션 라디오 버튼 변경 이벤트 리스너
 		$('input[name="optionCheck"]').change(function() {
 			var selectedOption = $('input[name="optionCheck"]:checked').val();
 			var additionalInfoName = $('input[name="optionName"]');
@@ -62,7 +57,7 @@ function submitForm() {
                 // 빈문자열로 초기화하는데 int값으로 저장되어야하니까 추후 오류발생할 수도 있음
                 // 오류 발생하는 경우 유효한 기본값 '-1'로 설정. 서버에서 처리해주면 될듯  
 			}
-		});
+		}); */
 			
 		//할인 라디오 버튼 변경 이벤트 리스너
 		$('input[name="discount"]').change(function(){
@@ -109,7 +104,7 @@ function submitForm() {
             }
         })
         
-        //옵션상품명
+        /* //옵션상품명
 		$('#optionName').on('keyup', function() {
             $('#optionName_text_cnt').html("("+$(this).val().length+" / 25)");
             if($(this).val().length > 25) {
@@ -117,7 +112,7 @@ function submitForm() {
                 $('#optionName_text_cnt').html("(25 / 25)");
                 alert("작성 가능 문자수를 초과하셨습니다")
             }
-        })
+        }) */
         
 		//주의사항
 		$('#caution').on('keyup', function() {
@@ -394,64 +389,6 @@ function submitForm() {
 					<div class="error-msg stock"></div>
 				</div>
 				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>옵션적용여부</label>
-				</div>
-				<div class="input-box">
-					<fieldset>
-						<input type="radio" name="optionCheck" value="N"> 
-							<span>옵션미적용</span> 
-						<input type="radio" name="optionCheck" value="Y"> 
-							<span>적용</span>
-					</fieldset>
-					<div class="error-msg option"></div>
-				</div>
-				<div class="btn-space"></div>
-				<div id="optionInfoContainer" style="display: none;">
-					<!-- 추가정보를 표시할 컨테이너 -->
-					<div class="input-line">
-						<div class="input-label">
-							<label>옵션상품명</label>
-						</div>
-						<div class="input-box">
-							<div class="input">
-								<input type="text" name="optionName" id="optionName"
-									placeholder="상품 이름을 입력해주세요." required>
-							</div>
-							<div class="error-msg optionName"></div>
-							<div id="optionName_text_cnt" class="text_cnt">(0 / 25)</div>
-						</div>
-						<div class="btn-space"></div>
-					</div>
-					<div class="input-line">
-						<div class="input-label">
-							<label>옵션상품재고수량</label>
-						</div>
-						<div class="input-box">
-							<div class="input">
-								<input type="number" name="optionStock"
-									placeholder="옵션 재고를 입력해주세요." required>
-							</div>
-							<div class="error-msg optionStock"></div>
-						</div>
-						<div class="btn-space"></div>
-					</div>
-					<div class="input-line">
-						<div class="input-label">
-							<label>옵션상품가격</label>
-						</div>
-						<div class="input-box">
-							<div class="input">
-								<input type="number" name="optionPrice"
-									placeholder="옵션 가격을 입력해주세요." required>
-							</div>
-							<div class="error-msg optionPrice"></div>
-						</div>
-						<div class="btn-space"></div>
-					</div>
-				</div>
 			</div>
 			<div class="input-line">
 				<div class="input-label">

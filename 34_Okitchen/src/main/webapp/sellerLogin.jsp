@@ -35,8 +35,8 @@ function login() {
 			contentType: "application/json",
 			success: function(response) {
 				console.log(response);
-				if(response){
-					alert("${sellerVO.sellerId}" + "님 환영합니다.");
+				if(response != null){
+					alert(response + "님 환영합니다.");
 					location.href = "${pageContext.request.contextPath}/product/productList.do";
 				} else {
 					alert("회원 정보가 없습니다.");
