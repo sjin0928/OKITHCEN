@@ -85,7 +85,8 @@
 			        console.log("에러 종류: " + textStatus);
 			        console.log("에러 객체: ", errorThrown);
 					alert("정보 수정 오류 : 담당자에게 문의주세요.");
-				}			
+				}	
+				
 			});
 		}		
 	}
@@ -182,6 +183,7 @@
 	    	location.href="productList.do";
 	    });
 	});
+	
 </script>
 	<!-- footer -->
 	<%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>

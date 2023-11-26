@@ -45,7 +45,7 @@
           <a class="nav-link dropdown-toggle" style="font-size: 14px; width: auto;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="${pageContext.request.contextPath}/seller/sellerUpPwCheck.do">회원 정보 수정</a>
-            <a class="dropdown-item" href="${pageContext.request.contextPath}/seller/sellerWithdrawal.do">회원탈퇴</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/seller/sellerWithdrawal.do">회원 탈퇴</a>
           </div>
         </li>
       </ul>

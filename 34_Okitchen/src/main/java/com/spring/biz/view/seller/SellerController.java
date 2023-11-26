@@ -1,13 +1,17 @@
 package com.spring.biz.view.seller;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Case;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +23,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.biz.product.ProductImageVO;
+import com.spring.biz.product.ProductService;
 import com.spring.biz.product.RegisterProdVO;
 import com.spring.biz.seller.Paging;
 import com.spring.biz.seller.SellerService;
@@ -33,7 +39,11 @@ public class SellerController {
 	
 	@Autowired
 	private SellerService sellerService;
-
+	@Autowired
+	private ProductService productService;
+	@Autowired
+	private BCryptPasswordEncoder pwdEncoder;
+	
 	
 	public SellerController() {
 		System.out.println("--------SellerController() 실행");
@@ -44,11 +54,19 @@ public class SellerController {
 	public String sellerLogin (@RequestBody SellerVO vo, Model model, SessionStatus session) {
 		System.out.println("login");
 		System.out.println("입력정보 : " + vo);
-
-		SellerVO sellerVO = sellerService.getSeller(vo);
-				System.out.println("db정보 : " + sellerVO);
 		
-		if(sellerVO != null) {
+		// 입력 비밀번호
+		String inPw = vo.getSellerPassword();
+		
+		
+		SellerVO sellerVO = null;
+		sellerVO = sellerService.getSeller(vo);
+		String getPw = sellerVO.getSellerPassword();
+		
+		System.out.println("pw 일치 결과 : " + pwdEncoder.matches(inPw, getPw));
+
+		
+		if(sellerVO != null && pwdEncoder.matches(inPw, getPw)) {
 			if(sellerVO.getSellerStatus().equals("회원")) {
 				
 				System.out.println(">> 로그인 성공");
@@ -66,7 +84,7 @@ public class SellerController {
 		return null;
 		
 	}
-	// 아이디 비번 오류 발생 후 페이지 이동
+	// 아이디 중복확인  후 페이지 이동
 	@ResponseBody
 	@PostMapping("/sellerIdCheck.do")
 	public int sellerIdCheck (SellerVO vo) {
@@ -97,8 +115,13 @@ public class SellerController {
 	// 회원가입
 	@PostMapping("/sellerSignIn.do")
 	public String sellerSignIn (SellerVO vo) {
+		
 		System.out.println(">> 회원가입 진행");
+		
+		//암호화
+		vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));
 		vo.setSellerStatus("회원");
+		
 		sellerService.insertSeller(vo);
 		System.out.println(vo);
 		return "redirect:/sellerLogin.jsp";
@@ -152,7 +175,7 @@ public class SellerController {
 			//아이디 찾기
 			SellerVO findVO = sellerService.findPwSeller(vo);
 			if (vo.getSellerId() != null) {
-				System.out.println(">> 비밀번호 찾기 중");
+				System.out.println(">> 아이디 찾기 중");
 				System.out.println("vo.getSellerId() : " + vo.getSellerId());
 				
 				System.out.println("findVO : " + findVO);
@@ -174,8 +197,12 @@ public class SellerController {
 	@PostMapping("/sellerPwUpdate.do")
 	public String sellerPwUpdate (SellerVO vo, Model model) {
 		System.out.println(">> 비밀번호 찾기 후 변경 중");
+		
+		//암호화
+		vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));
+		
 		System.out.println("vo : " + vo);
-				
+		
 		sellerService.updatePwSeller(vo);
 		model.addAttribute("sellerId", vo.getSellerId());
 		return "seller/sellerFindUpResult";
@@ -186,27 +213,37 @@ public class SellerController {
 				
 		session.setComplete();
 		
-		return "redirect:/sellerLogin.jsp";
+		return "../../sellerLogin";
 	}
 	// 회원 정보 수정 전 비밀번호 확인 페이지 이동
 	@GetMapping ("/sellerUpPwCheck.do")
 	public String sellerUpPwCheck () {
 		return "seller/sellerUpPwCheck";
 	}
+	// 회원정보 수정 전 비밀번호 체크
 	@RequestMapping ("/sellerUpPwCheck.do")
 	@ResponseBody
 	public boolean sellerUpPwCheck (@RequestBody SellerVO vo, HttpServletRequest request) {
 		HttpSession httpSession = request.getSession(false);
-		
-		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO"); 
+		// 입력 비밀번호, id
 		String inPw = vo.getSellerPassword();
 		String inId = vo.getSellerId();
-		String sessionPw = sessionVO.getSellerPassword();
-		String sessionId = sessionVO.getSellerId();
-		boolean result = inId.equals(sessionId) && inPw.equals(sessionPw);
-		if(result) {
-			return result;
+		
+		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO");
+		System.out.println();
+		String sessionPw = null;
+		String sessionId = null;
+		boolean result = false;
+		// 비밀번호 확인
+		if(sessionVO != null) {
+			sessionPw = sessionVO.getSellerPassword();
+			sessionId = sessionVO.getSellerId();
+			
+			System.out.println("pw 일치 결과 : " + pwdEncoder.matches(inPw, sessionPw));
+			
+			result = inId.equals(sessionId) && pwdEncoder.matches(inPw, sessionPw);
 		}
+		
 		return result;
 	}
 	
@@ -214,8 +251,10 @@ public class SellerController {
 	@RequestMapping ("/sellerUpdate.do")
 	@ResponseBody
 	public boolean sellerUpdate (@RequestBody(required = false) SellerVO vo, Model model) {
-		
+		//암호화
+		vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));
 		System.out.println("입력 받은 데이터 : " + vo);
+		
 		sellerService.updateSeller(vo);
 		
 		SellerVO sellerVO = sellerService.getSeller(vo);
@@ -299,7 +338,7 @@ public class SellerController {
 		}
 		
 		// 현재 블록의 시작, 끝 페이지 번호 구하기
-				pvo.setBeginPage((pvo.getNowBlock() - 1) * pvo.getPagePerBlock() + 1);
+		pvo.setBeginPage((pvo.getNowBlock() - 1) * pvo.getPagePerBlock() + 1);
 				
 		
 		// 현재 페이지 회원의 시작, 끝 번호
@@ -387,24 +426,16 @@ public class SellerController {
 		pMap.put("end", pvo.getEnd());
 		
 		List<SellerVO> list = sellerService.getSellerList(pMap);
-		
+		// 탈퇴일 없으면 - 표시
 		if(list != null) {
 			for(SellerVO vo : list) {
 				if(vo.getSellerChangeDate() == "" ||vo.getSellerChangeDate() == null ) {
 					vo.setSellerChangeDate("-");
 				}
-					
 			}
 		}
 		
 		System.out.println("list : " + list);
-		/*
-		for (SellerVO sellVO : list) {
-			if(sellVO.getSellerChangeDate().equals(null)) {
-				sellVO.setSellerChangeDate("");
-			}
-		}
-		*/
 		System.out.println("page : " + pvo);
 		
 		result.put("list", list);
@@ -416,11 +447,149 @@ public class SellerController {
 	
 	// 231124- 상품 수정(박수진)
 	@GetMapping("/sellerProductUpdate.do")
-	public String sellerProductUpdate (RegisterProdVO vo, Model model, HttpSession session) {
-		System.out.println(vo);
-		SellerVO sellVO = (SellerVO)session.getAttribute("sellerVO");
-		System.out.println(sellVO);
+	public String sellerProductUpdate (MultipartFile file, RegisterProdVO vo, Model model, HttpSession session) throws Exception {
+		System.out.println("상품 수정 페이지 이동중");
+		System.out.println("입력된 데이터 : " + vo);
+		RegisterProdVO prodVO = null;
+		if (vo != null) {
+			if(vo.getProductId() != 0) {
+				prodVO = productService.selectOneProd(vo.getProductId());
+				
+				switch (prodVO.getCategoryName()) {
+				case "vege":
+					prodVO.setCategoryName("채소");
+				case "fruit":
+					prodVO.setCategoryName("과일");
+				case "meat":
+					prodVO.setCategoryName("정육/계란");
+				case "seafood":
+					prodVO.setCategoryName("해산물");
+				case "snack":
+					prodVO.setCategoryName("간식/디저트");
+				case "bakary":
+					prodVO.setCategoryName("베이커리");
+				case "seasoning":
+					prodVO.setCategoryName("조미료");
+				case "drink":
+					prodVO.setCategoryName("생수/음료");
+				case "mealkit":
+					prodVO.setCategoryName("간편식/샐러드");
+				default:
+					break;
+				}
+				
+				List<ProductImageVO> PIList = null;
+				PIList = productService.selectDetailImages(vo.getProductId());
+				System.out.println("PIList : " + PIList);
+				if(PIList != null) {
+					model.addAttribute("PIList", PIList);
+					
+				}
+				
+				model.addAttribute("prodVO", prodVO);
+			}
+		}
+		System.out.println("db에서 받은 데이터 : " + prodVO);
+		
 		return "/seller/sellerProductUpdate";
+	}
+	@RequestMapping("/sellerUpdateProduct.do")
+	@ResponseBody
+	public String sellerupdateProduct (MultipartFile file, @RequestBody RegisterProdVO inProdVO, @RequestParam("productPhotoFiles") List<MultipartFile> productPhotoFiles, Model model, HttpServletRequest request) throws Exception {
+		System.out.println("---- 상품 수정 중");
+		
+		// session 저장값 호출
+		HttpSession httpSession = request.getSession(false);
+		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO"); 
+		System.out.println("sessionVO : " + sessionVO);
+		
+		// 사용자 입력값 확인
+		System.out.println("productPhotoFiles : " + productPhotoFiles);
+		System.out.println("입력 값 확인 inProdVO : " + inProdVO);
+				
+		if(inProdVO != null) {
+			
+			// 할인 금액 입력
+			if(inProdVO.getDiscountRate() != 0) {
+				float discountRate = inProdVO.getDiscountRate();
+				int price = inProdVO.getPrice();
+				inProdVO.setDiscountedPrice((int)(price - (price * discountRate)));
+			}
+			
+			// 대표이미지 입력
+			MultipartFile titleImage = inProdVO.getImageFile();
+			if(titleImage != null && titleImage.isEmpty() ) {
+				// 원본파일명 구하기
+				System.out.println("대표이미지");
+				String titleFilename = titleImage.getOriginalFilename();
+				System.out.println("원본 파일명 : " + titleFilename);
+				
+				// 저장 파일명 구하기
+				String savedFileName = UUID.randomUUID().toString();
+				System.out.println("저장 파일명 : " + savedFileName);
+				
+				// 서블릿 컨텍스트의 실제 경로를 얻어옴
+				String uploadPath = request.getServletContext().getRealPath("/productImage/title");
+				System.out.println("서블릿 컨텍스트의 실제 경로 : " + uploadPath);
+				
+				// 저장할 폴더 경로와 파일명을 합치기
+				String destPathFile = uploadPath + File.separator + savedFileName;
+				System.out.println("destPathFile : " + destPathFile);
+				
+				// 물리적 파일 복사
+				titleImage.transferTo(new File(destPathFile));
+				
+				inProdVO.setImage(savedFileName);
+				
+				productService.sellerUpdateProduct(inProdVO);
+				
+			}
+			// 상세이미지 입력
+			// 이미지 번호값 구해서 이미지 넣기
+			List<ProductImageVO> getImageList = productService.selectDetailImages(inProdVO.getProductId());
+			
+			
+			if(productPhotoFiles != null && productPhotoFiles.isEmpty()) {
+				// 이미지 저장경로 및 파일 저장
+				
+				for(int i = 0; i < getImageList.size(); i++) {
+					MultipartFile productPhotoFile = productPhotoFiles.get(i);
+							
+					System.out.println("상세이미지");
+					System.out.println("사진 파일 명(productPhotoFile) : " + productPhotoFile);
+					
+					// 원본 파일명
+					String titleFilename = productPhotoFile.getOriginalFilename();
+					System.out.println("원본 파일명 : " + titleFilename);
+					
+					// 저장 파일명
+					String savedFileName = UUID.randomUUID().toString();
+					System.out.println("저장파일명 : " + savedFileName);
+					
+					// 서블릿 컨텍스트의 실제 경로
+					String uploadPath = request.getServletContext().getRealPath("/productImage/detail");
+					System.out.println("서블릿 컨텍스트의 실제 경로 : " + uploadPath);
+					
+					// 저장할 폴더 경로와 파일명을 합치기
+					String destPathFile = uploadPath + File.separator + savedFileName;
+					System.out.println("destPathFile : " + destPathFile);
+					
+					// 물리적 파일 복사
+					productPhotoFile.transferTo(new File(destPathFile));
+					inProdVO.setProductPhoto(savedFileName);
+					
+					inProdVO.setImageId(getImageList.get(i).getImageId());
+					
+					productService.sellerUpdateProductImage(inProdVO);
+					
+					return "정보 수정 완료되었습니다."; 
+				}
+			}
+			
+		}
+		
+		return "정보 수정 완료되었습니다.";
+		
 	}
 	
 }

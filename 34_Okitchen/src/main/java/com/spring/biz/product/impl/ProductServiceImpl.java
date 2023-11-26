@@ -70,5 +70,17 @@ public class ProductServiceImpl implements ProductService{
 		return productDAO.selectDiscList();
 	}
 
+	@Override
+	public void sellerUpdateProduct(RegisterProdVO inProdVO) throws Exception  {
+		productDAO.sellerUpdateProduct(inProdVO);
+		
+	}
+
+	@Override
+	public void sellerUpdateProductImage(RegisterProdVO inProdVO) throws Exception {
+		productDAO.sellerUpdateProductImage(inProdVO);
+		
+	}
+
 	
 }

@@ -88,7 +88,7 @@
 	#sellerIdIn, #sellerPwIn {
 		max-width:500px;
 	}
-	#sellerSigninBtn, #sellerCancle {
+	#sellerSigninBtn, #sellerCancle, #prodUpdateBtn{
 		background-color: rgb(231, 129, 17); 
 		color: white; 
 		width: 150px;
@@ -135,8 +135,31 @@
 		padding: 12px 24px;
 	}
 	.inputTitle {
-		width: 120px;
+		width: 150px;
+		text-align:center;
+	}
+
+	#stock, #stockBox {
+		margin-bottom : 16px;
 	}
 	.ladioBox {
 		padding: 12px 24px;
 	}
+	.selectBox, #categoryName {
+		max-width: 170px;
+	}
+	#stockBox, #priceBox, #discountRate, #discountedPrice {
+		max-width: 240px;
+	}
+	.prodImg, .detailImg {
+		width: 170px;
+		margin-right: 0px;
+		border-style: none;
+	}
+	#imageFile:hover, #content-path:hover {
+		cursor: pointer;
+	}
+	.modalImg {
+		max-width: 100%;
+	}
+	

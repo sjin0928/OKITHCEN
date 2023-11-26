@@ -26,7 +26,7 @@ public class ProductDAO {
 		  System.out.println("===> Mybatis로 registerProduct() 실행"); 
 		  
 		  mybatis.insert("registerProdDAO.insertProduct", vo);
-		  mybatis.insert("registerProdDAO.insertOption", vo);
+		  //mybatis.insert("registerProdDAO.insertOption", vo);
 		  //mybatis.insert("registerProdDAO.insertProdImage", vo);
 	  }
 	  
@@ -104,5 +104,13 @@ public class ProductDAO {
 	  public List<RegisterProdVO> selectSearchList(String keyword){
 		  return mybatis.selectList("productDAO.searchList", keyword);
 	  }
+
+	public void sellerUpdateProduct(RegisterProdVO inProdVO) {
+		mybatis.update("productDAO.sellerUpdateProduct", inProdVO);
+	}
+
+	public void sellerUpdateProductImage(RegisterProdVO inProdVO) {
+		mybatis.update("productDAO.sellerUpdateProductImage", inProdVO);
+	}
 	  
 }

@@ -35,7 +35,7 @@ function login() {
 			contentType: "application/json",
 			success: function(response) {
 				console.log(response);
-				if(response != null){
+				if(response != null && response != ""){
 					alert(response + "님 환영합니다.");
 					location.href = "${pageContext.request.contextPath}/product/productList.do";
 				} else {

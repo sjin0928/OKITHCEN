@@ -17,6 +17,11 @@ public interface ProductService {
 	List<RegisterProdVO> selectLowPriceList() throws Exception; //낮은 가격순으로 조회
 	List<RegisterProdVO> selectDiscList() throws Exception; //할인율 높은순으로 조회
 	
+	//231127 - 박수진
+	// 상품수정
+	void sellerUpdateProduct(RegisterProdVO inProdVO) throws Exception;
+	void sellerUpdateProductImage(RegisterProdVO inProdVO) throws Exception;
+	
 	
 	
 }

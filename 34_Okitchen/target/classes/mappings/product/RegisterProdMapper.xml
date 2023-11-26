@@ -63,5 +63,31 @@
 	    WHERE PRODUCT_ID = #{productId}
 	</select> 
 	
+	<!-- 상품 수정 -->
+	<update id="sellerUpdateProduct" parameterType="registerProd">
+		UPDATE PRODUCT
+		SET IMAGE = #{image},
+		    PRICE = #{price},
+		    DISCOUNT_RATE = #{discountRate},
+		    UPDATE_DATE = SYSDATE,
+		    CONTENT = #{content},
+		    OPTION_CHECK = #{optionCheck},
+		    ORIGIN = #{origin},
+		    MANUFACTURING_DATE = #{manufacturingDate},
+		    EXPIRATION_DATE = #{expirationDate},
+		    CAUTION = #{caution},
+		    NOTIFICATION = #{notification},
+		    STOCK = #{stock},
+		    DISCOUNTED_PRICE = #{discountedPrice}
+		WHERE PRODUCT_ID = #{productId}
+	</update>
+	
+	<!-- 상품 수정 - 상세이미지 -->
+	<update id="sellerUpdateProductImage" parameterType="registerProd">
+		UPDATE PRODUCT_IMAGE
+		SET PRODUCT_PHOTO = #{productPhoto}
+		WHERE IMAGE_ID = #{imagId}
+	</update>
+	
 	
 </mapper>

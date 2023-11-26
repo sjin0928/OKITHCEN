@@ -8,8 +8,8 @@
 		SELECT * 
 		FROM SELLER
 		WHERE SELLER_ID = #{sellerId}
-		AND SELLER_PASSWORD = #{sellerPassword}
 	</select>
+	
 	<select id="findPwSeller" parameterType="seller"
 	 resultType="seller">
 		SELECT * 
@@ -35,17 +35,20 @@
 		FROM SELLER
 		WHERE SELLER_ID = #{sellerId}
 	</select>
+	
 	<insert id="insertSeller" parameterType="seller">
 		INSERT INTO SELLER (SELLER_ID, COMPANY_NAME, REPRESENTATIVE, CUSTOMER_CENTER, CUSTOMER_EMAIL, 
-							REGISTRATION_NUM, SELLER_PASSWORD, SELLER_TYPE, SELLER_CHANGE_DATE)
+							REGISTRATION_NUM, SELLER_PASSWORD, SELLER_TYPE, SELLER_CHANGE_DATE, SELLER_STAUS)
 		VALUES (#{sellerId}, #{companyName}, #{representative}, #{customerCenter}, #{customerEmail},
-				#{registrationNum}, #{sellerPassword}, #{sellerType}, SYSDATE)
+				#{registrationNum}, #{sellerPassword}, #{sellerType}, SYSDATE, #{sellerStatus})
 	</insert>
+	
 	<update id="updatePwSeller" parameterType="seller">
 		UPDATE SELLER
 		SET SELLER_PASSWORD = #{sellerPassword}
 		WHERE SELLER_ID = #{sellerId}
 	</update>
+	
 	<update id="updateSeller" parameterType="seller">
 		UPDATE SELLER
 		SET SELLER_PASSWORD = #{sellerPassword}, 
@@ -53,6 +56,7 @@
 			CUSTOMER_CENTER = #{customerCenter}
 		WHERE SELLER_ID = #{sellerId}
 	</update>
+	
 	<update id="updateSellerStatus" parameterType="seller">
 		UPDATE SELLER
 		SET SELLER_STATUS = #{sellerStatus},
@@ -60,6 +64,7 @@
 		WHERE SELLER_ID = #{sellerId}
 		AND SELLER_PASSWORD = #{sellerPassword}
 	</update>
+	
 	<select id="getSellerList" parameterType="Map" resultType="seller">
 		SELECT *
 		FROM (SELECT ROWNUM RNUM, SELL.*
@@ -68,6 +73,7 @@
 		                ORDER BY SELLER_REGDATE DESC) SELL)
 		WHERE RNUM BETWEEN #{begin} AND #{end}
 	</select>
+	
 	<select id="getSellerCount" resultType="int">
 		SELECT COUNT(*)
 		FROM SELLER
