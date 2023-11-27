@@ -9,7 +9,6 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Case;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -276,6 +275,7 @@ public class SellerController {
 	public String sellerWithdrawal () {
 		return "seller/sellerWithdrawal";
 	}
+	// 회원 탈퇴(회원 상태 정지로 변경)
 	@RequestMapping ("/sellerWithdrawal.do")
 	@ResponseBody
 	public void sellerWithdrawal (@RequestBody SellerVO vo, HttpServletRequest request, SessionStatus session) {
@@ -446,8 +446,38 @@ public class SellerController {
 	}
 	
 	// 231124- 상품 수정(박수진)
+	
+	//상품상세페이지로 이동
+	@RequestMapping("/prodDetail.do")
+	private String productDetail(RegisterProdVO vo, Model model, HttpServletRequest request) throws Exception {
+		System.out.println("======> productController.productDetail() 실행");
+		System.out.println(">>> 화면 이동 - productDetail()");
+		
+		//판매자 정보 가져오기
+		HttpSession httpSession = request.getSession(false);
+		SellerVO sellerVO = (SellerVO)httpSession.getAttribute("sellerVO");
+		System.out.println("sellerVO : " + sellerVO);
+		
+		//상품상세정보 가져오기
+		int productId = vo.getProductId();
+		vo = productService.selectOneProd(productId);
+		System.out.println(">>> vo : " + vo);
+		
+		//상품 상세정보 모델에 추가
+		model.addAttribute("vo", vo);
+		
+		//상세이미지 가져오기
+		List<ProductImageVO> productImageList = productService.selectDetailImages(productId);
+		
+		//상세이미지 모델에 추가
+		model.addAttribute("productImageList", productImageList);
+
+	    return "seller/prodDetail"; //판매자의 상품 상세보기
+    }
+	
+	// 수정페이지로 이동
 	@GetMapping("/sellerProductUpdate.do")
-	public String sellerProductUpdate (MultipartFile file, RegisterProdVO vo, Model model, HttpSession session) throws Exception {
+	public String sellerProductUpdate (RegisterProdVO vo, Model model) throws Exception {
 		System.out.println("상품 수정 페이지 이동중");
 		System.out.println("입력된 데이터 : " + vo);
 		RegisterProdVO prodVO = null;
@@ -482,8 +512,7 @@ public class SellerController {
 				PIList = productService.selectDetailImages(vo.getProductId());
 				System.out.println("PIList : " + PIList);
 				if(PIList != null) {
-					model.addAttribute("PIList", PIList);
-					
+					model.addAttribute("PIList", PIList);					
 				}
 				
 				model.addAttribute("prodVO", prodVO);
@@ -493,9 +522,10 @@ public class SellerController {
 		
 		return "/seller/sellerProductUpdate";
 	}
-	@RequestMapping("/sellerUpdateProduct.do")
-	@ResponseBody
-	public String sellerupdateProduct (MultipartFile file, @RequestBody RegisterProdVO inProdVO, @RequestParam("productPhotoFiles") List<MultipartFile> productPhotoFiles, Model model, HttpServletRequest request) throws Exception {
+	
+	// 상품 수정
+	@RequestMapping(value = "/sellerUpdateProduct.do", method = RequestMethod.POST, consumes="multipart/form-data")
+	public String sellerupdateProduct (Model model, MultipartFile file, RegisterProdVO inProdVO, @RequestParam("productPhotoFiles") List<MultipartFile> productPhotoFiles, HttpServletRequest request) throws Exception {
 		System.out.println("---- 상품 수정 중");
 		
 		// session 저장값 호출
@@ -506,19 +536,26 @@ public class SellerController {
 		// 사용자 입력값 확인
 		System.out.println("productPhotoFiles : " + productPhotoFiles);
 		System.out.println("입력 값 확인 inProdVO : " + inProdVO);
-				
+		
+		// DB 데이터 호출
+		RegisterProdVO DBProdVO = productService.selectOneProd(inProdVO.getProductId());
+		String getImage = DBProdVO.getImage();
+		
 		if(inProdVO != null) {
-			
+			System.out.println("1");
 			// 할인 금액 입력
 			if(inProdVO.getDiscountRate() != 0) {
 				float discountRate = inProdVO.getDiscountRate();
 				int price = inProdVO.getPrice();
-				inProdVO.setDiscountedPrice((int)(price - (price * discountRate)));
+				inProdVO.setDiscountedPrice((int)(price - (price * discountRate / 100)));
 			}
-			
+			if(inProdVO.getStock() == 0) {
+				inProdVO.setProductStatus("품절");
+			}
+			System.out.println("2");
 			// 대표이미지 입력
 			MultipartFile titleImage = inProdVO.getImageFile();
-			if(titleImage != null && titleImage.isEmpty() ) {
+			if(titleImage != null) {
 				// 원본파일명 구하기
 				System.out.println("대표이미지");
 				String titleFilename = titleImage.getOriginalFilename();
@@ -540,28 +577,44 @@ public class SellerController {
 				titleImage.transferTo(new File(destPathFile));
 				
 				inProdVO.setImage(savedFileName);
-				
+				// 원본 파일명 없으면 파일 기존 파일로 저장
+				if(titleFilename == "" || titleFilename == null) {
+					inProdVO.setImage(getImage);
+				}
+				System.out.println("savedFileName" + savedFileName);
+				System.out.println("getImage" + getImage);
+				System.out.println("서버 전송 전 데이터" + inProdVO);
 				productService.sellerUpdateProduct(inProdVO);
-				
+				System.out.println("3");
 			}
-			// 상세이미지 입력
+			// 상세이미지 삭제 후 저장
 			// 이미지 번호값 구해서 이미지 넣기
 			List<ProductImageVO> getImageList = productService.selectDetailImages(inProdVO.getProductId());
+			System.out.println("getImageList : " + getImageList);
+			System.out.println("4");
+			System.out.println("productPhotoFiles : " + productPhotoFiles.size());
+			System.out.println("productPhotoFiles : " + productPhotoFiles.toString());
 			
 			
-			if(productPhotoFiles != null && productPhotoFiles.isEmpty()) {
+			if(productPhotoFiles != null && !productPhotoFiles.isEmpty()) {
 				// 이미지 저장경로 및 파일 저장
+				System.out.println("5");
+				System.out.println(getImageList.size());
+				String titleFilename = null;
 				
-				for(int i = 0; i < getImageList.size(); i++) {
-					MultipartFile productPhotoFile = productPhotoFiles.get(i);
+				for(MultipartFile productPhotoFile : productPhotoFiles) {
 							
 					System.out.println("상세이미지");
 					System.out.println("사진 파일 명(productPhotoFile) : " + productPhotoFile);
 					
 					// 원본 파일명
-					String titleFilename = productPhotoFile.getOriginalFilename();
+					titleFilename = productPhotoFile.getOriginalFilename();
 					System.out.println("원본 파일명 : " + titleFilename);
 					
+					// 원본 파일명 없으면 파일 저장 없음
+					if(titleFilename == "" || titleFilename == null) {
+						continue;
+					}
 					// 저장 파일명
 					String savedFileName = UUID.randomUUID().toString();
 					System.out.println("저장파일명 : " + savedFileName);
@@ -578,18 +631,39 @@ public class SellerController {
 					productPhotoFile.transferTo(new File(destPathFile));
 					inProdVO.setProductPhoto(savedFileName);
 					
-					inProdVO.setImageId(getImageList.get(i).getImageId());
+					productService.registerProductFile(inProdVO);
+					System.out.println("6");
 					
-					productService.sellerUpdateProductImage(inProdVO);
-					
-					return "정보 수정 완료되었습니다."; 
+				}
+				// 저장할 파일이 있을경우 기존 이미지 삭제
+				System.out.println("titleFilename : " + titleFilename);
+				if(!titleFilename.isEmpty() && titleFilename != null) {
+					for(ProductImageVO prodVO : getImageList) {
+						productService.deleteProductImage(prodVO.getImageId());
+					}
 				}
 			}
-			
+			model.addAttribute("prodVO", inProdVO);
+			return "redirect:prodDetail.do?productId=" + inProdVO.getProductId();
 		}
-		
-		return "정보 수정 완료되었습니다.";
-		
+		return "redirect:sellerProductUpdate.do";
 	}
+	
+	// 상품 상태 수정
+	@RequestMapping(value="/productStatusUpdate.do", method = RequestMethod.POST)
+	@ResponseBody
+	public String productStatusUpdate (@RequestBody RegisterProdVO vo, Model model) throws Exception {
+		System.out.println("--상품 상태 수정중");
+		System.out.println("입력된 데이터 : " + vo);
+		if (vo != null) {
+			if(vo.getProductId() != 0) {
+				//db데이터
+				productService.productStatusUpdate(vo);
+				
+			}
+		}
+		return vo.getProductStatus();
+	}
+	
 	
 }

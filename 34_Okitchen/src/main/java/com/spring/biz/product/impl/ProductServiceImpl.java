@@ -82,5 +82,16 @@ public class ProductServiceImpl implements ProductService{
 		
 	}
 
+	@Override
+	public void deleteProductImage(int imageId) {
+		productDAO.deleteProductImage(imageId);
+		
+	}
+
+	@Override
+	public void productStatusUpdate(RegisterProdVO vo) {
+		productDAO.productStatusUpdate(vo);
+	}
+
 	
 }

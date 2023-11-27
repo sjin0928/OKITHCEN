@@ -69,7 +69,6 @@
 		SET IMAGE = #{image},
 		    PRICE = #{price},
 		    DISCOUNT_RATE = #{discountRate},
-		    UPDATE_DATE = SYSDATE,
 		    CONTENT = #{content},
 		    OPTION_CHECK = #{optionCheck},
 		    ORIGIN = #{origin},
@@ -86,8 +85,20 @@
 	<update id="sellerUpdateProductImage" parameterType="registerProd">
 		UPDATE PRODUCT_IMAGE
 		SET PRODUCT_PHOTO = #{productPhoto}
-		WHERE IMAGE_ID = #{imagId}
+		WHERE IMAGE_ID = #{imageId}
 	</update>
 	
+	<!-- 상품 상세 이미지 삭제 -->
+	<delete id="deleteProductImage" parameterType="int">
+		DELETE 
+		FROM PRODUCT_IMAGE
+		WHERE IMAGE_ID = #{imageId}
+	</delete>
 	
+	<!-- 상품 수정 - 상태 -->
+	<update id="productStatusUpdate" parameterType="registerProd">
+		UPDATE PRODUCT
+		SET PRODUCT_STATUS = #{productStatus}
+		WHERE PRODUCT_ID = #{productId}
+	</update>
 </mapper>

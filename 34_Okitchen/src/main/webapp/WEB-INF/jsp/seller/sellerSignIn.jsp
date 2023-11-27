@@ -116,8 +116,8 @@
 			alert("아이디는 영어 or 영어+숫자로 입력해주세요.");
 		} else if ($("#checkMessage").html() != "사용 가능한 아이디입니다.") {
 			alert("아이디 중복확인을 해주세요.");
-		} else if ($("#sellerPassword").val() == "") {
-			alert("비밀번호를 입력해주세요.");
+		} else if (!regex.$("#sellerPassword").val() || $("#sellerPassword").val() == "") {
+			alert("비밀번호를 입력해주세요.(영어+숫자)");
 		} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
 			alert ("비밀번호 확인 버튼을 클릭해주세요.");
 		} else if($("#registNum").val() == "") {
@@ -181,7 +181,7 @@
 				<div class="input-group-prepend SIinput">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword" >
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(영어 +숫자, 8~20자)" id="sellerPassword"name="sellerPassword" >
 			</div>
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">

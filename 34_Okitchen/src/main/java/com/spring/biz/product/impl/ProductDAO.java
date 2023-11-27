@@ -106,11 +106,21 @@ public class ProductDAO {
 	  }
 
 	public void sellerUpdateProduct(RegisterProdVO inProdVO) {
-		mybatis.update("productDAO.sellerUpdateProduct", inProdVO);
+		mybatis.update("registerProdDAO.sellerUpdateProduct", inProdVO);
 	}
 
 	public void sellerUpdateProductImage(RegisterProdVO inProdVO) {
-		mybatis.update("productDAO.sellerUpdateProductImage", inProdVO);
+		mybatis.update("registerProdDAO.sellerUpdateProductImage", inProdVO);
+	}
+
+	public void deleteProductImage(int imageId) {
+		mybatis.delete("registerProdDAO.deleteProductImage", imageId);
+		
+	}
+
+	public void productStatusUpdate(RegisterProdVO vo) {
+		mybatis.update("registerProdDAO.productStatusUpdate", vo);
+		
 	}
 	  
 }

@@ -38,7 +38,7 @@
 	
 	<insert id="insertSeller" parameterType="seller">
 		INSERT INTO SELLER (SELLER_ID, COMPANY_NAME, REPRESENTATIVE, CUSTOMER_CENTER, CUSTOMER_EMAIL, 
-							REGISTRATION_NUM, SELLER_PASSWORD, SELLER_TYPE, SELLER_CHANGE_DATE, SELLER_STAUS)
+							REGISTRATION_NUM, SELLER_PASSWORD, SELLER_TYPE, SELLER_CHANGE_DATE, SELLER_STATUS)
 		VALUES (#{sellerId}, #{companyName}, #{representative}, #{customerCenter}, #{customerEmail},
 				#{registrationNum}, #{sellerPassword}, #{sellerType}, SYSDATE, #{sellerStatus})
 	</insert>

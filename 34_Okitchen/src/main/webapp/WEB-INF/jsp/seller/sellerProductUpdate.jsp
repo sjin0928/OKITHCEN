@@ -141,27 +141,32 @@
 			$("#discountedPrice").val(price - (price * discountRate / 100));
 	    });
 		
+		<%--
 		$("#prodUpdateBtn").on("click", function() {
-			//$("#discountedPrice").prop("disabled", false);
-			//$("#sellerProductUpdate").submit();
-			var data = {
-					content: $("#content").val(),
-					price: $("#price").val(),
-					discountRate: $("#discountRate").val(),
-					imageFile: $("#imageFile").val(),
-					origin: $("#origin").val(),
-					manufacturingDate: $("#manufacturingDate").val(),
-					expirationDate: $("#expirationDate").val(),
-					caution: $("#caution").val(),
-					notification: $("#notification").val(),
-					stock: $("#stockBox").val()
-				}
+			$("#sellerProductUpdate").submit();		
+			
+			console.log($("#imageFile")[0].files[0]);
+			var formData = new FormData();
+			
+			formData.append("content", $("#content").val());
+			formData.append("price", $("#price").val());
+			formData.append("discountRate", $("#discountRate").val());
+			formData.append("imageFile", $("#imageFile")[0].files[0]);
+			formData.append("origin", $("#origin").val());
+			formData.append("manufacturingDate", $("#manufacturingDate").val());
+			formData.append("expirationDate", $("#expirationDate").val());
+			formData.append("caution", $("#caution").val());
+			formData.append("notification", $("#notification").val());
+			formData.append("stock", $("#stockBox").val());
+			
 			
 			$.ajax({
 				url: "sellerUpdateProduct.do",
-				type:"POST",
-				data: JSON.stringify(data),
-				contentType: "application/json",
+				type: "POST",
+				enctype: "multipart/form-data",
+				data: formData,
+				contentType: false,
+				processData: false,
 				success: function (response) {
 					alert(response);
 					location.href="prodDetail.do"
@@ -174,7 +179,10 @@
 					alert("상품 정보 수정 오류 : 담당자에게 문의주세요.");
 				}
 			});
+			
 		});
+		--%>
+		
 	});
 	
 	
@@ -193,7 +201,7 @@
 		 삭제 후 등록 혹은 담당자에게 문의하세요.<br> 
 	</div>
 
-		<form id="sellerProductUpdate" action="sellerUpdateProduct.do" method="post" enctype="multipart/form-data" action="sellerUpdateProduct.do">
+		<form id="sellerProductUpdate" method="post" enctype="multipart/form-data" action="sellerUpdateProduct.do">
 			<input type="hidden" name="productId" value="${prodVO.productId }">
 		    <div class="input-group mb-3 input-line">
 		      <div class="input-group-prepend mb-3">
@@ -234,7 +242,6 @@
 			<div class="input-group input-line mb-3">
 				<div class="input-group-prepend priceBox">
 					<span class="input-group-text inputTitle">상품가격</span>
-				</div>
 				<input class="form-control priceBox" type="number" name="price" value="${prodVO.price }" id="priceBox" required>
 		    </div>
 		    <div class="error-msg price"></div>
@@ -317,7 +324,7 @@
 							<span class="input-group-text inputTitle">변경 이미지</span>
 						</div>
 						<div class="upload-input custom-file">
-				    	<input type="file" class="custom-file-input" id="imageFile" name="imageFile">
+				    	<input type="file" class="custom-file-input" id="imageFile" name="imageFile" >
 						<label class="custom-file-label" for="imageFile">이미지를 첨부해주세요.</label>
 						</div>
 					</div>
@@ -439,7 +446,7 @@
 		    <div class="error-msg contentFile"></div>
 		    <div class="btn-space"></div>
 			
-           	<input id="prodUpdateBtn" class="btn reg-confirm" value="수정하기" >
+           	<input type="submit" id="prodUpdateBtn" class="btn reg-confirm" value="수정하기" >
 
 		</form>
 		

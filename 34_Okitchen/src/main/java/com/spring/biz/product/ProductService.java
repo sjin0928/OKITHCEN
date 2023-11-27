@@ -21,6 +21,10 @@ public interface ProductService {
 	// 상품수정
 	void sellerUpdateProduct(RegisterProdVO inProdVO) throws Exception;
 	void sellerUpdateProductImage(RegisterProdVO inProdVO) throws Exception;
+	// 상품 이미지 삭제
+	void deleteProductImage(int imageId);
+	// 상품 상태 수정
+	void productStatusUpdate(RegisterProdVO vo);
 	
 	
 	
