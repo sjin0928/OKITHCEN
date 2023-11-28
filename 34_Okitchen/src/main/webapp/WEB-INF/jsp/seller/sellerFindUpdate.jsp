@@ -72,20 +72,20 @@
 	<div>
 		
 		<form id="passwordUpdate" method="post" action="sellerPwUpdate.do">
-			<div class="input-group mb-3 ">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SLinput">
+				<div class="input-group-prepend">
 				<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
-			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${findVO.sellerId }" disabled="true">
+			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${findVO.sellerId }" disabled>
 			</div>
 			<p>변경하실 비밀번호를 입력해주세요</p>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SLinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword" >
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword" name="sellerPassword" >
 			</div>
-			<div class="input-group mb-3 SIinput">
+			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호 확인</span>
 				</div>
@@ -97,12 +97,13 @@
 			</div>
 			<input type="button" class="btn" id="sellerSigninBtn" onclick="check()" value="변경">
 		</form>
-		
+		<hr>
+		<div id="sellerCancleBox">
+		<button class="btn" id="sellerLoginBtn">취소</button>
+		</div>
 	</div>
-	<br><br>
-	<div>
-	<button class="btn" id="sellerLoginBtn">이전</button>
-	</div>
+	<br>
+	
 </div>
 <script>
 	$(document).ready(function() {

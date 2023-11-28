@@ -71,4 +71,8 @@ public class SellerDAO {
 		return vo;
 	}
 
+	public int sellerFindregistNum(SellerVO vo) {
+		return mybatis.selectOne("sellerDAO.sellerFindregistNum", vo);
+	}
+
 }

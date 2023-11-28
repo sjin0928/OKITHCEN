@@ -61,8 +61,8 @@
 
 	<form id="sellerWithdrawal" method="post" action="sellerWithdrawal.do">
 		<div class="container" id="sellerSignInBox">
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SLinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" id="sellerId" name="sellerId" value="${sellerVO.sellerId }" disabled>
@@ -70,8 +70,8 @@
 			<div id="messageBox">
 				<span id="checkMessage"></span>
 			</div>	
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SLinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
 				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword" >

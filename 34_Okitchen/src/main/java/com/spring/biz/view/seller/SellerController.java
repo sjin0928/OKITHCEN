@@ -111,6 +111,19 @@ public class SellerController {
 	public String sellerSignIn () {
 		return "seller/sellerSignIn";
 	}
+	// 사업자 등록 번호 확인
+	@RequestMapping(value="/sellerFindregistNum")
+	@ResponseBody
+	public int sellerFindregistNum (@RequestBody SellerVO vo) {
+		int result = 0;
+		System.out.println("입력값 : " + vo);
+		
+		result = sellerService.getSellerFindregistNum(vo);
+		System.out.println(sellerService.getSellerFindregistNum(vo));
+		
+		return result;
+	}
+	
 	// 회원가입
 	@PostMapping("/sellerSignIn.do")
 	public String sellerSignIn (SellerVO vo) {

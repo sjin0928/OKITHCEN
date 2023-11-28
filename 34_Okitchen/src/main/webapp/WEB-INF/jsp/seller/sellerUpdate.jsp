@@ -52,14 +52,14 @@
 
 	function allCheck() {
   
-		if($("#sellerPassword").val() == "") {
-			alert("비밀번호를 입력해주세요.");
-		} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
+		if($("#pwCheckMessage").html() != "비밀번호가 일치합니다." || $("#pwCheckMessage").html() == "") {
 			alert ("비밀번호 확인 버튼을 클릭해주세요.");
 		} else if($("#customerEmail").val() == "") {
 			alert ("이메일을 입력해주세요.");
 		} else if($("#customerCenter").val() == "") {
 			alert ("대표 연락처를 입력해주세요.");
+		} else if(regexPhone.test($("#customerCenter").val())) {
+			alert ("연락처의 입력 양식은 000-0000-0000 입니다.");
 		} else {
 			console.log($("#sellerPassword").val(), $("#customerEmail").val(),$("#customerCenter").val());
 			var data = {
@@ -100,8 +100,8 @@
 	<h6>[사업자 정보 수정은 사업자등록증을 okithcen@ockithen.com으로 메일 발송 후 연락부탁드립니다.]</h6>
 	<form id="sellerUpdate" method="post" action="sellerUpdate.do">
 		<div class="container" id="sellerSignInBox">
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend ">
 					<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" id="sellerId" name="sellerId" value="${sellerVO.sellerId }" disabled>
@@ -109,24 +109,24 @@
 			<div id="messageBox">
 				<span id="checkMessage"></span>
 			</div>	
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword">
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword" name="sellerPassword" required>
 			</div>
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호 확인</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" id="confirmPassword" name="confirmPassword">
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" id="confirmPassword" name="confirmPassword" required>
 				<button class="btn" id="sellerPwConfirmBtn" type="button" onclick="passwordCheck()">확인</button>
 			</div>
 			<div id="messageBox">
 				<span id="pwCheckMessage"></span>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp사업자등록번호</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" id="registNum" name="registrationNum" value="${sellerVO.registrationNum }" disabled>
@@ -134,21 +134,21 @@
 			<div id="messageBox">
 				<span id="registCheckMessage"></span>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp대표자명</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" id="representName" name="representative" value="${sellerVO.representative }" disabled>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp상호명</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName"
 						value="${sellerVO.companyName }" disabled>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput sellerTypeBox">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp사업자유형</span>
 				</div>
 				<label class="typeLabel" for="corporation">법인</label><input type="radio" class="form-control" id="corporation" name="sellerType"
@@ -156,23 +156,24 @@
 				<label class="typeLabel" for="individual">개인</label><input type="radio" class="form-control" id="individual" name="sellerType" 
 						value="개인" ${sellerVO.sellerType eq '개인' ? 'checked' : ''} disabled>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
 				<input type="email" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail"
-						value="${sellerVO.customerEmail }">
+						value="${sellerVO.customerEmail }" required>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SIinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp대표 연락처</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요" id="customerCenter" name="customerCenter"
-						value="${sellerVO.customerCenter }">
+				<input type="tel" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요(000-0000-0000 or 000-000-0000 or 00-0000-0000)" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+				 		value="${sellerVO.customerCenter }" id="customerCenter" name="customerCenter" required>
 			</div>
-			<input type="button" class="btn" id="sellerSigninBtn" onclick="allCheck()" value="정보 수정">
+			<input type="submit" class="btn" id="sellerSigninBtn" onclick="allCheck()" value="정보 수정">
 		</div>
 	</form>
+	<hr>
 	<div id="sellerCancleBox">
 	<button class="btn" id="sellerCancle">취소</button>
 	</div>

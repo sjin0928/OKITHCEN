@@ -19,17 +19,19 @@
 	#sellerSignInfirstBox {
 		margin-top: 10px;
 	}
-	
+	/* 
 	.SignIninputBox {
 		max-width: 530px; 
 		color: #c0c0c023112917;
-	}
-	.SLinput {
-		justify-content: center;
-	}
+	} */
+
 	.signIn-text {
 		height:45px;
 		width: 170px;
+	}
+	.login-text {
+		height:45px;
+		width: 130px;
 	}
 	.login-text {
 		height:45px;
@@ -39,11 +41,21 @@
 		background-color: rgb(231, 129, 17); 
 		color: white; 
 		width: 150px;
+		border-radius: 5px;
 	}
 
 	#loginBox, #sellerSignContainer, #sellerFindContainer {
 		padding: 61px 0px 20px;
 		text-align:center;
+		
+	}
+	.SLinput {
+		justify-content: center;
+		padding: 0px 290px;
+	}
+	.SIinput {
+		justify-content: center;
+		padding: 0px 200px;
 	}
 	#sellerSignIn, #sellerFind {
 		background-color: rgb(231, 129, 17);
@@ -51,21 +63,24 @@
 		width: 200px;
 		display: inline;
 		margin: 0px 20px 20px 20px;
+		border-radius: 5px;
 	}
 	#sellerSignInBox {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+	}
 
+	.sellerTypeBox {
+		justify-content: flex-start;
 	}
-	.SIinput {
-		padding-left: 130px;
-	}
+	
 	#sellerIdConfirmBtn, #sellerPwConfirmBtn, #sellerRegistConfirmBtn {
 		background-color: rgb(231, 129, 17); 
 		color: white; 
 		height: 45px;
 		width: 101px;
+		border-radius: 15x;
 	}
 	.typeLabel {
 		font-size: 15px;
@@ -85,14 +100,13 @@
 	.mb-3 {
 		margin-top: 1rem !important;
 	}
-	#sellerIdIn, #sellerPwIn {
-		max-width:500px;
-	}
+
 	#sellerSigninBtn, #sellerCancle, #prodUpdateBtn{
 		background-color: rgb(231, 129, 17); 
 		color: white; 
 		width: 150px;
 		margin: 20px 10px; 
+		border-radius: 5px;
 	}
 	#sellerCancleBox {
 		display: flex;
@@ -101,7 +115,6 @@
 	}
 	#findInputComName, #findInputEmail, #findInputRegistNum, #findInputId {
 		padding: 0px;
-		
 	}
 	.findInput {
 		justify-content: center;
@@ -117,7 +130,6 @@
 	.countText {
 		text-align: right;
 		font-size: 0.9em;
-		
 	}
 	#imgInput {
 		display: flex;
@@ -144,6 +156,7 @@
 	}
 	.ladioBox {
 		padding: 12px 24px;
+		margin : 
 	}
 	.selectBox, #categoryName {
 		max-width: 170px;
@@ -162,4 +175,12 @@
 	.modalImg {
 		max-width: 100%;
 	}
-	
+	#sellerFindIdGoBox {
+		display: flex;
+		justify-content: flex-end;
+		color : blue;
+		padding: 0px 290px;
+	}
+	#sellerFindIdGoBox > a {
+		color : #ff8040;
+	}

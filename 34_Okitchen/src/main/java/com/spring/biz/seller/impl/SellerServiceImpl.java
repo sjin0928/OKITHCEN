@@ -75,4 +75,9 @@ public class SellerServiceImpl implements SellerService {
 	public SellerVO selectOneSel(String sellerId) throws Exception {
 		return sellerDAO.selectOneSel(sellerId);
 	}
+
+	@Override
+	public int getSellerFindregistNum(SellerVO vo) {
+		return sellerDAO.sellerFindregistNum(vo);
+	}
 }

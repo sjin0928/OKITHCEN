@@ -24,20 +24,6 @@ function sellerCancle() {
 	location.href="sellerLogin.do";
 }
 
-function sellerFind() {
-	var sellerId = $("#sellerId").val();
-	if($("#sellerId").val() == "") {
-		alert("아이디를 입력해주세요.");
-	} else if($("#companyName").val() == "") {
-		alert ("상호명을 입력해주세요.");
-	} else if($("#customerEmail").val() == "") {
-		alert ("이메일을 입력해주세요.");
-	} else if($("#registNum").val() == "") {
-		alert ("사업자등록번호를 입력해주세요.");
-	} else {
-		$("#sellerFind").submit();
-	}
-}
 </script>
 <!-- header -->
 <%@ include file="../../../../css/headerFooter/sellerHeader.jsp" %>
@@ -48,32 +34,32 @@ function sellerFind() {
 	
 	<form id="sellerFind" method="post" action="sellerFindPw.do">
 		<div class="container" id="sellerSignInBox">
-			<div class="input-group mb-3 findInput" id="sellerIdFind">
-				<div class="input-group-prepend SIinput" id="findInputId">
+			<div class="input-group mb-3 findInput SLinput" id="sellerIdFind">
+				<div class="input-group-prepend" id="findInputId">
 					<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId">
+				<input type="text" class="form-control SignIninputBox" placeholder="아이디를 입력해주세요" id="sellerId" name="sellerId" required>
 			</div>
-			<div class="input-group mb-3 findInput">
-				<div class="input-group-prepend SIinput" id="findInputComName">
+			<div class="input-group mb-3 findInput SLinput">
+				<div class="input-group-prepend " id="findInputComName">
 					<span class="input-group-text signIn-text">&nbsp상호명</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName" >
+				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName" required>
 			</div>
 
-			<div class="input-group mb-3 findInput">
-				<div class="input-group-prepend SIinput" id="findInputEmail">
+			<div class="input-group mb-3 findInput SLinput">
+				<div class="input-group-prepend " id="findInputEmail">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" >
+				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" required>
 			</div>
-			<div class="input-group mb-3 findInput">
-				<div class="input-group-prepend SIinput" id="findInputRegistNum">
+			<div class="input-group mb-3 findInput SLinput">
+				<div class="input-group-prepend" id="findInputRegistNum">
 					<span class="input-group-text signIn-text">&nbsp사업자등록번호</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(숫자로  10자리 입력해주세요  '-' 제외)" id="registNum" name="registrationNum" >
+				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(000-00-00000)" id="registNum" name="registrationNum" required>
 			</div>
-			<input type="button" class="btn" id="sellerSigninBtn" onclick="sellerFind()" value="찾기">
+			<input type="submit" class="btn" id="sellerSigninBtn" onclick="sellerFind()" value="찾기">
 		</div>
 	</form>
 	<div id="sellerCancleBox">

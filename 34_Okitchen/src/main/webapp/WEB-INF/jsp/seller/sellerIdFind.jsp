@@ -47,28 +47,29 @@ function sellerFind() {
 	<form id="sellerFind" method="post" action="sellerFindId.do">
 		<div class="container" id="sellerSignInBox">
 
-			<div class="input-group mb-3 findInput">
-				<div class="input-group-prepend SIinput" id="findInputComName">
+			<div class="input-group mb-3 findInput SLinput">
+				<div class="input-group-prepend" id="findInputComName">
 					<span class="input-group-text signIn-text">&nbsp상호명</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName" >
+				<input type="text" class="form-control SignIninputBox" placeholder="상호명을 입력해주세요" id="companyName" name="companyName" required>
 			</div>
 
-			<div class="input-group mb-3 findInput">
-				<div class="input-group-prepend SIinput" id="findInputEmail">
+			<div class="input-group mb-3 findInput SLinput">
+				<div class="input-group-prepend" id="findInputEmail">
 					<span class="input-group-text signIn-text">&nbsp이메일</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" >
+				<input type="text" class="form-control SignIninputBox" placeholder="이메일을 입력해주세요" id="customerEmail" name="customerEmail" required>
 			</div>
-			<div class="input-group mb-3 findInput">
-				<div class="input-group-prepend SIinput" id="findInputRegistNum">
+			<div class="input-group mb-3 findInput SLinput">
+				<div class="input-group-prepend" id="findInputRegistNum">
 					<span class="input-group-text signIn-text">&nbsp사업자등록번호</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(숫자로  10자리 입력해주세요  '-' 제외)" id="registNum" name="registrationNum" >
+				<input type="text" class="form-control SignIninputBox" placeholder="사업자등록번호를 입력해주세요(000-00-00000)" id="registNum" name="registrationNum" required>
 			</div>
 			<input type="button" class="btn" id="sellerSigninBtn" onclick="sellerFind()" value="찾기">
 		</div>
 	</form>
+	<hr>
 	<div id="sellerCancleBox">
 	<button class="btn" id="sellerCancle" onclick="sellerCancle()">취소</button>
 	</div>

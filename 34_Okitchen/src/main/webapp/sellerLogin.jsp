@@ -54,9 +54,9 @@ function login() {
 	<%@ include file="css/headerFooter/sellerLoginHeader.jsp" %>
 
 	<!-- 각자 main에 들어갈 내용 작성 -->
+	<br>
 	<div class="container" id="loginBox">
 		<h2>파트너 로그인</h2>
-
 		<form action="${pageContext.request.contextPath}/seller/sellerLogin.do" method="post">
 			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
@@ -73,18 +73,16 @@ function login() {
 				</div>
 				<input type="password" class="form-control" placeholder="password" id="sellerPwIn" name="sellerPassword" >
 			</div>
+			<div id="sellerFindIdGoBox">
+				<a href="${pageContext.request.contextPath}/seller/sellerFindIdGo.do">아이디/비밀번호 찾기</a>
+			</div>
 			<input type="button" class="btn" id="sellerLoginBtn" value="로그인" onclick="login()">
 		</form>
-	</div>
-	
-	<div class="container" id="sellerSignInBox">
-
+		<hr>
 		<form action="${pageContext.request.contextPath}/seller/sellerSignIn.do" method="get">
 			<input type="submit" class="btn" id="sellerSignIn" value="회원가입">
 		</form>
-		<form action="${pageContext.request.contextPath}/seller/sellerFindIdGo.do" method="get">
-			<input type="submit" class="btn" id="sellerFind" value="아이디/비밀번호 찾기">
-		</form>
+		
 	</div>
 	
 	<!-- footer -->

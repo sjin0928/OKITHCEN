@@ -60,36 +60,33 @@
 <!-- 각자 main에 들어갈 내용 작성 -->
 <div class="container" style="text-align:center" id="sellerSignContainer">
 	<h2>파트너 회원 정보 수정</h2>
-
 	<form id="sellerUpdate" method="post" action="sellerUpPwCheck.do">
 		<div class="container" id="sellerSignInBox">
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SLinput" >
+				<div class="input-group-prepend ">
 					<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
 				<input type="text" class="form-control SignIninputBox" id="sellerId" name="sellerId" value="${sellerVO.sellerId }" disabled>
 			</div>
-			<div id="messageBox">
-				<span id="checkMessage"></span>
-			</div>	
-			<div class="input-group mb-3">
-				<div class="input-group-prepend SIinput">
+			<div class="input-group mb-3 SLinput">
+				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword"name="sellerPassword" >
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword" name="sellerPassword" >
 			</div>
 			
 			<input type="button" class="btn" id="sellerSigninBtn" onclick="allCheck()" value="정보 수정">
 		</div>
 	</form>
 	<div id="sellerCancleBox">
-	<button class="btn" id="sellerCancle">취소</button>
+			<button class="btn" id="sellerCancle">취소</button>
 	</div>
+	
 </div>
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="productList.do";
+	    	location.href="${pageContext.request.contextPath}/product/productList.do";
 	    });
 	});
 </script>

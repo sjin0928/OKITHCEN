@@ -16,4 +16,5 @@ public interface SellerService {
 	int getSellerCount();
 	//--------(cho)
 	SellerVO selectOneSel(String sellerId) throws Exception; //판매자 정보 가져오기
+	int getSellerFindregistNum(SellerVO vo);
 }
