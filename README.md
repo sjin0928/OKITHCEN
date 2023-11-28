@@ -25,7 +25,7 @@
 &emsp;- 구매자 : 회원 아이디, 비밀번호 찾기<br>
 &emsp;- 구매자 : 회원 정보 수정<br>
 &emsp;- 구매자 : 마이페이지 header, footer 구현<br>
-&emsp;- 구매자 : 메인페이지 header, footer 구현<br>
+&emsp;- 구매자 : 메인페이지 header, footer 구현<br><br>
  
   3) 이초희  : 상품 관리<br>
 &emsp;- 구매자 : 메인페이지 header, footer 구현<br>
@@ -34,7 +34,7 @@
 &emsp;- 관리자 : 상품 승인, 반려<br>
 &emsp;- 관리자 : 상품 조회, 검색<br>
 &emsp;- 관리자 : 상품 승인 대기 상품 조회<br>
-&emsp;- 관리자 : 재고 현황 조회<br>
+&emsp;- 관리자 : 재고 현황 조회<br><br>
 
  4) 전의진 : 게시판 관리<br>
 &emsp;- 구매자 : 상품 문의 등록, 조회<br>
