@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sellerDAO">
+	<!-- 수진 -->
 	<select id="getSeller" parameterType="seller"
 	 resultType="seller">
 		SELECT * 
@@ -92,5 +93,48 @@
 		FROM SELLER
 		WHERE REGISTRATION_NUM = #{registrationNum}
 	</select>
+	
+	
+	<!-- 231128 의진 -->
+	<!-- 문의답변작성 시 문의 내용 조회 -->
+	<select id="getinquiryOne"  parameterType="inquiry" resultType="inquiry">
+		SELECT * 
+		FROM INQUIRY
+		WHERE INQ_ID = #{inqId}
+	</select>
+
+	
+	<!-- 문의답변 등록 -->
+	<insert id="inqAnsInsert" parameterType="inquiryAns">
+	    INSERT INTO INQUIRY_ANS (ANS_ID, ANS_CONTENT, ANS_DATE, INQ_ID) 
+		VALUES ((SELECT NVL(MAX(ANS_ID), 0) + 1 FROM INQUIRY_ANS), #{ansContent}, SYSDATE, #{inqId})
+	</insert>
+	
+	<!-- 문의답변여부 수정 -->
+	<update id="inqAnswered" parameterType="inquiryAns">
+	    UPDATE INQUIRY
+		SET INQ_ANSWERED = '답변완료'
+		WHERE INQ_ID = #{inqId}
+	</update>
+	
+	<!-- 문의답변 수정 -->
+	<update id="inqAnsUpdate" parameterType="inquiryAns">
+       	UPDATE INQUIRY_ANS
+		SET ANS_CONTENT = #{ansContent}
+		WHERE INQ_ID = #{inqId}
+	</update>
+	
+	<!-- 문의답변수정 시 답변내용 조회 -->
+	<select id="getinquiryAnsOne"  parameterType="inquiryAns" resultType="inquiryAns">
+		SELECT * 
+		FROM INQUIRY_ANS
+		WHERE INQ_ID = #{inqId}
+	</select>
+	
+	<!-- 문의답변 삭제 -->
+	<delete id="deleteInquiryAns" parameterType="inquiry">
+		DELETE INQUIRY_ANS
+		WHERE INQ_ID = #{inqId}
+	</delete>
 	
 </mapper>

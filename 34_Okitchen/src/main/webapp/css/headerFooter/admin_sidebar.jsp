@@ -97,17 +97,9 @@
             
             <!-- Nav Item - 게시판관리 Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBoard"
-                    aria-expanded="true" aria-controls="collapseBoard">
-                    <span>게시판관리</span>
+                <a class="nav-link collapsed" href="${pageContext.request.contextPath}/admin/goAdminNotice.do">
+                    <span>공지사항 관리</span>
                 </a>
-                
-                <div id="collapseBoard" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">공지사항등록</a>
-                        <a class="collapse-item" href="#">1:1문의내역</a>
-                    </div>
-                </div> 
             </li>
             
             <!-- Divider -->

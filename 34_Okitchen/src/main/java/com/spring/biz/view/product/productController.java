@@ -61,14 +61,17 @@ public class productController {
 		System.out.println("======> productController.productList() 실행");
 		System.out.println(">>>  화면 이동 - productList()");
 		SellerVO sessionVO = (SellerVO)session.getAttribute("sellerVO");
-		System.out.println(">>> sellerId : " + sessionVO.getSellerId());
+		if(sessionVO != null) {
+			System.out.println(">>> sellerId : " + sessionVO.getSellerId());
+			
+			//상품 목록 조회
+			List<RegisterProdVO> productList = productService.selectListSelProd(sessionVO.getSellerId());
+			System.out.println(">>> productList : " + productList);
+			
+			// 모델에 상품 목록 추가
+			model.addAttribute("productList", productList);
+		}
 		
-		//상품 목록 조회
-		List<RegisterProdVO> productList = productService.selectListSelProd(sessionVO.getSellerId());
-		System.out.println(">>> productList : " + productList);
-		
-		// 모델에 상품 목록 추가
-		model.addAttribute("productList", productList);
 				
 		return "seller/productList";
 	}

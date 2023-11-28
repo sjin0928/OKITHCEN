@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="inquiryDAO">
+
+	<!-- 문의 등록 -->
+	<insert id="insertInquiry" parameterType="inquiry">
+	    INSERT INTO INQUIRY (INQ_ID, USER_ID, PRODUCT_ID, INQ_PRIVATE, INQ_DATE, INQ_CONTENT, INQ_TITLE, INQ_ANSWERED) 
+	    VALUES ((SELECT NVL(MAX(INQ_ID), 0) + 1 FROM INQUIRY), #{userId}, #{productId}, #{inqPrivate}, SYSDATE, #{inqContent}, #{inqTitle}, '답변대기') 
+	</insert>
+
+	<!-- 상품문의 리스트 보기 -->
+	<select id="inquiryList"  parameterType="inquiry" resultType="inquiry">
+	
+		SELECT *
+		FROM (
+		    SELECT INQUIRY.*, USERS.USER_NAME, ROW_NUMBER() OVER (ORDER BY INQUIRY.INQ_ID DESC) AS ROW_NUM
+		    FROM INQUIRY
+		    JOIN USERS ON INQUIRY.USER_ID = USERS.USER_ID
+		    WHERE INQUIRY.PRODUCT_ID = #{productId}
+		)
+		WHERE ROW_NUM BETWEEN #{startPage} AND #{endPage}
+		ORDER BY INQ_DATE DESC
+		
+	</select>
+	
+	<select id="inquiryUpdateView"  parameterType="inquiry" resultType="inquiry">
+
+		SELECT *
+		FROM INQUIRY
+		WHERE INQ_ID = #{ inqId}
+	
+	</select>
+	
+	<!-- 문의 수정 -->
+	<update id="updateInquiry" parameterType="inquiry">
+		UPDATE INQUIRY
+		SET INQ_CONTENT = #{ inqContent} , INQ_TITLE = #{ inqTitle}, INQ_PRIVATE = #{ inqPrivate}
+		WHERE INQ_ID = #{ inqId}
+	</update>
+	
+	<!-- 문의 삭제 -->
+	<delete id="deleteInquiry" parameterType="inquiry">
+		DELETE INQUIRY
+		WHERE INQ_ID = #{ inqId}
+	</delete>
+	
+	<!-- 마이페이지 상품문의 리스트 조회 -->
+	<select id="MyInquiry"  parameterType="inquiry" resultType="inquiry">
+
+		SELECT INQUIRY.*, USERS.USER_NAME, PRODUCT.TITLE, PRODUCT.IMAGE, PRODUCT.BRAND
+		FROM INQUIRY
+		JOIN USERS ON INQUIRY.USER_ID = USERS.USER_ID
+        JOIN PRODUCT ON INQUIRY.PRODUCT_ID = PRODUCT.PRODUCT_ID
+		WHERE INQUIRY.USER_ID = #{ userId}
+		ORDER BY INQUIRY.INQ_DATE DESC
+	
+	</select>
+	
+	<!-- 판매자페이지 '답변대기'상태 상품문의 리스트 조회 -->
+	<select id="SellerinquiryList"  parameterType="seller" resultType="inquiry">
+		SELECT *
+		FROM SELLER
+		JOIN PRODUCT ON SELLER.SELLER_ID = PRODUCT.SELLER_ID
+		JOIN INQUIRY ON PRODUCT.PRODUCT_ID = INQUIRY.PRODUCT_ID
+		WHERE SELLER.SELLER_ID = #{ sellerId}
+		  AND INQUIRY.INQ_ANSWERED = '답변대기'
+		ORDER BY INQUIRY.INQ_DATE DESC
+	</select>
+	
+	<!-- 판매자페이지 '답변완료'상태 상품문의 리스트 조회 -->
+	<select id="SellerinquiryAnsList"  parameterType="seller" resultType="inquiry">
+		SELECT *
+		FROM SELLER
+		JOIN PRODUCT ON SELLER.SELLER_ID = PRODUCT.SELLER_ID
+		JOIN INQUIRY ON PRODUCT.PRODUCT_ID = INQUIRY.PRODUCT_ID
+		WHERE SELLER.SELLER_ID = #{ sellerId}
+		  AND INQUIRY.INQ_ANSWERED = '답변완료'
+		ORDER BY INQUIRY.INQ_DATE DESC
+	</select>
+	
+	<!-- 상품문의 답변조회 -->
+	<select id="inquiryAns"  parameterType="String" resultType="inquiryAns">
+		SELECT *
+		FROM INQUIRY_ANS
+		WHERE INQ_ID = #{ inqId}
+	</select>
+		
+	<!-- 문의글 총 개수 구하기 -->
+	<select id="inquiryCount" parameterType="inquiry" resultType="Double">
+			SELECT COUNT(*) FROM INQUIRY 
+			WHERE PRODUCT_ID = #{productId}
+	</select>
+	
+
+</mapper>

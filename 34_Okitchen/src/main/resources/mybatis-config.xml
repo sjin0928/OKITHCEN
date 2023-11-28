@@ -18,9 +18,9 @@
 		<typeAlias type="com.spring.biz.vo.CommunityPickedVO" alias="communityPicked"/>
 		<typeAlias type="com.spring.biz.vo.CommunityVO" alias="community"/>
 		<typeAlias type="com.spring.biz.vo.FAQVO" alias="FAQ"/>
-		<typeAlias type="com.spring.biz.vo.InquiryAnsVO" alias="inquiryAns"/>
-		<typeAlias type="com.spring.biz.vo.InquiryVO" alias="inquiry"/>
-		<typeAlias type="com.spring.biz.vo.NoticeVO" alias="notice"/>
+		<typeAlias type="com.spring.biz.inquiry.InquiryAnsVO" alias="inquiryAns"/>
+		<typeAlias type="com.spring.biz.inquiry.InquiryVO" alias="inquiry"/>
+		<typeAlias type="com.spring.biz.board.NoticeVO" alias="notice"/>
 		<typeAlias type="com.spring.biz.vo.OptionsVO" alias="option"/>
 		<typeAlias type="com.spring.biz.vo.OrderDetailVO" alias="orderDetail"/>
 		<typeAlias type="com.spring.biz.vo.OrdersVO" alias="orders"/>
@@ -28,7 +28,7 @@
 		<typeAlias type="com.spring.biz.product.ProductImageVO" alias="productImage"/>
       	<typeAlias type="com.spring.biz.product.ProductVO" alias="product"/>
 		<typeAlias type="com.spring.biz.vo.RecipeInfoVO" alias="recipeInfo"/>
-		<typeAlias type="com.spring.biz.vo.ReviewVO" alias="review"/>
+		<typeAlias type="com.spring.biz.review.ReviewVO" alias="review"/>
 		<typeAlias type="com.spring.biz.seller.SellerVO" alias="seller"/>
 		<typeAlias type="com.spring.biz.vo.UsersVO" alias="user"/>
 		<typeAlias type="com.spring.biz.product.RegisterProdVO" alias="registerProd"/>

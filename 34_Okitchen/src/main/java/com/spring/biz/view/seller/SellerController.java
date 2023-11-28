@@ -236,12 +236,15 @@ public class SellerController {
 	@RequestMapping ("/sellerUpPwCheck.do")
 	@ResponseBody
 	public boolean sellerUpPwCheck (@RequestBody SellerVO vo, HttpServletRequest request) {
-		HttpSession httpSession = request.getSession(false);
+		
 		// 입력 비밀번호, id
 		String inPw = vo.getSellerPassword();
 		String inId = vo.getSellerId();
 		
+		//session 정보 
+		HttpSession httpSession = request.getSession(false);
 		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO");
+		
 		System.out.println();
 		String sessionPw = null;
 		String sessionId = null;

@@ -36,10 +36,12 @@
             <a class="dropdown-item" href="#">Separated link</a>
           </div>
         </li>
-        <li class="nav-item" style="margin-right: 50px;">
-          <a class="nav-link active" href="#" style="font-size: 14px; width: auto;">문의관리
-            <span class="visually-hidden"></span>
-          </a>
+        <li class="nav-item dropdown" style="margin-right: 50px;">
+          <a class="nav-link dropdown-toggle" style="font-size: 14px; width: auto;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">문의관리</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/biz/seller/Sellerinquirypage.do">나의 문의 조회</a>
+            <a class="dropdown-item" href="/biz/seller/SellerinquiryAnsPage.do">답변완료 문의 조회</a>
+          </div>
         </li>
               	<li class="nav-item dropdown" style="margin-right: 50px;">
           <a class="nav-link dropdown-toggle" style="font-size: 14px; width: auto;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">마이페이지</a>
