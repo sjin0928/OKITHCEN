@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=O%20KITCHEN&fontSize=90&animation=fadeIn&fontAlignY=38&desc=sujin's%20portfolio)
+[![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=O%20KITCHEN&fontSize=90&animation=fadeIn&fontAlignY=38&desc=sujin's%20portfolio)
 
 
 <!-- 방문자수 --!>
@@ -97,21 +97,199 @@
   <h4>1) 요구사항 명세서</h4>
   &nbsp&nbsp<a href="https://pricey-fear-6c4.notion.site/0b9ef0b509c64d38b4ddc3a8bcf0c213?v=679a92d45227451da8c8962d65142576&pvs=4">요구사항 명세서</a>
   <h4>2) 화면구현</h4>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/qvejmFof5ck4PMsUosHZQu.png">메인</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/dV22dxoLnyV8y4s9k3g3aX.png">상품 목록</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/hQhgzN4KPQTA9773HpcEtx.png">상품 상세</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/21y8CG7jdEbLEuW3UZF5hN.png">구매자 : 회원 로그인</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/kuApZGsCD2jgLtevF7VF1V.png">구매자 : 회원 가입</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/e3CNEPMwwjPWZ6znKme2Hw.png">구매자 : 회원 정보 수정</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/uz8WwBGwCF1Kbb9ZkpzkZG.png">구매자 : 주문내역 조회</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/sq1FQbBbNZFjnvyB9wY3mH.png">구매자 : 찜 목록 조회</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/8afoPPVDyNniXg33zdo6DU.png">구매자 : 상품 후기 조회</a><br>
-  &nbsp&nbsp<a href="https://share.balsamiq.com/c/hFM4fhd9Lw2up8EmvBqsAc.png">구매자 : 상품 후기 조회</a><br>
-  <td><img width="400" src="https://share.balsamiq.com/c/hFM4fhd9Lw2up8EmvBqsAc.png"</td>
-  &nbsp&nbsp<a href="">고객센터 및 게시판</a><br>
-  &nbsp&nbsp<a href="">고객센터 및 게시판</a><br>
-  &nbsp&nbsp<a href="">고객센터 및 게시판</a><br>
-  &nbsp&nbsp<a href="">관리자페이지 화면구현</a><br>
+<h4>1) 구매자 회원 페이지</h4>
+<table style="text-align:center">
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/qvejmFof5ck4PMsUosHZQu.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/dV22dxoLnyV8y4s9k3g3aX.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 메인페이지</td>
+    <td>구매자 : 상품 목록</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/hQhgzN4KPQTA9773HpcEtx.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/21y8CG7jdEbLEuW3UZF5hN.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품 상세</td>
+    <td>구매자 : 로그인</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/kuApZGsCD2jgLtevF7VF1V.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/e3CNEPMwwjPWZ6znKme2Hw.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 회원가입</td>
+    <td>구매자 : 개인정보 수정</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/uz8WwBGwCF1Kbb9ZkpzkZG.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/sq1FQbBbNZFjnvyB9wY3mH.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 주문내역</td>
+    <td>구매자 : 찜 목록</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/8afoPPVDyNniXg33zdo6DU.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/hFM4fhd9Lw2up8EmvBqsAc.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품 후기</td>
+    <td>구매자 : 장바구니</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/nSSgbL9gx4SWSYVwM78EiF.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/9MJBB96REK8H1DhsRkuV3S.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 주문페이지</td>
+    <td>구매자 : 배송 현황 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/x4hbPRijXeW9Jiwskcrthy.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/gf8sME6fDbvu4RffKbp7SX.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품문의</td>
+    <td>구매자 : 상품문의 입력</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/wp4z7z1h33Erbn6JDQTR3n.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/unRYaaZU5etdfHXqFjhFyC.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품 후기</td>
+    <td>구매자 : 상품 후기 등록</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/3J88yhdH7wFd6ApNci4HnR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/6BTPB1iyvyrRSqrAmkANRv.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 공지사항 조회</td>
+    <td>구매자 : 공지사항 상세 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/ryisj6NRGoqc4PudhbMFrw.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 1:1문의</td>
+    <td>구매자 : 자주 묻는 질문</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/qSJ1JxKLMSiNGJK5qzRFRr.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/hSkg9VhAHKrugBQ1MBXYKt.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 커뮤니티 게시물 목록 조회</td>
+    <td>구매자 : 커뮤니티 게시물 상세 조회</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/4xrKJgCfyRmzN7tg86DvFd.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 커뮤니티 게시물 작성</td>
+    <td>구매자 : 자주 묻는 질문</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/ryisj6NRGoqc4PudhbMFrw.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 1:1문의</td>
+    <td>구매자 : 자주 묻는 질문</td>
+  </tr>
+  </table>
+  <h4>2) 판매자 페이지</h4>
+  <table>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/wfChnHZsZDMPCRhsmX3qZe.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/bQpVpmt2hamUsuwEExuA2F.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 로그인</td>
+    <td>판매자 : 회원가입</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 아이디 찾기</td>
+    <td>판매자 : 비밀번호 찾기</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 회원 정보 수정</td>
+    <td>판매자 : 회원 탈퇴</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 상품 문의 답변</td>
+    <td>판매자 : 상품 목록 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 상품 등록</td>
+    <td>판매자 : 상품 수정</td>
+  </tr>
+</table>
+<h4>3) 관리자 페이지</h4>
+  <table>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 메인페이지</td> 
+    <td>관리자 : 주문 내역 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 배송 현황 수정</td>
+    <td>관리자 : 매출 조회</td>
+  </tr>  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 판매 통계</td>
+    <td>관리자 : 등록 상품 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 승인 대기 상품 조회</td>
+    <td>관리자 : 상품 승인 반려</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>관리자 : 공지사항 등록</td>
+    <td></td>
+  </tr>
+</table>
+
   <h4>3) ERD</h4>
   &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/ddb4239a-1bda-4667-9a99-606566220621">
 </div>
@@ -307,3 +485,4 @@
 <a href="https://grandstage.a-rt.com">ABC마트</a><br>
 
 
+](https://share.balsamiq.com/c/nSSgbL9gx4SWSYVwM78EiF.png)
