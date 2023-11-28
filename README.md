@@ -98,7 +98,7 @@
   &nbsp&nbsp<a href="https://pricey-fear-6c4.notion.site/0b9ef0b509c64d38b4ddc3a8bcf0c213?v=679a92d45227451da8c8962d65142576&pvs=4">요구사항 명세서</a>
   
   <h4>2) ERD</h4>
-  &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/3b281bf8-b2bf-4f88-939b-40dd78d45071">
+  &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/550afeb2-2885-4874-8053-b4ff03165594">
   
   <h4>3) 화면구현</h4>
   
