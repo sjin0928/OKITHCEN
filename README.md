@@ -96,8 +96,13 @@
 <h3>4. 프로젝트 설계</h3>
   <h4>1) 요구사항 명세서</h4>
   &nbsp&nbsp<a href="https://pricey-fear-6c4.notion.site/0b9ef0b509c64d38b4ddc3a8bcf0c213?v=679a92d45227451da8c8962d65142576&pvs=4">요구사항 명세서</a>
-  <h4>2) 화면구현</h4>
-<h4>1) 구매자 회원 페이지</h4>
+  
+  <h4>2) ERD</h4>
+  &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/3b281bf8-b2bf-4f88-939b-40dd78d45071">
+  
+  <h4>3) 화면구현</h4>
+  
+<h4>(1) 구매자 회원 페이지</h4>
 <table style="text-align:center">
   <tr>
     <td><img width="400" src="https://share.balsamiq.com/c/qvejmFof5ck4PMsUosHZQu.png"</td>
@@ -204,7 +209,7 @@
     <td>구매자 : 자주 묻는 질문</td>
   </tr>
   </table>
-  <h4>2) 판매자 페이지</h4>
+  <h4>(2) 판매자 페이지</h4>
   <table>
   <tr>
     <td><img width="400" src="https://share.balsamiq.com/c/wfChnHZsZDMPCRhsmX3qZe.png"</td>
@@ -247,7 +252,7 @@
     <td>판매자 : 상품 수정</td>
   </tr>
 </table>
-<h4>3) 관리자 페이지</h4>
+<h4>(3) 관리자 페이지</h4>
   <table>
   <tr>
     <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
@@ -290,8 +295,6 @@
   </tr>
 </table>
 
-  <h4>3) ERD</h4>
-  &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/ddb4239a-1bda-4667-9a99-606566220621">
 </div>
 <hr>
 <h3>5. 기능 설명</h3>
