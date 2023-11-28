@@ -1,4 +1,4 @@
-[![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=O%20KITCHEN&fontSize=90&animation=fadeIn&fontAlignY=38&desc=sujin's%20portfolio)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=O%20KITCHEN&fontSize=90&animation=fadeIn&fontAlignY=38&desc=sujin's%20portfolio)
 
 
 <!-- 방문자수 --!>
@@ -295,124 +295,152 @@
 </div>
 <hr>
 <h3>5. 기능 설명</h3>
+
+<h4>2) 구매자 회원 기능</h4>
+&nbsp;(1) CREATE<br>
+&emsp;- 회원가입 기능<br>
+&emsp;- 상품을 장바구니에 담는 기능<br>
+&emsp;- 장바구니에 담은 상품을 주문 및 결제하는 기능<br>
+&emsp;- 상품 문의, 후기를 등록하는 기능<br>
+&nbsp;(2) READ<br>
+&emsp;- 가입한 아이디로 로그인하는 기능<br>
+&emsp;- 아이디와 비밀번호를 찾는 기능<br>
+&emsp;- 상품을 조회하는 기능<br>
+&emsp;- 주문한 상품을 조회하는 기능<br>
+&emsp;- 상품 문의는 작성한 회원만 조회할 수 있는 기능<br>
+&emsp;- 공지사항을 조회하는 기능<br>
+&nbsp;(3) UPDATE<br>
+&emsp;- 비밀번호 찾기 시 비밀번호 수정하는 기능<br>
+&emsp;- 회원 정보를 수정하는 기능<br>
+&emsp;- 회원 탈퇴시 회원 상태를 정지로 수정하는 기능<br>
+&emsp;- 상품 문의, 후기를 수정하는 기능<br>
+&emsp;- 장바구니에 담긴 상품의 개수를 수정하는 기능<br>
+&emsp;- 문의 게시글을 수정하는 기능<br>
+&nbsp;(4) DELETE<br>
+&emsp;- 장바구니에 담긴 상품을 삭제하는 기능<br>
+&emsp;- 상품 문의, 후기를 삭제하는 기능<br>
+&nbsp;(5) LIST (ALL)<br>
+&emsp;- 상품의 전체 목록을 조회하는 기능<br>
+&emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
+&emsp;- 상품 문의, 후기를 조회하는 기능<br>
+&nbsp;(6) LIST (SEARCH)<br>
+&emsp;- 키워드(상품명, 브랜드)로 검색된 상품 목록을 조회하는 기능<br>
+&emsp;- 제목으로 검색된 공지사항 목록을 조회하는 기능<br>
+<hr>
+<h4>2) 판매자 회원 기능</h4>
+&nbsp;(1) CREATE<br>
+&emsp;- 회원가입 기능<br>
+&emsp;- 상품을 등록하는 기능<br>
+&emsp;- 상품 문의에 대한 답변을 등록하는 기능<br>
+&nbsp;(2) READ<br>
+&emsp;- 가입한 아이디로 로그인하는 기능<br>
+&emsp;- 아이디와 비밀번호를 찾는 기능<br>
+&emsp;- 등록한 상품을 조회하는 기능<br>
+&emsp;- 상품에 등록된 문의를 조회할 수 있는 기능<br>
+&nbsp;(3) UPDATE<br>
+&emsp;- 비밀번호 찾기 시 비밀번호 수정하는 기능<br>
+&emsp;- 회원 정보를 수정하는 기능<br>
+&emsp;- 회원 탈퇴시 회원 상태를 정지로 수정하는 기능<br>
+&emsp;- 상품에 대한 정보를 수정하는 기능<br>
+&emsp;- 상품의 판매 상태를 수정하는 기능<br>
+&emsp;- 상품 문의에 대한 답변을 수정하는 기능<br>
+&nbsp;(4) DELETE<br>
+&emsp;- 상품 수정시 기존에 등록된 상세이미지를 삭제하는 기능<br>
+&emsp;- 상품 문의에 대한 답변을 삭제하는 기능<br>
+&nbsp;(5) LIST (ALL)<br>
+&emsp;- 등록한 상품 목록을 조회하는 기능<br>
+&emsp;- 상품 문의 목록을 조회하는 기능<br>
+<hr>
+
 <h4>1) 사이트 관리자 기능</h4>
 &nbsp;(1) CREATE<br>
-&emsp;- 판매할 상품을 직접 등록하는 기능<br>
 &emsp;- 공지사항을 등록하는 기능<br>
-&emsp;- 문의게시글에 답변을 등록하는 기능<br>
 &nbsp;(2) READ<br>
-&emsp;- 관리자로 로그인하는 기능<br>
 &emsp;- 상품을 조회하는 기능<br>
+&emsp;- 승인 대기 상품을 조회하는 기능<br>
 &emsp;- 공지사항을 조회하는 기능<br>
-&emsp;- 회원이 남긴 문의게시글을 조회하는 기능<br>
-&emsp;- 가입 된 회원을 조회하는 기능<br>
+&emsp;- 가입 된 구매자, 판매자 회원을 조회하는 기능<br>
+&emsp;- 커뮤니티 게시글을 조회하는 기능<br>
 &nbsp;(3) UPDATE<br>
 &emsp;- 상품을 수정하는 기능<br>
 &emsp;- 공지사항을 수정하는 기능<br>
 &nbsp;(4) DELETE<br>
 &emsp;- 상품을 삭제하는 기능<br>
 &emsp;- 공지사항을 삭제하는 기능<br>
-&emsp;- 문의게시글에 남긴 답변을 삭제하는 기능<br>
+&emsp;- 커뮤니티 게시글을 삭제하는 기능<br>
 &nbsp;(5) LIST (ALL)<br>
 &emsp;- 상품의 전체 목록을 조회하는 기능<br>
 &emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
+&emsp;- 주문 현황 목록을 조회하는 기능<br>
 &emsp;- 문의게시글의 전체 목록을 조회하는 기능<br>
 &nbsp;(6) LIST (SEARCH)<br>
-&emsp;- 제목으로 검색된 공지사항 목록을 조회하는 기능<br>
+&emsp;- 상품을 이름으로 검색하여 조회하는 기능<br>
 &emsp;- 키워드(작성자, 제목, 상품명)로 검색된 문의게시글 목록을 조회하는 기능<br>
-
-<h4>2) 회원 기능</h4>
-&nbsp;(1) CREATE<br>
-&emsp;- 회원가입 기능<br>
-&emsp;- 상품을 장바구니에 담는 기능<br>
-&emsp;- 장바구니에 담은 상품을 주문 및 결제하는 기능<br>
-&emsp;- 문의게시글을 등록하는 기능<br>
-&nbsp;(2) READ<br>
-&emsp;- 가입한 아이디로 로그인하는 기능<br>
-&emsp;- 아이디와 비밀번호를 찾는 기능<br>
-&emsp;- 주문한 상품을 조회하는 기능<br>
-&emsp;- 비밀 문의게시글은 작성한 회원만 조회할 수 있는 기능<br>
-&emsp;- 공개 문의게시글은 모든 회원이 조회할 수 있는 기능<br>
-&emsp;- 공지사항을 조회하는 기능<br>
-&nbsp;(3) UPDATE<br>
-&emsp;- 회원 정보를 수정하는 기능<br>
-&emsp;- 장바구니에 담긴 상품의 개수를 수정하는 기능<br>
-&emsp;- 문의 게시글을 수정하는 기능<br>
-&nbsp;(4) DELETE<br>
-&emsp;- 장바구니에 담긴 상품을 삭제하는 기능<br>
-&emsp;- 문의게시글을 삭제하는 기능<br>
-&nbsp;(5) LIST (ALL)<br>
-&emsp;- 상품의 전체 목록을 조회하는 기능<br>
-&emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
-&emsp;- 문의게시글의 전체 목록을 조회하는 기능<br>
-&nbsp;(6) LIST (SEARCH)<br>
-&emsp;- 키워드(상품명, 브랜드)로 검색된 상품 목록을 조회하는 기능<br>
-&emsp;- 제목으로 검색된 공지사항 목록을 조회하는 기능<br>
-&emsp;- 키워드(작성자, 제목, 상품명)로 검색된 문의게시글 목록을 조회하는 기능<br>
-<hr>
 
 <h3>6. 화면구성</h3>
 <h4>1) 일반 회원 페이지</h4>
+--- 프로젝트 종료 후 추가 예정 ---
+<!-- -
 <table style="text-align:center">
   <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/b4c2bd89-763d-49c5-8fa3-6ea5355cb2ac"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/4be38ed9-73bf-4a7e-aabf-405ecd1f865b"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>메인페이지(상)</td>
     <td>메인페이지(하)</td>
   </tr>
   <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/6057cf39-9b28-4adf-b681-6062ec6bc072"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/cd528d6a-6869-43d1-8aa1-27cb27d97f1d"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>회원가입</td>
     <td>로그인</td>
   </tr>
   <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/9e13ba7a-c18f-4345-9e92-21a66317d490"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/36050f6e-85d3-499a-9336-e00cf900f968"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>아이디 찾기</td>
     <td>아이디찾기 결과</td>
   </tr>
     <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/7868b644-8666-4bf3-953b-9938ed3439b9"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/e7d70a12-17be-4791-91f4-a9f3b264008e"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>마이페이지</td>
     <td>회원_정보수정</td>
   </tr>
     <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/c51f402c-1fb5-48b5-8f28-2ff08d4290d2"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/639d166c-560b-4a79-99ab-52f3fbc51016"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>상품상세</td>
     <td>장바구니</td>
   </tr>
   <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/89fc11f1-71c1-47aa-a353-6e2220731f1f"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/de287377-0630-4a1c-812a-82f23cfb0493"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>주문페이지</td>
     <td>결제완료</td>
   </tr>
   <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/e357ec1c-3296-4efd-a339-52f79287c3fd"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/893d7878-2150-44e2-ac08-a55849d6772e"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>주문완료</td>
     <td>게시판_메인</td>
   </tr>
   <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/608d2c07-e841-4a90-88b7-89b32894181c"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/9060ac98-41be-41ca-8263-e8ffa09f6714"</td>
+    <td><img width="400" src=""</td>
+    <td><img width="400" src=""</td>
   </tr>
   <tr>
     <td>게시판_공지_리스트</td>
@@ -478,11 +506,10 @@
     <td></td>
   </tr>
 </table>
+->
 <hr>
 
 <h3>7.참고자료</h3>
-<a href="https://www.shoemarker.co.kr">SHOEMARKER</a><br>
-<a href="https://grandstage.a-rt.com">ABC마트</a><br>
+<a href="https://www.coupang.com/">COUPANG</a><br>
+<a href="https://www.kurly.com/main">마켓컬리</a><br>
 
-
-](https://share.balsamiq.com/c/nSSgbL9gx4SWSYVwM78EiF.png)
