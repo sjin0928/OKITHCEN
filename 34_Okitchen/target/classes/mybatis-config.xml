@@ -8,31 +8,33 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
-
+   
 	<typeAliases>
-		<typeAlias type="com.spring.biz.vo.AddressVO" alias="address"/>
-		<typeAlias type="com.spring.biz.vo.AdminVO" alias="admin"/>
-		<typeAlias type="com.spring.biz.vo.AskAnsVO" alias="askAns"/>
-		<typeAlias type="com.spring.biz.vo.AskVO" alias="ask"/>
-		<typeAlias type="com.spring.biz.vo.CartVO" alias="cart"/>
-		<typeAlias type="com.spring.biz.vo.CommunityPickedVO" alias="communityPicked"/>
-		<typeAlias type="com.spring.biz.vo.CommunityVO" alias="community"/>
-		<typeAlias type="com.spring.biz.vo.FAQVO" alias="FAQ"/>
-		<typeAlias type="com.spring.biz.inquiry.InquiryAnsVO" alias="inquiryAns"/>
-		<typeAlias type="com.spring.biz.inquiry.InquiryVO" alias="inquiry"/>
-		<typeAlias type="com.spring.biz.board.NoticeVO" alias="notice"/>
-		<typeAlias type="com.spring.biz.vo.OptionsVO" alias="option"/>
-		<typeAlias type="com.spring.biz.vo.OrderDetailVO" alias="orderDetail"/>
-		<typeAlias type="com.spring.biz.vo.OrdersVO" alias="orders"/>
-		<typeAlias type="com.spring.biz.vo.PickedVO" alias="picked"/>
-		<typeAlias type="com.spring.biz.product.ProductImageVO" alias="productImage"/>
-      	<typeAlias type="com.spring.biz.product.ProductVO" alias="product"/>
-		<typeAlias type="com.spring.biz.vo.RecipeInfoVO" alias="recipeInfo"/>
-		<typeAlias type="com.spring.biz.review.ReviewVO" alias="review"/>
-		<typeAlias type="com.spring.biz.seller.SellerVO" alias="seller"/>
-		<typeAlias type="com.spring.biz.vo.UsersVO" alias="user"/>
-		<typeAlias type="com.spring.biz.product.RegisterProdVO" alias="registerProd"/>
-	</typeAliases>
+      <typeAlias type="com.spring.biz.vo.AddressVO" alias="address"/>
+      <typeAlias type="com.spring.biz.admin.AdminVO" alias="admin"/>
+      <typeAlias type="com.spring.biz.vo.AskAnsVO" alias="askAns"/>
+      <typeAlias type="com.spring.biz.admin.AdminOrdersVO" alias="adminOrders"/>
+      <typeAlias type="com.spring.biz.vo.AskVO" alias="ask"/>
+      <typeAlias type="com.spring.biz.cart.CartVO" alias="cart"/>
+	  <typeAlias type="com.spring.biz.community.CommunityPickedVO" alias="communityPicked"/>
+      <typeAlias type="com.spring.biz.community.CommunityVO" alias="community"/>
+      <typeAlias type="com.spring.biz.community.CommunityRecipeVO" alias="communityRecipe"/>
+      <typeAlias type="com.spring.biz.vo.FAQVO" alias="FAQ"/>
+      <typeAlias type="com.spring.biz.inquiry.InquiryAnsVO" alias="inquiryAns"/>
+      <typeAlias type="com.spring.biz.inquiry.InquiryVO" alias="inquiry"/>
+      <typeAlias type="com.spring.biz.board.NoticeVO" alias="notice"/>
+      <typeAlias type="com.spring.biz.product.OptionsVO" alias="option"/>
+      <typeAlias type="com.spring.biz.ordersDetail.OrderDetailVO" alias="orderDetail"/>
+      <typeAlias type="com.spring.biz.orders.OrdersVO" alias="orders"/>
+      <typeAlias type="com.spring.biz.picked.PickedVO" alias="picked"/>
+      <typeAlias type="com.spring.biz.product.ProductImageVO" alias="productImage"/>
+      <typeAlias type="com.spring.biz.product.ProductVO" alias="product"/>
+      <typeAlias type="com.spring.biz.recipe.RecipeInfoVO" alias="recipeInfo"/>
+      <typeAlias type="com.spring.biz.review.ReviewVO" alias="review"/>
+      <typeAlias type="com.spring.biz.seller.SellerVO" alias="seller"/>
+      <typeAlias type="com.spring.biz.user.UsersVO" alias="user"/>
+      <typeAlias type="com.spring.biz.product.RegisterProdVO" alias="registerProd"/>
+   </typeAliases>
   
 </configuration>
 

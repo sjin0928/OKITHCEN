@@ -31,4 +31,7 @@ public class ProductVO {
 	private String caution; //주의사항
 	private String notification; //안내사항
 	private String categoryName; //카테고리명
+	private int discountedPrice; //할인된 가격
+	private int orderDetailId;
+	private Date orderDate;
 }

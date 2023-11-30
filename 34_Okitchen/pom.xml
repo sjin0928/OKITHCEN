@@ -12,35 +12,47 @@
 		<org.springframework-version>4.3.16.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<!-- spring.security -->
+		<!-- 스프링 4.3.16.RELEASE 버전에 딱 맞는 시큐리티 버전이 없음  -->
+		<spring.security.version>4.2.20.RELEASE</spring.security.version>
 	</properties>
 	<dependencies>
-		<!-- 암호화  -->
+	<!-- spring.security 설정 (시작) -->
 		<dependency>
-	    	<groupId>org.springframework.security</groupId>
+		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-core</artifactId>
 		    <version>4.2.20.RELEASE</version>
 		</dependency>
+		
+				
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-web</artifactId>
 		    <version>4.2.20.RELEASE</version>
 		</dependency>
-
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-config</artifactId>
 		    <version>4.2.20.RELEASE</version>
 		</dependency>
-
-				
+		<!-- spring.security 설정 (끝) -->
 		<!--  스프링-마이바티스 연동 라이브러리 설정(시작) -->
 		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis</artifactId>
 		    <version>3.4.6</version>
 		</dependency>
-		
+		<!-- 문자 인증관련 라이브러리(핸드폰 인증 시 필요함) -->
 		<dependency>
+			<groupId>net.nurigo</groupId>
+		    <artifactId>javaSDK</artifactId>
+		    <version>2.2</version>
+		</dependency>
+		<dependency>
+		
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>
 		    <version>1.3.3</version>
@@ -87,7 +99,6 @@
 		    <artifactId>ojdbc8</artifactId>
 		    <version>18.3.0.0</version>
 		</dependency>
-
 		
 		<!-- Spring -->
 		<dependency>

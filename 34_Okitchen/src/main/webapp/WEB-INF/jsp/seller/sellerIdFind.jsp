@@ -14,6 +14,7 @@
 </head>
 <body>
 <script>
+
 function idFind() {
 	location.href="sellerFindIdGo.do";
 }

@@ -123,6 +123,12 @@ public class InquiryServiceImpl implements InquiryService{
 		return inquiryDAO.inquiryCount(vo);
 	}
 
+	@Override
+	public void inqAnsweredUpdate(InquiryVO vo) {
+		inquiryDAO.inqAnsweredUpdate(vo);
+		
+	}
+
 
 
 

@@ -73,15 +73,15 @@
 	float: inline-end;
 	margin-right: 17px;
 	}
-	.goBack{
-		margin-left: 475px;
-	    background-color: #4e73df;
-	    color: white;
-	    padding: 4px;
-	    border-radius: 5px;
-	    text-align: center;
-	    padding-top: 7px;
-	}
+   .goBack{
+      margin-left: 560px; /*버튼 중앙에 오게하는 부분*/
+       background-color: #4e73df;
+       color: white;
+       padding: 4px;
+       border-radius: 5px;
+       text-align: center;
+       padding-top: 7px;
+   }
 	a {
 	text-decoration: none !important;
 	}
@@ -98,7 +98,7 @@
 <div id="wrapper">
 
 
-<%@ include file="../../../css/headerFooter/admin_sidebar.jsp" %>
+<%@ include file="../../../css/headerFooter/adminSidebar.jsp" %>
 
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">

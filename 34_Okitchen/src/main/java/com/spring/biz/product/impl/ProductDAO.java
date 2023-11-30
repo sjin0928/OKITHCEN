@@ -26,8 +26,6 @@ public class ProductDAO {
 		  System.out.println("===> Mybatis로 registerProduct() 실행"); 
 		  
 		  mybatis.insert("registerProdDAO.insertProduct", vo);
-		  //mybatis.insert("registerProdDAO.insertOption", vo);
-		  //mybatis.insert("registerProdDAO.insertProdImage", vo);
 	  }
 	  
 	  //상세이미지 등록 (여러장)
@@ -47,7 +45,7 @@ public class ProductDAO {
 		  return productList;
 	  }
 	  
-	//상품상세보기(대표이미지만 가져오기)
+	  //상품상세보기(대표이미지만 가져오기)
 	  public RegisterProdVO selectOneProd(int productId) {
 		  System.out.println("===> Mybatis로 selectOneProd() 실행");
 		  
@@ -69,14 +67,14 @@ public class ProductDAO {
 		  return list;
 	  }
 	  
-	//모든 상품 가져오기
+	  //모든 상품 가져오기
 	  public List<RegisterProdVO> selectAllList() {
 		  System.out.println("===> Mybatis로 selectAllList() 실행");
 		  
 		  List<RegisterProdVO> list = mybatis.selectList("productDAO.selectAllList");
 		  return list;
 	  }
-
+	  
 	  //최근 등록순으로 조회하기
 	  public List<RegisterProdVO> selectAcceptList() {
 		  System.out.println("===> Mybatis로 selectAcceptList() 실행");
@@ -100,27 +98,59 @@ public class ProductDAO {
 		  return list;
 	  }
 	  
+	  //리뷰 많은 순으로 조회
+	  public List<RegisterProdVO> selectReviewList() {
+		  System.out.println("===> Mybatis로 selectReviewList() 실행");
+		  
+		  List<RegisterProdVO> list = mybatis.selectList("productDAO.selectReviewList");
+		  return list;
+	  }
+	  
+	  //판매량 많은 순으로 조회
+	  public List<RegisterProdVO> selectBestList() {
+		  System.out.println("===> Mybatis로 selectBestList() 실행");
+		  
+		  List<RegisterProdVO> list = mybatis.selectList("productDAO.selectBestList");
+		  return list;
+	  }
+	  
 	  //통합 검색-----------------------------------
 	  public List<RegisterProdVO> selectSearchList(String keyword){
 		  return mybatis.selectList("productDAO.searchList", keyword);
 	  }
 
-	public void sellerUpdateProduct(RegisterProdVO inProdVO) {
-		mybatis.update("registerProdDAO.sellerUpdateProduct", inProdVO);
-	}
-
-	public void sellerUpdateProductImage(RegisterProdVO inProdVO) {
-		mybatis.update("registerProdDAO.sellerUpdateProductImage", inProdVO);
-	}
-
-	public void deleteProductImage(int imageId) {
-		mybatis.delete("registerProdDAO.deleteProductImage", imageId);
-		
-	}
-
-	public void productStatusUpdate(RegisterProdVO vo) {
-		mybatis.update("registerProdDAO.productStatusUpdate", vo);
-		
-	}
+	  //리뷰수 가져오기
+	  public String reviewCount(RegisterProdVO vo) {
+		  System.out.println("===> Mybatis로 reviewCount() 실행");
+		  System.out.println("vo : " + vo);
+		  return mybatis.selectOne("productDAO.reviewCount", vo);
+	  }
 	  
+	  //카테고리별 상품조회
+	  public List<RegisterProdVO> selectCategoryList(String category) {
+		  System.out.println("===> Mybatis로 selectCategoryList() 실행");
+		  System.out.println("category : " + category);
+		  return mybatis.selectList("productDAO.selectCategory", category);
+	  }
+
+	  public void sellerUpdateProduct(RegisterProdVO inProdVO) {
+			mybatis.update("registerProdDAO.sellerUpdateProduct", inProdVO);
+		}
+
+		public void sellerUpdateProductImage(RegisterProdVO inProdVO) {
+			mybatis.update("registerProdDAO.sellerUpdateProductImage", inProdVO);
+		}
+
+		public void deleteProductImage(int imageId) {
+			mybatis.delete("registerProdDAO.deleteProductImage", imageId);
+			
+		}
+
+		public void productStatusUpdate(RegisterProdVO vo) {
+			mybatis.update("registerProdDAO.productStatusUpdate", vo);
+			
+		}
+		  
+	 
+
 }

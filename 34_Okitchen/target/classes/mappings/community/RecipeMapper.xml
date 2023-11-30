@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="recipeDAO"> <!-- recipeInfo -->
+	
+	<insert id="insertRecipe" parameterType="recipeInfo">
+		<selectKey keyProperty="communityId" order="BEFORE" resultType="int">
+        SELECT RECIPE_INFO_SEQ.NEXTVAL FROM DUAL
+    	</selectKey>
+    	INSERT INTO RECIPE_INFO (PIC_ID, COMMUNITY_ID, PRODUCT_ID, RECIPE_PHOTO, RECIPE_CONTENT)
+    	VALUES (#{picId}, #{communityId}, #{productId}, #{recipePhoto}, #{recipeContent})
+	</insert>
+	
+	<select id="getRecipe" parameterType="recipeInfo" resultType="recipeInfo">
+		SELECT PIC_ID, COMMUNITY_ID, PRODUCT_ID, RECIPE_PHOTO, RECIPE_CONTENT
+		FROM RECIPE_INFO
+		WHERE PIC_ID = #{picId}
+	</select>
+	
+	
+	<select id="getRecipeList" parameterType="recipeInfo" resultType="recipeInfo">
+		SELECT PIC_ID, COMMUNITY_ID, PRODUCT_ID, RECIPE_PHOTO, RECIPE_CONTENT
+		FROM RECIPE_INFO
+		WHERE PIC_ID = #{communityId}
+		ORDER BY PIC_ID
+	</select>
+	
+	<update id="updateRecipe" parameterType="recipeInfo">
+		UPDATE RECIPE_INFO
+		SET PRODUCT_ID = #{productId}
+			RECIPE_PHOTO = #{recipePhoto}
+			RECIPE_CONTENT = #{recipeContent}
+		WHERE PIC_ID = ${picId}
+	</update>
+	
+	<delete id="deleteRecipe" parameterType="recipeInfo">
+		DELETE FROM RECIPE_INFO
+		WHERE PIC_ID = ${picId}
+	</delete>
+	
+	
+</mapper>

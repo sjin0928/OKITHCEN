@@ -17,13 +17,27 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	window.onload = function() {
-		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+		var result = "${result}";
+		if(result !== undefined) {
+			if(result == 1){
+				alert("회원 정보 수정되었습니다.");
+			}
+		}
+
+		if("${sellerVO.sellerId}" === ("") ||"${sellerVO.sellerId}" === (null)){
 			alert("세션만료 : 다시 로그인 해주세요.")
 			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
 		}
 	}
 	function passwordCheck(){
-		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
+		var regexPw= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+$/;
+		
+		if (!regexPw.test($("#sellerPassword").val())){
+			$("#pwCheckMessage").removeClass("Omessage");
+			$("#pwCheckMessage").html("비밀번호는 영어, 숫자, 특수문자를 모두 포함해야 합니다.");
+			$("#pwCheckMessage").addClass("Xmessage");
+			
+		} else if($("#sellerPassword").val() === "" || $("#confirmPassword").val() === ""){
 			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
 			$("#pwCheckMessage").addClass("Xmessage");
@@ -50,52 +64,35 @@
 		}
 	}
 
-	function allCheck() {
-  
-		if($("#pwCheckMessage").html() != "비밀번호가 일치합니다." || $("#pwCheckMessage").html() == "") {
+	function validateForm() {
+		var regexPhone1 = /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/;
+		var regexPhone2 = /^[0-9]{2}-[0-9]{4}-[0-9]{4}$/;
+		var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		var regexId = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
+		var regexPw= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+$/;
+		
+		if (!regexPw.test($("#sellerPassword").val())) {
+			alert("비밀번호는 영어, 숫자, 특수문자를 혼합하여 입력해주세요.(8~20자)");
+			return false;
+		} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
 			alert ("비밀번호 확인 버튼을 클릭해주세요.");
-		} else if($("#customerEmail").val() == "") {
-			alert ("이메일을 입력해주세요.");
-		} else if($("#customerCenter").val() == "") {
-			alert ("대표 연락처를 입력해주세요.");
-		} else if(regexPhone.test($("#customerCenter").val())) {
-			alert ("연락처의 입력 양식은 000-0000-0000 입니다.");
+			return false;
+		} else if (!regexEmail.test($("#customerEmail").val())) {
+			alert ("이메일 양식은 xxx@xxx.xxx입니다.");
+			return false;
+		} else if(!regexPhone1.test($("#customerCenter").val()) && !regexPhone2.test($("#customerCenter").val())) {
+			alert ("연락처의 입력 양식은 000-0000-0000 or 000-000-0000 or 00-0000-0000 입니다.");
+			return false;
 		} else {
-			console.log($("#sellerPassword").val(), $("#customerEmail").val(),$("#customerCenter").val());
-			var data = {
-				sellerId: "${sellerVO.sellerId}",
-				sellerPassword : $("#sellerPassword").val(),
-				customerEmail : $("#customerEmail").val(),
-				customerCenter : $("#customerCenter").val()
-			}
-			console.log(data);
-			$.ajax({
-				url: "sellerUpdate.do",
-				type: "POST",
-				data: JSON.stringify(data),
-				contentType: "application/json",
-				success: function (response) {
-					alert("정보 수정 되었습니다.");
-					location.href="sellerUpdateGo.do";
-					
-				},
-				error: function (jqXHR, textStatus, errorThrown){
-					console.log("HTTP 상태 코드: " + jqXHR.status);
-			        console.log("서버 응답 내용: " + jqXHR.responseText);
-			        console.log("에러 종류: " + textStatus);
-			        console.log("에러 객체: ", errorThrown);
-					alert("정보 수정 오류 : 담당자에게 문의주세요.");
-				}	
-				
-			});
-		}		
+			return true;
+		}
 	}
 	
 </script>
 <body>
 
 <!-- 각자 main에 들어갈 내용 작성 -->
-<div class="container" style="text-align:center" id="sellerSignContainer">
+<div class="container" style="text-align:center" id="sellerSignContainer" onsubmit="return validateForm()">
 	<h2>파트너 회원 정보 수정</h2>
 	<h6>[사업자 정보 수정은 사업자등록증을 okithcen@ockithen.com으로 메일 발송 후 연락부탁드립니다.]</h6>
 	<form id="sellerUpdate" method="post" action="sellerUpdate.do">
@@ -113,13 +110,15 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword" name="sellerPassword" required>
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)"
+					id="sellerPassword" name="sellerPassword" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+" required>
 			</div>
 			<div class="input-group mb-3 SIinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호 확인</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" id="confirmPassword" name="confirmPassword" required>
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" 
+					id="confirmPassword" name="confirmPassword" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+" required>
 				<button class="btn" id="sellerPwConfirmBtn" type="button" onclick="passwordCheck()">확인</button>
 			</div>
 			<div id="messageBox">
@@ -167,7 +166,7 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp대표 연락처</span>
 				</div>
-				<input type="tel" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요(000-0000-0000 or 000-000-0000 or 00-0000-0000)" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+				<input type="tel" class="form-control SignIninputBox" placeholder="대표 연락처를 입력해주세요(000-0000-0000 or 000-000-0000 or 00-0000-0000)" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"
 				 		value="${sellerVO.customerCenter }" id="customerCenter" name="customerCenter" required>
 			</div>
 			<input type="submit" class="btn" id="sellerSigninBtn" onclick="allCheck()" value="정보 수정">
@@ -181,7 +180,7 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="productList.do";
+	    	location.href="../product/productList.do";
 	    });
 	});
 	

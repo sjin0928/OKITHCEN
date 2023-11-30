@@ -1,0 +1,354 @@
+/*주문 내역 마이페이지 css*/
+.css-171zbec {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	width: 820px;
+}
+
+.css-j0lifa {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding-bottom: 27px;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.css-fhxb3m {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-1268zpe {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	font-weight: 500;
+	font-size: 24px;
+	color: rgb(51, 51, 51);
+	letter-spacing: -0.5px;
+	line-height: 48px;
+}
+
+.css-1c8nox {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding-top: 20px;
+	position: relative;
+	height: 100%;
+}
+
+.css-4wlxei {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	box-sizing: border-box;
+	margin: 0;
+	width: 100%;
+	padding: 16px 20px;
+	margin-bottom: 14px;
+}
+
+.css-1hbtwy0 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	padding: 8px 0px 13px;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	border-bottom: 1px solid rgb(221, 223, 225);
+}
+
+.css-asma03 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.31;
+	color: rgb(51, 51, 51);
+}
+
+.css-l9y4tx {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	text-decoration: none;
+	align-self: center;
+	padding-right: 10px;
+	line-height: 1.33;
+	font-size: 12px;
+	color: rgb(51, 51, 51);
+	background:
+		url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgICAgICA8ZyBzdHJva2U9IiMzMzMiPgogICAgICAgICAgPHBhdGggZD0iTTAgMEw0IDQgMCA4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIxNS4wMDAwMDAsIC02OTkuMDAwMDAwKSB0cmFuc2xhdGUoMTk1LjAwMDAwMCwgNTczLjAwMDAwMCkgdHJhbnNsYXRlKDIzMC4wMDAwMDAsIDk2LjAwMDAwMCkgdHJhbnNsYXRlKDIwLjAwMDAwMCwgMTYuMDAwMDAwKSB0cmFuc2xhdGUoNjMwLjAwMDAwMCwgMTAuMDAwMDAwKSB0cmFuc2xhdGUoMTQ0LjAwMDAwMCwgNS4wMDAwMDApIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K")
+		right center/10px 10px no-repeat;
+	cursor: pointer;
+}
+
+.css-7apail {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	padding: 14px 0px 16px;
+}
+
+.css-fhxb3m {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-1oc1pau {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	max-width: 100%;
+	border: 0;
+	vertical-align: top;
+	width: 60px;
+	height: 78px;
+	margin-right: 20px;
+	background-color: rgb(245, 245, 245);
+}
+
+.css-1fttcpj {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.css-1ccl3pq {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	padding-top: 6px;
+	flex-direction: row;
+	color: rgb(0, 0, 0);
+	line-height: 20px;
+}
+
+.css-dzjp62 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	width: 70px;
+	line-height: 1.58;
+	margin-right: 10px;
+	font-size: 12px;
+	color: rgb(51, 51, 51);
+}
+
+.css-1o8e829 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	flex: 1 1 0%;
+	font-weight: 500;
+	color: rgb(51, 51, 51);
+	line-height: 1.36;
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: normal;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.css-1i58pf4 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	flex: 1 1 0%;
+	font-weight: 500;
+	color: rgb(51, 51, 51);
+	line-height: 1.36;
+}
+
+.css-s5xdrg {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-1fdt947 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	width: 100px;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: right;
+	color: rgb(51, 51, 51);
+	margin-right: 20px;
+}

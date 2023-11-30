@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>파트너 회원 정보 수정</title>
+<title>파트너 회원 탈퇴</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cssStyle/style.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cssStyle/seller.css">
 	<!-- 메뉴바 부트스트랩 템플릿 -->
@@ -17,20 +17,19 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	window.onload = function() {
-		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+		if("${sellerVO.sellerId}" == ("") ||"${sellerVO.sellerId}" == (null)){
 			alert("세션만료 : 다시 로그인 해주세요.")
 			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
 		}
 	}
 	function allCheck() {
-  		console.log($("#sellerPassword").val());
   		
 		if($("#sellerPassword").val() == "") {
 			alert("비밀번호를 입력해주세요.");
 			
 		} else {
-			$("#sellerId").prop("disabled", false);
-			
+			console.log($("#sellerId").val());
+			console.log($("#sellerPassword").val());
 			var data = {
 				sellerId : $("#sellerId").val(),
 				sellerPassword : $("#sellerPassword").val()
@@ -40,13 +39,18 @@
 				type: "POST",
 				data: JSON.stringify(data), // json 을 string으로 변환하여 전송
 				contentType: "application/json",
-				success: function() {
-					alert("회원 탈퇴 되었습니다. 감사합니다.");
-					location.href = "${pageContext.request.contextPath}/sellerLogin.jsp";
+				success: function(result) {
+					console.log(result);
+					if(result === 1){
+						alert("회원 탈퇴 되었습니다. 감사합니다.");
+						location.href = "${pageContext.request.contextPath}/sellerLogin.jsp";
+					}
+					else {
+						alert("비밀번호가  틀렸습니다.");
+					}
 				}, 
 				error: function() {
-					$("#sellerId").prop("disabled", true);
-			 		alert("비밀번호 오류 : 비밀번호를 확인 후 입력해주세요.");
+			 		alert("서버오류 : 담당자에게 문의하세요");
 				}
 			});
 		}
@@ -65,7 +69,7 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
-				<input type="text" class="form-control SignIninputBox" id="sellerId" name="sellerId" value="${sellerVO.sellerId }" disabled>
+				<input type="text" class="form-control SignIninputBox" id="sellerId" name="sellerId" value="${sellerVO.sellerId }" readonly>
 			</div>
 			<div id="messageBox">
 				<span id="checkMessage"></span>
@@ -87,7 +91,7 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="productList.do"
+	    	location.href="../product/productList.do";
 	    });
 	});
 </script>

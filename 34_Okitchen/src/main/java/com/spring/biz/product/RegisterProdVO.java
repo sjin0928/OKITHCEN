@@ -56,5 +56,7 @@ public class RegisterProdVO {
 	//페이징 처리를 위한 ROWNUM
 	private int rnum;
 
+	//상품의 리뷰 개수
+	private String reviewCnt;
 	
 }

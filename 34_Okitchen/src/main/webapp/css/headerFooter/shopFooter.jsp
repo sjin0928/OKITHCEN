@@ -5,7 +5,7 @@
 	<div class="css-17cdx60 ebj6vxr6">
 	<div id="footer" class="css-1i60c0e ebj6vxr5">
 	<div class="css-j6zuv6 ebj6vxr4">
-	<div class="css-0 eam2qm511">
+	<div class="css-0eam2qm511">
 	<h2 class="css-4iyald eam2qm510">고객행복센터</h2>
 	<strong class="css-9jqcug eam2qm58">1655-1130<span class="css-1uz1ro8 eam2qm59">월~토요일 오전 7시 - 오후 6시</span></strong>
 	<div class="css-1fttcpj eam2qm57">

@@ -2,9 +2,83 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dd">
+<mapper namespace="adminDAO">
 
+	<select id="userList" resultType="user">
+		SELECT * FROM USERS
+	</select>
 	
-
+	<select id="totalUserList" resultType="int">
+		SELECT COUNT(*) FROM USERS
+	</select>
+	
+	<!-- 고객 목록 페이징 처리 -->
+	<select id="userListPaging" resultType="user" parameterType="map">
+		SELECT * 
+ 		FROM (SELECT ROWNUM AS RNUM, C.*   
+      		FROM (SELECT *
+		 			FROM USERS ORDER BY USER_DATE DESC) C
+        		 )
+        		 WHERE RNUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- [상품관리] -->
+	<!-- 전체 상품 조회 -->
+	<select id="selectAllList" resultType="registerProd">
+		SELECT * 
+		FROM PRODUCT
+	</select>
+	
+	<!-- 승인대기 상품 조회 -->
+	<select id="confirmProdList" resultType="registerProd">
+		SELECT *
+		FROM PRODUCT
+		WHERE APPROVAL_STATUS = '승인대기'
+	</select>
+	
+	<!-- 총 상품 수 -->
+	<select id="totalProdList" resultType="int">
+		SELECT COUNT(*) FROM PRODUCT
+	</select>
+	
+	<!-- 상품 목록 페이징 처리 -->
+	<select id="allProdListPaging" resultType="registerProd" parameterType="map">
+		SELECT * 
+ 		FROM (SELECT ROWNUM AS RNUM, P.*   
+      		FROM (SELECT *
+		 			FROM PRODUCT ORDER BY SUBMIT_DATE DESC, ACCEPT_DATE) P
+        		 )
+		WHERE RNUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 승인대기 상품 조회 페이징 처리 -->
+	<select id="confirmProdPaging" resultType="registerProd" parameterType="map">
+		 SELECT * 
+ 		 FROM (SELECT ROWNUM AS RNUM, P.*   
+      		     FROM (SELECT *
+			 			FROM PRODUCT 
+	                    WHERE APPROVAL_STATUS = '승인대기'
+	                    ORDER BY PRODUCT.SUBMIT_DATE DESC) P
+        		 )
+  		 WHERE RNUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 상품 승인처리 -->
+	<update id="approveProdStatus" parameterType="int">
+		UPDATE PRODUCT
+		SET PRODUCT.APPROVAL_STATUS = '승인',
+		    PRODUCT_STATUS = '전시',
+		    ACCEPT_DATE = SYSDATE
+		WHERE PRODUCT_ID = #{productId} AND STOCK > 0
+	</update>
+	
+	<!-- 상품 반려처리 -->
+	<update id="rejectProdStatus" parameterType="int">
+		UPDATE PRODUCT
+		SET PRODUCT.APPROVAL_STATUS = '거절',
+			PRODUCT_STATUS = '비전시'
+		WHERE PRODUCT_ID = #{productId}
+	</update>
+	
 	
 </mapper>

@@ -22,6 +22,13 @@
     <!-- Custom styles for this template-->
     <link href="${pageContext.request.contextPath}/css/cssStyle/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>	
+<script>
+	function cancelReview() {
+	    alert('공지사항 작성을 취소합니다.');
+	    
+	    history.back();
+	  }
+</script>
  <style>
  	.card-body{
 	    min-height: 1px;
@@ -88,7 +95,7 @@
 <div id="wrapper">
 
 
-<%@ include file="../../../css/headerFooter/admin_sidebar.jsp" %>
+<%@ include file="../../../css/headerFooter/adminSidebar.jsp" %>
 
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewDAO">
+   
+   <!-- 리뷰작성 시 어떤상품의 리뷰를 쓰는지 나타내기 위한 상품정보select -->
+   <select id="getProductOne"  parameterType="int" resultType="product">
+      SELECT PRODUCT_ID, BRAND, TITLE, IMAGE
+      FROM PRODUCT
+      WHERE PRODUCT_ID = #{ productId }
+   </select>
+   
+   <!-- 리뷰 수정 시 전에 썼던 글 조회-->
+   <select id="reviewUpdateView" parameterType="review" resultType="review">
+      SELECT REVIEW_CONTENT, REVIEW_IMAGE
+      FROM REVIEW
+      WHERE ORDER_DETAIL_ID = #{ orderDetailId }
+   </select>
+   
+   <!-- 리뷰 등록 -->
+   <insert id="insertReview" parameterType="review">
+       INSERT INTO REVIEW (REVIEW_ID, ORDER_DETAIL_ID, REVIEW_IMAGE, REVIEW_CONTENT, REVIEW_DATE, USER_ID) 
+       VALUES ((SELECT NVL(MAX(REVIEW_ID), 0) + 1 FROM REVIEW), #{orderDetailId}, #{reviewImage}, #{reviewContent}, SYSDATE, #{userId})    
+   </insert>
+   
+   <!-- 리뷰 수정 -->
+   <update id="reviewUpdate" parameterType="review">
+       UPDATE REVIEW
+      SET REVIEW_CONTENT = #{ reviewContent} , REVIEW_IMAGE = #{ reviewImage}
+      WHERE ORDER_DETAIL_ID = #{ orderDetailId}
+   </update>
+   
+   <!-- 리뷰 조회 -->
+   <select id="getReviewList" parameterType="review" resultType="review">
+      SELECT *
+      FROM (
+          SELECT ROWNUM AS RN,
+              REVIEW_ID,
+              ORDER_DETAIL_ID,
+              USER_ID,
+              REVIEW_DATE,
+              REVIEW_IMAGE,
+              REVIEW_CONTENT,
+              BRAND,
+              TITLE,
+              IMAGE,
+              PRODUCT_ID,
+              USER_NAME
+          FROM (
+              SELECT DISTINCT
+                  R.REVIEW_ID,
+                  R.ORDER_DETAIL_ID,
+                  R.USER_ID,
+                  R.REVIEW_DATE,
+                  R.REVIEW_IMAGE,
+                  R.REVIEW_CONTENT,
+                  P.BRAND,
+                  P.TITLE,
+                  P.IMAGE,
+                  P.PRODUCT_ID,
+                  U.USER_NAME
+              FROM
+                  REVIEW R
+              JOIN
+                  ORDER_DETAIL O ON R.ORDER_DETAIL_ID = O.ORDER_DETAIL_ID
+              JOIN
+                  PRODUCT P ON O.PRODUCT_ID = P.PRODUCT_ID
+              JOIN
+                  USERS U ON R.USER_ID = U.USER_ID
+              WHERE
+                  P.PRODUCT_ID = #{ productId}
+              ORDER BY
+                  R.REVIEW_DATE DESC
+          )
+      )
+      WHERE RN BETWEEN #{ startPage} AND #{ endPage}
+   </select>   
+   
+   <!-- 리뷰사진조회 -->
+   <select id="getPhotoList" parameterType="review" resultType="review">
+      SELECT DISTINCT
+          R.REVIEW_ID,
+          R.ORDER_DETAIL_ID,
+          R.USER_ID,
+          R.REVIEW_DATE,
+          R.REVIEW_IMAGE,
+          R.REVIEW_CONTENT,
+          P.BRAND,
+          P.TITLE,
+          P.IMAGE,
+          P.PRODUCT_ID,
+          U.USER_NAME
+      FROM
+          REVIEW R
+      JOIN
+          ORDER_DETAIL O ON R.ORDER_DETAIL_ID = O.ORDER_DETAIL_ID
+      JOIN
+          PRODUCT P ON O.PRODUCT_ID = P.PRODUCT_ID
+      JOIN
+          USERS U ON R.USER_ID = U.USER_ID
+      WHERE
+          P.PRODUCT_ID = #{ productId}
+      ORDER BY
+          R.REVIEW_DATE DESC
+   </select>   
+   
+   <!-- 총 리뷰개수 조회 -->
+   <select id="getCount" resultType="int">
+      SELECT COUNT(*) FROM REVIEW
+   </select>
+   
+   <!-- 후기작성 가능한 상품목록 보기 -->
+   <select id="getableReview"  parameterType="String" resultType="product">
+      SELECT O.ORDER_DETAIL_ID, P.*
+      FROM ORDER_DETAIL O
+      JOIN PRODUCT P ON O.PRODUCT_ID = P.PRODUCT_ID
+      JOIN ORDERS ORD ON O.ORDER_ID = ORD.ORDER_ID
+      WHERE O.USER_ID = #{userId}
+      AND (O.REVIEW_STATUS IS NULL OR O.REVIEW_STATUS = 'N')
+      AND ORD.ORDER_STATUS = '배송완료'
+   </select>
+   
+   <!-- 후기작성한 상품목록 보기 -->
+   <select id="getwriteReview"  parameterType="String" resultType="product">
+      SELECT O.ORDER_DETAIL_ID, P.*
+      FROM ORDER_DETAIL O
+      JOIN PRODUCT P ON O.PRODUCT_ID = P.PRODUCT_ID
+      WHERE O.USER_ID = #{userId}
+      AND (O.REVIEW_STATUS = 'Y')
+   </select>
+   
+   <!-- 후기작성하면 상태값 변경 -->
+   <update id="updateReviewStatus" parameterType="review">
+      UPDATE ORDER_DETAIL
+      SET REVIEW_STATUS = 'Y'
+      WHERE ORDER_DETAIL_ID = #{ orderDetailId}
+   </update>
+   
+   <!-- 해당 상품의 리뷰 총 개수 구하기 -->
+   <select id="reviewCount" parameterType="review" resultType="String">
+      SELECT COUNT(DISTINCT R.REVIEW_ID)
+      FROM REVIEW R
+      JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+      JOIN PRODUCT P ON OD.PRODUCT_ID = P.PRODUCT_ID
+      WHERE P.PRODUCT_ID = #{productId}
+   </select>
+   
+
+</mapper>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminOrdersDAO"> <!-- recipeInfo -->
+	
+	<!-- 조건 조회 -->
+	<select id="getOrdersListByOption" resultType="adminOrders" parameterType="adminOrders">
+		SELECT COUNT(*) OVER () AS totalOrderNum ,ORDER_ID, USER_ID, ORDER_STATUS, ORDER_DATE, TOTAL_CNT, TOTAL_PRICE
+		FROM ORDERS
+		WHERE 1 = 1
+		<if test= 'selectOrderDate == "allDate" '>
+			AND 2=2
+			<choose>
+				<when test='selectOrderStatus == "allShipping" '>
+				AND 3=3
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "paid" '>
+					AND ORDER_STATUS = 'paid'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "beDelivery" '>
+					AND ORDER_STATUS = '배송전'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "afDelivery" '>
+					AND ORDER_STATUS = '배송중'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "cpDelivery" '>
+					AND ORDER_STATUS = '배송완료'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+			</choose>
+		</if>
+		<if test= 'selectOrderDate == "toDay"'>
+			AND TRUNC(ORDER_DATE) = TRUNC(SYSDATE)
+			<choose>
+				<when test='selectOrderStatus == "allShipping" '>
+				AND 3=3
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "paid" '>
+					AND ORDER_STATUS = 'paid'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "beDelivery" '>
+					AND ORDER_STATUS = '배송전'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "afDelivery" '>
+					AND ORDER_STATUS = '배송중'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "cpDelivery" '>
+					AND ORDER_STATUS = '배송완료'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+			</choose>
+		</if>
+		<if test= 'selectOrderDate == "thisMonth" '>
+			AND ORDER_DATE 
+			BETWEEN TRUNC((SELECT TRUNC (SYSDATE, 'MONTH') FROM DUAL)) 
+			AND TRUNC(SYSDATE)
+			<choose>
+				<when test='selectOrderStatus == "allShipping" '>
+				AND 3=3
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "paid" '>
+					AND ORDER_STATUS = 'paid'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "beDelivery" '>
+					AND ORDER_STATUS = '배송전'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "afDelivery" '>
+					AND ORDER_STATUS = '배송중'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "cpDelivery" '>
+					AND ORDER_STATUS = '배송완료'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+			</choose>
+		</if>
+		<if test= 'selectOrderDate == "thisYear" '>
+			AND ORDER_DATE 
+			BETWEEN TRUNC((SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)) 
+			AND TRUNC(SYSDATE)
+		
+			<choose>
+				<when test='selectOrderStatus == "allShipping" '>
+				AND 3=3
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "paid" '>
+					AND ORDER_STATUS = 'paid'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "beDelivery" '>
+					AND ORDER_STATUS = '배송전'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "afDelivery" '>
+					AND ORDER_STATUS = '배송중'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "cpDelivery" '>
+					AND ORDER_STATUS = '배송완료'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+			</choose>
+		</if>
+		<if test= 'selectOrderDate == "insertSearchDate" '>
+			AND ORDER_DATE 
+			BETWEEN #{startDate}
+			AND #{endDate}
+			<choose>
+				<when test='selectOrderStatus == "allShipping" '>
+				AND 3=3
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "paid" '>
+					AND ORDER_STATUS = 'paid'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "beDelivery" '>
+					AND ORDER_STATUS = '배송전'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "afDelivery" '>
+					AND ORDER_STATUS = '배송중'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+				<when test='selectOrderStatus == "cpDelivery" '>
+					AND ORDER_STATUS = '배송완료'
+					<if test='searchUserId == "" '>
+					AND 4=4
+					</if>
+					<if test='searchUserId != "" '>
+						AND USER_ID = #{searchUserId}
+					</if>
+				</when>
+			</choose>
+		</if>
+		ORDER BY ORDER_DATE DESC
+	</select>
+	
+	
+	<!-- 배송정보 수정 -->
+	<update id="updateOrderStatus" parameterType="adminOrders">
+		UPDATE ORDERS
+		<if test='selectOrderStatus == "paid" '>
+			SET ORDER_STATUS = 'paid'
+		</if>
+		<if test='selectOrderStatus == "beDelivery" '>
+			SET ORDER_STATUS = '배송전'
+		</if>
+		<if test='selectOrderStatus == "afDelivery" '>
+			SET ORDER_STATUS = '배송중'
+		</if>
+		<if test='selectOrderStatus == "cpDelivery" '>
+			SET ORDER_STATUS = '배송완료'
+		</if>
+		WHERE ORDER_ID = #{orderId} 
+	</update>
+	
+	
+	<!-- 월 매출 금액 -->
+	<select id="totalAmountMonth" resultType="adminOrders">
+		SELECT COALESCE(SUM(TOTAL_PRICE), 0) AS TOTALAMOUNTMONTH
+      	FROM ORDERS
+      	WHERE ORDER_STATUS = '배송완료' 
+      	AND ORDER_DATE 
+			BETWEEN TRUNC((SELECT TRUNC (SYSDATE, 'MONTH') FROM DUAL)) 
+			AND TRUNC(SYSDATE)
+	</select>
+	
+	<!-- 년 매출 금액 -->
+	<select id="totalAmountYear" resultType="adminOrders">
+		SELECT COALESCE(SUM(TOTAL_PRICE), 0) AS TOTALAMOUNTYEAR
+	    FROM ORDERS
+	    WHERE ORDER_STATUS = '배송완료'
+	    AND ORDER_DATE BETWEEN TRUNC((SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)) 
+			AND TRUNC(SYSDATE)
+	</select>
+	
+	<!-- 커뮤니티 게시물 모두 가져오기 -->
+	<select id="getcommunityListAdmin" resultType="community">
+		SELECT COMMUNITY_ID, USER_ID, COMM_HIT, COMM_DATE, COMM_IMAGE, PRODUCT_ID, COMM_CONTENT, TITLE
+		FROM COMMUNITY
+		ORDER BY COMMUNITY_ID DESC
+	</select>
+	
+	
+</mapper>

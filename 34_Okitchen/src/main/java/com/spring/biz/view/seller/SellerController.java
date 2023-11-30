@@ -184,10 +184,10 @@ public class SellerController {
 		public String sellerFindPw (SellerVO vo, Model model) {
 			System.out.println(">> 아이디, 비밀번호 찾기 중");
 			System.out.println("vo : " + vo);
-			//아이디 찾기
+			//아이디 가져오기
 			SellerVO findVO = sellerService.findPwSeller(vo);
 			if (vo.getSellerId() != null) {
-				System.out.println(">> 아이디 찾기 중");
+				System.out.println(">> 비밀번호 찾기 중");
 				System.out.println("vo.getSellerId() : " + vo.getSellerId());
 				
 				System.out.println("findVO : " + findVO);
@@ -209,9 +209,9 @@ public class SellerController {
 	@PostMapping("/sellerPwUpdate.do")
 	public String sellerPwUpdate (SellerVO vo, Model model) {
 		System.out.println(">> 비밀번호 찾기 후 변경 중");
-		
+		System.out.println(vo);
 		//암호화
-		vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));
+		vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));		
 		
 		System.out.println("vo : " + vo);
 		
@@ -263,26 +263,35 @@ public class SellerController {
 	}
 	
 	//회원 정보 수정
-	@RequestMapping ("/sellerUpdate.do")
-	@ResponseBody
-	public boolean sellerUpdate (@RequestBody(required = false) SellerVO vo, Model model) {
+	@PostMapping(value = "/sellerUpdate.do")
+	public String sellerUpdate (SellerVO vo, Model model) {
 		//암호화
-		vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));
-		System.out.println("입력 받은 데이터 : " + vo);
-		
-		sellerService.updateSeller(vo);
-		
+		int result = 0;
 		SellerVO sellerVO = sellerService.getSeller(vo);
-		model.addAttribute("sellerVO", sellerVO);
+		if(sellerVO != null) {
+			vo.setSellerPassword(pwdEncoder.encode(vo.getSellerPassword()));
+			System.out.println("입력 받은 데이터 : " + vo);
+			
+			sellerService.updateSeller(vo);
+			
+			
+			model.addAttribute("sellerVO", sellerVO);
+			result = 1;
+		}
 		
-		boolean response = true;
-		
-		return response;
+		return "redirect:sellerUpdateResult.do?result=" + result;
 	}
 	
 	// 회원 정보 수정 이동
 	@GetMapping ("/sellerUpdateGo.do")
 	public String sellerUpdate () {
+		return "seller/sellerUpdate";
+	}
+	// 회원 정보 수정 이동
+	@GetMapping ("/sellerUpdateResult.do")
+	public String sellerUpdateResult (int result, Model model) {
+		System.out.println(result);
+		model.addAttribute("result", result);
 		return "seller/sellerUpdate";
 	}
 	
@@ -294,18 +303,31 @@ public class SellerController {
 	// 회원 탈퇴(회원 상태 정지로 변경)
 	@RequestMapping ("/sellerWithdrawal.do")
 	@ResponseBody
-	public void sellerWithdrawal (@RequestBody SellerVO vo, HttpServletRequest request, SessionStatus session) {
+	public int sellerWithdrawal (@RequestBody SellerVO vo, HttpServletRequest request, SessionStatus session) {
 		HttpSession httpSession = request.getSession(false);
 		SellerVO sessionVO = (SellerVO)httpSession.getAttribute("sellerVO");
-		String sessionId = sessionVO.getSellerId();
-		String sessionPw = sessionVO.getSellerPassword();
-		String InId = vo.getSellerId();
-		String InPw = vo.getSellerPassword();
-		if(sessionId.equals(InId) && sessionPw.equals(InPw)) {
-			vo.setSellerStatus("정지");
-			sellerService.updateSellerStatus(vo);
-			session.setComplete();
+		int result = 0;
+		
+		if(sessionVO != null) {
+				
+			String sessionId = sessionVO.getSellerId();
+			String sessionPw = sessionVO.getSellerPassword();
+			
+			String InId = vo.getSellerId();
+			String InPw = vo.getSellerPassword();
+			System.out.println("입력 : " +  vo);
+			System.out.println("세션 : " +  sessionVO);
+			System.out.println("pw 일치 결과 : " + pwdEncoder.matches(InPw, sessionPw));
+			
+			if(sessionId.equals(InId) && pwdEncoder.matches(InPw, sessionPw)) {
+				vo.setSellerStatus("정지");
+				sellerService.updateSellerStatus(vo);
+				session.setComplete();
+				
+				result = 1;
+			}
 		}
+		return result;
 	}
 	
 	// 상품리스트 페이지로 이동 (중복시 삭제)
@@ -464,7 +486,7 @@ public class SellerController {
 	// 231124- 상품 수정(박수진)
 	
 	//상품상세페이지로 이동
-	@RequestMapping("/prodDetail.do")
+	@RequestMapping("/prodDetailSeller.do")
 	private String productDetail(RegisterProdVO vo, Model model, HttpServletRequest request) throws Exception {
 		System.out.println("======> productController.productDetail() 실행");
 		System.out.println(">>> 화면 이동 - productDetail()");
@@ -660,7 +682,7 @@ public class SellerController {
 				}
 			}
 			model.addAttribute("prodVO", inProdVO);
-			return "redirect:prodDetail.do?productId=" + inProdVO.getProductId();
+			return "redirect:prodDetailSeller.do?productId=" + inProdVO.getProductId();
 		}
 		return "redirect:sellerProductUpdate.do";
 	}

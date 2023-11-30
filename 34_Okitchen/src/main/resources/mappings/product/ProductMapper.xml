@@ -3,54 +3,149 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="productDAO">
-	
-	<!-- 전시 가능한 모든 상품리스트 조회하기 (관리자에서 사용?) -->
-	<select id="selectAllList" resultType="registerProd">
-		SELECT * 
-		FROM PRODUCT
-		WHERE APPROVAL_STATUS = '승인'
-		AND PRODUCT_STATUS = '전시'
-		AND STOCK > 0
-	</select>
-	
+
 	<!-- 최근 등록순으로 조회하기 -->
 	<select id="selectAcceptList" resultType="registerProd">
-		SELECT * 
-		FROM PRODUCT
-		WHERE APPROVAL_STATUS = '승인'
-		AND PRODUCT_STATUS = '전시'
-		AND STOCK > 0
-		ORDER BY ACCEPT_DATE DESC
+		SELECT
+		    P.*,
+		    (
+		        SELECT COUNT(DISTINCT R.REVIEW_ID)
+		        FROM REVIEW R
+		        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+		        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+		    ) AS reviewCnt
+		FROM
+		    PRODUCT P
+		WHERE
+		    P.APPROVAL_STATUS = '승인'
+		    AND P.PRODUCT_STATUS = '전시'
+		    AND P.STOCK > 0
+		ORDER BY
+		    P.ACCEPT_DATE DESC
 	</select>
 	
 	<!-- 낮은 가격순으로 조회하기 -->
 	<select id="selectLowPriceList" resultType="registerProd">
-		SELECT * 
-		FROM PRODUCT
-		WHERE APPROVAL_STATUS = '승인'
-		AND PRODUCT_STATUS = '전시'
-		AND STOCK > 0
-		ORDER BY PRICE
-	</select>
-	
-	<!-- 할인율 높은순으로 조회하기 -->
-	<select id="selectDiscList" resultType="registerProd">
-		SELECT * 
-		FROM PRODUCT
-		WHERE APPROVAL_STATUS = '승인'
-		AND PRODUCT_STATUS = '전시'
-		AND STOCK > 0
-		AND DISCOUNT_RATE > 0
-		ORDER BY DISCOUNT_RATE DESC
+		SELECT
+		    P.*,
+		    (
+		        SELECT COUNT(DISTINCT R.REVIEW_ID)
+		        FROM REVIEW R
+		        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+		        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+		    ) AS reviewCnt
+		FROM
+		    PRODUCT P
+		WHERE
+		    P.APPROVAL_STATUS = '승인'
+		    AND P.PRODUCT_STATUS = '전시'
+		    AND P.STOCK > 0
+		ORDER BY P.PRICE
 	</select>
 
-	<!-- 1만원대 판매량 많은 제품 조회하기 -->
-	
-	
+	<!-- 할인율 높은순으로 조회하기 -->
+	<select id="selectDiscList" resultType="registerProd">
+		SELECT
+		    P.*,
+		    (
+		        SELECT COUNT(DISTINCT R.REVIEW_ID)
+		        FROM REVIEW R
+		        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+		        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+		    ) AS reviewCnt
+		FROM
+		    PRODUCT P
+		WHERE
+		    P.APPROVAL_STATUS = '승인'
+		    AND P.PRODUCT_STATUS = '전시'
+		    AND P.STOCK > 0
+            AND P.DISCOUNT_RATE > 0
+		ORDER BY P.DISCOUNT_RATE DESC, P.ACCEPT_DATE DESC
+	</select>
+
 	<!-- 판매량 많은 순으로 조회하기 -->
+	<select id="selectBestList" resultType="registerProd">
+		SELECT DISTINCT OD.PRODUCT_ID
+		    , P.SELLER_ID, P.BRAND, P.ACCEPT_DATE, P.CATEGORY_NAME
+		    , P.CAUTION, P.CONTENT, P.DISCOUNTED_PRICE, P.DISCOUNT_RATE
+		    , P.EXPIRATION_DATE, P.IMAGE, P.MANUFACTURING_DATE, P.NOTIFICATION
+		    , P.OPTION_CHECK, P.ORIGIN, P.PRICE, P.PRODUCT_STATUS
+		    , P.SELLER_ID, P.STOCK, P.SUBMIT_DATE, P.TITLE
+		    , (
+		        SELECT COUNT(DISTINCT R.REVIEW_ID)
+		        FROM REVIEW R
+		        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+		        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+		    ) AS reviewCnt
+		FROM ORDER_DETAIL OD
+		JOIN PRODUCT P 
+		ON P.PRODUCT_ID = OD.PRODUCT_ID
+		WHERE
+		    P.APPROVAL_STATUS = '승인'
+		    AND P.PRODUCT_STATUS = '전시'
+		    AND P.STOCK > 0
+		ORDER BY OD.PRODUCT_ID DESC
+	</select>
 	
+	<!-- 리뷰 많은 순으로 조회 -->
+	<select id="selectReviewList" resultType="registerProd">
+	SELECT
+	    P.*,
+	    (
+	        SELECT COUNT(DISTINCT R.REVIEW_ID)
+	        FROM REVIEW R
+	        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+	        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+	    ) AS reviewCnt
+	FROM
+	    PRODUCT P
+	WHERE
+	    P.APPROVAL_STATUS = '승인'
+	    AND P.PRODUCT_STATUS = '전시'
+	    AND P.STOCK > 0
+	    AND (
+        SELECT COUNT(DISTINCT R.REVIEW_ID)
+        FROM REVIEW R
+        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+    ) > 0 
+	ORDER BY
+	    reviewCnt DESC, P.ACCEPT_DATE DESC
+	</select>
 	
-	<!-- 찜수 많은 순으로 조회하기 -->
+	<!-- 통합검색 -->
+	<select id="searchList" parameterType="string" resultType="registerProd">
+		SELECT *
+		FROM PRODUCT
+		WHERE (TITLE LIKE '%' || #{keyword} || '%' OR BRAND LIKE '%' || #{keyword} || '%')
+		  AND APPROVAL_STATUS = '승인'
+		  AND PRODUCT_STATUS = '전시'
+		  AND STOCK > 0
+	</select>
 	
+	<!-- 리뷰수 카운트 -->
+	<select id="reviewCount" parameterType="registerProd" resultType="String">
+		SELECT COUNT(DISTINCT R.REVIEW_ID)
+		FROM REVIEW R
+		JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+		JOIN PRODUCT P ON OD.PRODUCT_ID = P.PRODUCT_ID
+		WHERE P.PRODUCT_ID = #{productId}
+   	</select>
+   	
+   	<!-- 카테고리별 조회 -->
+   	<select id="selectCategory" parameterType="String" resultType="registerProd">
+   		SELECT P.*, (
+		        SELECT COUNT(DISTINCT R.REVIEW_ID)
+		        FROM REVIEW R
+		        JOIN ORDER_DETAIL OD ON R.ORDER_DETAIL_ID = OD.ORDER_DETAIL_ID
+		        WHERE OD.PRODUCT_ID = P.PRODUCT_ID
+		    ) AS reviewCnt
+		FROM PRODUCT P
+		WHERE CATEGORY_NAME = #{category, jdbcType=VARCHAR}
+		  AND APPROVAL_STATUS = '승인'
+		  AND PRODUCT_STATUS = '전시'
+		  AND STOCK > 0
+	    ORDER BY ACCEPT_DATE DESC
+   	</select>
 	
 </mapper>

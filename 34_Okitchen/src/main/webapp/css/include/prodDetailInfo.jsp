@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<div id="detail" class="css-18eozqj el27cq0">
+				<div id="detail" class="css-18eozqj el27cq0">
 					<div class="css-8k5a6c ezy1ugy1"></div>
 					<div class="css-186pvss e1j4wjnz1">
 						<h3 class="css-nd38pl e1j4wjnz0">판매자정보</h3>
@@ -55,116 +55,5 @@
 								</dd>
 							</dl>
 						</div>
-					</div>
-					<div class="css-0 e18xf2bx10">
-						<div class="css-o0wurt e18xf2bx9">
-							<div class="css-0 e18xf2bx8">
-								<h5 class="css-rbx0sz e18xf2bx7">고객행복센터</h5>
-								<p class="css-1vh38tr e18xf2bx6">
-									궁금하신 점이나 서비스 이용에 불편한 점이 있으신가요?<span
-										class="css-ekock0 e18xf2bx5">문제가 되는 부분을 사진으로 찍어 아래 중
-										편하신 방법으로 접수해 주시면 빠르게 도와드리겠습니다.</span>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="css-xwfhcz e1wbvr7p4">
-						<strong class="css-1whdyd5 e1wbvr7p3">교환 및 환불 안내</strong>
-						<p class="css-1l0p3iw e1wbvr7p2">교환 및 환불이 필요하신 경우 고객행복센터로
-							문의해주세요.</p>
-						<button type="button" class="css-1t0iw3m e1wbvr7p0">닫기</button>
-					</div>
-					<div class="css-zym26p e1wuccxq2">
-						<strong class="css-ro4hvg e1wuccxq1">01. 상품에 문제가 있는 경우</strong>
-						<p class="css-13xsn2p e1wuccxq0">
-							받으신 상품이 표시·광고 내용 또는 계약 내용과 다른 경우에는 상품을 받은 날부터 3개월 이내,
-							<!-- -->
-							<!-- -->
-							그 사실을 알게 된 날부터 30일 이내에 교환 및 환불을 요청하실 수 있습니다.
-							<!-- -->
-							<!-- -->
-							상품의 정확한 상태를 확인할 수 있도록 사진을 함께 보내주시면 더 빠른 상담이 가능합니다.<span
-								class="css-13ttlil e1u4390v2">※ 배송 상품에 문제가 있는 것으로 확인되면
-								배송비는 오늘의식탁이 부담합니다.</span>
-						</p>
-					</div>
-					<div class="css-zym26p e1wuccxq2">
-						<strong class="css-ro4hvg e1wuccxq1">02. 단순 변심, 주문 착오의 경우</strong>
-						<p class="css-13xsn2p e1wuccxq0">
-							<strong class="css-e6zvdp e1u4390v1">신선 / 냉장 / 냉동 식품</strong>재판매가
-							불가한 상품의 특성상, 단순 변심, 주문 착오 시 교환 및 반품이 어려운 점 양해 부탁드립니다.
-							<!-- -->
-							<!-- -->
-							상품에 따라 조금씩 맛이 다를 수 있으며, 개인의 기호에 따라 같은 상품도 다르게 느끼실 수 있습니다.<strong
-								class="css-e6zvdp e1u4390v1">유통기한 30일 이상 식품 (신선 / 냉장 /
-								냉동 제외) &amp; 기타 상품 (뷰티 제품, 생활용품)</strong>상품을 받은 날부터 7일 이내 교환, 반품이 가능합니다.
-							고객행복센터로 문의해주세요.<span class="css-13ttlil e1u4390v2">※ 단순
-								변심으로 인한 배송 상품 교환 또는 환불의 경우 고객님께서 배송비 6,000원을 부담하셔야 합니다. (주문건
-								배송비를 결제하셨을 경우 3,000원)</span>
-						</p>
-					</div>
-					<div class="css-zym26p e1wuccxq2">
-						<strong class="css-ro4hvg e1wuccxq1">03. 교환·반품이 불가한 경우</strong>
-						<p class="css-13xsn2p e1wuccxq0">
-							다음에 해당하는 교환·환불 신청은 처리가 어려울 수 있으니 양해 부탁드립니다.
-							<!-- -->
-
-							<span class="css-1pcbtdr e1u4390v0">고객님의 책임 있는 사유로 상품이
-								멸실되거나 훼손된 경우<!-- --> <!-- -->(단, 상품의 내용을 확인하기 위해 포장 등을 훼손한 경우는
-								제외)
-							</span><span class="css-1pcbtdr e1u4390v0">고객님의 사용 또는 일부 소비로 상품의
-								가치가 감소한 경우</span><span class="css-1pcbtdr e1u4390v0">시간이 지나 다시
-								판매하기 곤란할 정도로 상품의 가치가 감소한 경우</span><span class="css-1pcbtdr e1u4390v0">복제가
-								가능한 상품의 포장이 훼손된 경우</span><span class="css-1pcbtdr e1u4390v0">고객님의
-								주문에 따라 개별적으로 생산되는 상품의 제작이 이미 진행된 경우</span>
-						</p>
-					</div>
-					<div class="css-xwfhcz e1wbvr7p4">
-						<strong class="css-1whdyd5 e1wbvr7p3">주문 취소 안내</strong>
-						<p class="css-1l0p3iw e1wbvr7p2">
-							<strong class="css-1oekmga e1wbvr7p1">- [주문완료] 상태일 경우에만
-								주문 취소 가능합니다. - [OKITCHEN &gt; 주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.</strong>
-						</p>
-						<button type="button" class="css-1t0iw3m e1wbvr7p0">닫기</button>
-					</div>
-					<div class="css-zym26p e1wuccxq2">
-						<strong class="css-ro4hvg e1wuccxq1">주문 취소 관련</strong>
-						<p class="css-13xsn2p e1wuccxq0">
-							- [배송준비중] 부터는 취소가 불가하니, 반품으로 진행해주세요. (상품에 따라 반품이 불가할 수 있습니다.)
-							<!-- -->
-							<!-- -->
-							- 주문마감 시간에 임박할수록 취소 가능 시간이 짧아질 수 있습니다.
-							<!-- -->
-							<!-- -->
-							- 비회원은 App 또는 모바일 웹사이트에서 [마이페이지
-							<!-- -->
-							&gt;
-							<!-- -->
-							비회원 주문조회 페이지] 에서 취소가 가능합니다.
-							<!-- -->
-							<!-- -->
-							- 일부 예약상품은 배송 3~4일 전에만 취소 가능합니다.
-							<!-- -->
-							<!-- -->
-							- 주문상품의 부분취소는 불가능합니다. 전체 주문 취소 후 다시 구매 해주세요.
-							<!-- -->
-							<!-- -->
-							- 미성년자 결제 시 법정대리인이 그 거래를 취소할 수 있습니다.
-							<!-- -->
-						</p>
-					</div>
-					<div class="css-zym26p e1wuccxq2">
-						<strong class="css-ro4hvg e1wuccxq1">결제 승인 취소 / 환불 관련</strong>
-						<p class="css-13xsn2p e1wuccxq0">
-							- 카드 환불은 카드사 정책에 따르며, 자세한 사항은 카드사에 문의해주세요.
-							<!-- -->
-							<!-- -->
-							- 결제 취소 시, 사용하신 적립금과 쿠폰도 모두 복원됩니다.
-						</p>
-					</div>
-					<div class="css-mve3d0 e1raabu12">
-						<strong class="css-1whdyd5 e1raabu11">배송관련 안내</strong>
-						<p class="css-0 e1raabu10">배송 과정 중 기상 악화 및 도로교통 상황에 따라 부득이하게
-							지연 배송이 발생될 수 있습니다.</p>
 					</div>
 				</div>

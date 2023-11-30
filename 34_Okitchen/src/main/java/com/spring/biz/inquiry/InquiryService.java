@@ -21,4 +21,5 @@ public interface InquiryService {
 	InquiryAnsVO getinquiryAnsOne(InquiryAnsVO avo); //문의 답변 수정시 문의 답변내용을 가져옴
 	void deleteInquiryAns(InquiryVO vo); //문의답변삭제
 	Double inquiryCount(InquiryVO vo); //문의글 총개수구하기
+	void inqAnsweredUpdate(InquiryVO vo);//문의답변삭제 시 상태값바꾸기
 }

@@ -88,7 +88,7 @@
 <div id="wrapper">
 
 
-<%@ include file="../../../css/headerFooter/admin_sidebar.jsp" %>
+<%@ include file="../../../css/headerFooter/adminSidebar.jsp" %>
 
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">

@@ -23,7 +23,7 @@ public class ReviewVO {
 	private String cPage2;
 	private String startPage;
 	private String endPage;
-	private Double totPage;
+	private String totPage;
 	private String productId;
 	private int orderDetailId;
 	
@@ -64,10 +64,10 @@ public class ReviewVO {
 	public void setEndPage(String endPage) {
 		this.endPage = endPage;
 	}
-	public Double getTotPage() {
+	public String getTotPage() {
 		return totPage;
 	}
-	public void setTotPage(Double totPage) {
+	public void setTotPage(String totPage) {
 		this.totPage = totPage;
 	}
 	public String getBrand() {

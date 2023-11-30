@@ -41,7 +41,7 @@ $.ajax("getAdminNoticeList.do", {
 
         let dispTag = "<div>";
         
-        dispTag += "<h3>공지사항 리스트</h3>";
+   /*      dispTag += "<h3>공지사항 리스트</h3>"; */
         dispTag += "<a class='noticeInsert' href='goInsertNoticePage.do'>등록</a>";
         dispTag += "<table class='table'>";
         dispTag += "<thead>";
@@ -215,14 +215,14 @@ $.ajax("getAdminNoticeList.do", {
       a:hover {
         text-decoration: none !important;
    }
-   .disAble1{
-      color: #00000040;
-       font-weight: bold;
-       background-color: white;
-       border-radius: 5px;
-       border-color: #00000040;
-       margin-left: 447px;
-   }
+	.disAble1{
+	      color: #00000040;
+	       font-weight: bold;
+	       background-color: white;
+	       border-radius: 5px;
+	       border-color: #00000040;
+	       margin-left: 600px; /*버튼 중앙에 오게하는 부분*/
+	   }
    .disAble{
       color: #00000040;
       background-color: white;
@@ -248,7 +248,7 @@ $.ajax("getAdminNoticeList.do", {
 	<div id="wrapper">
 
 
-	<%@ include file="../../../css/headerFooter/admin_sidebar.jsp" %>
+	<%@ include file="../../../css/headerFooter/adminSidebar.jsp" %>
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
@@ -440,7 +440,7 @@ $.ajax("getAdminNoticeList.do", {
 						<!-- 판매자 회원 리스트 -->
 						<div class="card shadow col-lg-12">
 							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">파트너 리스트</h6>
+								<h6 class="m-0 font-weight-bold text-primary">공지사항 리스트</h6>
 							</div>
 							
 							<div class="card-body">

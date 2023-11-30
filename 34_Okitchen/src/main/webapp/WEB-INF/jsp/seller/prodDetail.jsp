@@ -33,24 +33,30 @@
 <link href="${pageContext.request.contextPath}/css/cssStyle/seller.css"
 	rel="stylesheet" />
 </head>
+
 <body>
 <%-- \${vo } : ${vo } <hr>
 \${sellerVO} : ${sellerVO } <hr>
 \${productImageList } : ${productImageList } <hr> --%>
 <script>
 	window.onload = function() {
-		if("${sellerVO}" == ("") || "${sellerVO}" == (null)){
+		if("${sellerVO.sellerId}" === ("") ||"${sellerVO.sellerId}" === (null)){
 			alert("세션만료 : 다시 로그인 해주세요.")
 			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
 		}
 	}
 </script>
+
 <!-- header -->
 <%@ include file="/css/headerFooter/sellerLogoutHeader.jsp" %>
 
 <!-------------------- 상품 디테일 --------------------->
+
 <div class="css-1qphylu e1tjwjt99"></div>
 	<div class="css-16c0d8l e1brqtzw0">
+		<div class="update_button">
+			<button class="update_prod btn" id="updateBtn" onclick="update(${vo.productId })">수정</button>
+		</div>
 		<main id="product-atf" class="css-1eoy87d e17iylht5">
 				<div class="css-rky48o e17iylht4">
 					<img alt="대표이미지"
@@ -303,10 +309,7 @@
 	</div>
 </div>
 </div>
-<div class="update_button">
-	<button class="update_prod" onclick="update(${vo.productId })">수정</button>
-	<button class="update_status" onclick="StatusUpdate(${vo.productId })">상태변경</button>
-</div>
+
 <!-- 판매자정보 등등 -->
 <%@ include file="/css/include/prodDetailInfo.jsp"%>
 
@@ -319,6 +322,9 @@
 	}
 </script>
 <!-- footer -->
-<%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>        
+<%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>  
+
+
+      
 </body>
 </html>

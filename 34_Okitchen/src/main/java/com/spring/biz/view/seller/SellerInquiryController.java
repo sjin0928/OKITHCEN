@@ -190,8 +190,11 @@ public class SellerInquiryController {
 			
 			System.out.println("vo : " + vo);
 			
-			//리뷰답변수정
+			//리뷰답변삭제
 			inquiryService.deleteInquiryAns(vo);
+			
+			//리뷰답변삭제하면서 상태값 바꾸기
+			inquiryService.inqAnsweredUpdate(vo);
 			
 			return "/seller/SellerInquiryAnsList";
 		}

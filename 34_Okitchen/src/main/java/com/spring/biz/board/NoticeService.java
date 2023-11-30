@@ -6,8 +6,7 @@ import java.util.Map;
 
 import com.spring.biz.product.ProductVO;
 import com.spring.biz.review.ReviewVO;
-import com.spring.biz.inquiry.InquiryAnsVO;
-import com.spring.biz.inquiry.InquiryVO;
+import com.spring.biz.vo.InquiryAnsVO;
 import com.spring.biz.vo.OptionsVO;
 import com.spring.biz.vo.OrdersVO;
 

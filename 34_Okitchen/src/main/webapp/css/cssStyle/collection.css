@@ -1,0 +1,1965 @@
+.css-nu1lw1 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	position: relative;
+	display: flex;
+	margin-bottom: 80px;
+}
+
+.css-1b38o8c {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width: 1050px;
+	margin: 0px auto;
+}
+
+.css-1azakc {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	text-align: center;
+}
+
+/* .banner {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    --swiper-theme-color: #007aff;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.img {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    --swiper-theme-color: #007aff;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 14px;
+    text-align: center;
+    color: inherit;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 100%;
+    border: 0;
+    width: 100%;
+    vertical-align: top;
+} */
+.css-i804ml {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	margin-top: 50px;
+	font-weight: 500;
+	font-size: 28px;
+	color: rgb(51, 51, 51);
+	line-height: 35px;
+	letter-spacing: -1px;
+	text-align: center;
+}
+
+.css-pzlq5x {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	position: relative;
+	display: flex;
+	width: 1050px;
+	margin-top: 50px;
+	margin-bottom: 75px;
+}
+
+.css-1jgnig9 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	position: sticky;
+	width: 220px;
+	flex-shrink: 0;
+	height: 100%;
+	max-height: calc(100vh - 120px);
+	top: 80px;
+	margin-right: 47px;
+	border-bottom: 1px solid rgb(238, 238, 238);
+	overflow: hidden scroll;
+}
+
+.css-1d3w5wq {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	width: 100%;
+}
+
+.css-1stur9s {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	padding-bottom: 20px;
+	line-height: 20px;
+}
+
+.css-crqql1 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	line-height: 20px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgb(51, 51, 51);
+}
+
+.css-11y1fso {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	position: sticky;
+	top: 0px;
+	display: flex;
+	z-index: 20;
+	background-color: rgb(255, 255, 255);
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgb(238, 238, 238);
+	line-height: 20px;
+}
+
+.css-wy76no {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	line-height: 20px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	font-weight: 500;
+	font-size: 15px;
+	color: rgb(51, 51, 51);
+}
+
+.css-7pv5zq {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+.css-w7g3fo {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	pointer-events: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	margin-left: 5px;
+	font-weight: 500;
+	color: rgb(221, 221, 221);
+}
+/* 
+.css-0 {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    --swiper-theme-color: #007aff;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 14px;
+    color: #333;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+} */
+<!--
+======
+추가 ====== -->.swiper-android .swiper-slide, .swiper-wrapper {
+	transform: translateZ(0)
+}
+
+.css-ouzwxv {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+	width: 1050px;
+	margin: 0px auto;
+}
+
+.swiper {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1
+}
+
+.swiper-css-mode>.swiper-wrapper {
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none
+}
+
+.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar {
+	display: none
+}
+
+.swiper-css-mode>.swiper-wrapper>.swiper-slide {
+	scroll-snap-align: start start
+}
+
+<!--
+====
+추가 (끝) ==== -->.css-0 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	cursor: pointer;
+	color: rgb(153, 153, 153);
+	font-size: 13px;
+	line-height: 20px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	width: 15px;
+	height: 15px;
+	margin-top: 2px;
+}
+
+.css-146937 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.css-16ixplb {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	width: 100%;
+	height: 52px;
+	overflow: hidden;
+}
+
+.css-1iwixyn {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 20px;
+	color: rgb(51, 51, 51);
+}
+
+.css-1kscq9s {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: block;
+	transition: all 250ms cubic-bezier(0.83, 0, 0.17, 1) 0s;
+	height: auto;
+	overflow: hidden;
+	max-height: 100vh;
+	opacity: 1;
+}
+
+.css-x67gaa {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	list-style: none;
+	margin-bottom: 18px;
+	display: inline-block;
+	margin-top: 9px;
+}
+
+.css-s5xdrg {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-11kh0cw {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 249px);
+	gap: 31px 18px;
+	width: 100%;
+}
+
+.css-17kh8wb {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-right: 8px;
+}
+
+.css-1buhy1h {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	margin-right: 4px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgb(51, 51, 51);
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.css-ryw54y {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	flex-shrink: 0;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: rgb(204, 204, 204);
+}
+
+.css-ypdml9 {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	width: 100%;
+	height: 30px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	color: rgb(153, 153, 153);
+	font-weight: 500;
+	font-size: 12px;
+	margin-bottom: 11px;
+}
+
+.css-jbgpyq {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	color: rgb(153, 153, 153);
+	font-weight: 500;
+	font-size: 12px;
+	width: 18;
+	height: 18;
+	fill: none;
+	stroke: rgb(153, 153, 153);
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	transform: rotate(90deg);
+	overflow: hidden;
+}
+
+.css-146937 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.css-16ixplb {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	width: 100%;
+	height: 52px;
+	overflow: hidden;
+}
+
+.css-1iwixyn {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 20px;
+	color: rgb(51, 51, 51);
+}
+
+.css-innaj4 {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	width: 18;
+	height: 18;
+	fill: none;
+	stroke: rgb(153, 153, 153);
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	transition: transform 250ms ease-out 0s;
+	overflow: hidden;
+	transform: rotate(0deg);
+}
+
+.css-1kscq9s {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: block;
+	transition: all 250ms cubic-bezier(0.83, 0, 0.17, 1) 0s;
+	height: auto;
+	overflow: hidden;
+	max-height: 100vh;
+	opacity: 1;
+}
+
+.css-1gtroub {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	gap: 12px;
+	list-style-type: none;
+	margin-bottom: 25px;
+}
+
+.css-14cvnbg {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	list-style-type: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.css-8fr2f6 {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style-type: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	font-size: 14px;
+	color: rgb(95, 0, 128);
+	font-weight: 500;
+}
+
+.css-1vbs14e {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style-type: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	font-weight: 400;
+}
+
+.css-3770rk {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 12px;
+	gap: 4px 2.5px;
+}
+
+.css-ffhm6p {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	list-style-type: none;
+}
+
+.css-15z0st1 {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style-type: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: block;
+	width: 47px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	border-radius: 2px;
+	font-size: 13px;
+	background-color: rgb(51, 51, 51);
+	font-weight: 500;
+	line-height: 17px;
+	color: rgb(255, 255, 255);
+}
+
+.css-1e7ssny {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style-type: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: block;
+	width: 22px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	border-radius: 2px;
+	font-size: 13px;
+	background-color: rgb(247, 247, 247);
+	font-weight: 400;
+	line-height: 17px;
+	color: rgb(181, 181, 181);
+}
+
+.css-x67gaa {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	list-style: none;
+	margin-bottom: 18px;
+	display: inline-block;
+	margin-top: 9px;
+}
+
+.css-s5xdrg {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-17kh8wb {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-right: 8px;
+}
+
+.css-1buhy1h {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	margin-right: 4px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgb(51, 51, 51);
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.css-ryw54y {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	flex-shrink: 0;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: rgb(204, 204, 204);
+}
+
+.css-ypdml9 {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	width: 100%;
+	height: 30px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	color: rgb(153, 153, 153);
+	font-weight: 500;
+	font-size: 12px;
+	margin-bottom: 11px;
+}
+
+.css-jbgpyq {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	color: rgb(153, 153, 153);
+	font-weight: 500;
+	font-size: 12px;
+	width: 18;
+	height: 18;
+	fill: none;
+	stroke: rgb(153, 153, 153);
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	transform: rotate(90deg);
+	overflow: hidden;
+}
+
+.css-146937 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.css-16ixplb {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	width: 100%;
+	height: 52px;
+	overflow: hidden;
+}
+
+.css-1iwixyn {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 20px;
+	color: rgb(51, 51, 51);
+}
+
+.css-innaj4 {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	text-transform: none;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	width: 18;
+	height: 18;
+	fill: none;
+	stroke: rgb(153, 153, 153);
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	transition: transform 250ms ease-out 0s;
+	overflow: hidden;
+	transform: rotate(0deg);
+}
+
+.css-1kscq9s {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: block;
+	transition: all 250ms cubic-bezier(0.83, 0, 0.17, 1) 0s;
+	height: auto;
+	overflow: hidden;
+	max-height: 100vh;
+	opacity: 1;
+}
+
+.css-x67gaa {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: #333;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	list-style: none;
+	margin-bottom: 18px;
+	display: inline-block;
+	margin-top: 9px;
+}
+
+.css-s5xdrg {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-17kh8wb {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	font-size: 14px;
+	color: #333;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-right: 8px;
+}
+
+.css-1buhy1h {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	margin-right: 4px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgb(51, 51, 51);
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.css-ryw54y {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	flex-shrink: 0;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: rgb(204, 204, 204);
+}
+
+.css-9o2zup {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	background-color: transparent;
+	text-decoration: none;
+	/* display: flex; */
+	flex-direction: column;
+	/* height: 573px;*/
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+}
+
+.e1c07x4812 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	border-radius: 4px;
+	background-color: rgb(245, 245, 245);
+	width: 249px;
+	height: 320px;
+}
+
+.css-0 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.e1c07x4812 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	border-radius: 4px;
+	background-color: rgb(245, 245, 245);
+	width: 249px;
+	height: 320px;
+}
+
+.button-wrapper {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+    width: 250px;
+	height: 36px;
+	margin-top: 6px;
+	border: 1px solid rgb(221, 221, 221);
+	border-radius: 4px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.css-13xu5fn {
+	-webkit-text-size-adjust: 100%; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: visible;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	-webkit-appearance: button;
+	cursor: pointer;
+	border-radius: 0;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif;
+	color: rgb(51, 51, 51);
+	width: 100%;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	height: 36px;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.css-1kpzrna {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 8px 10px 0px 0px;
+}
+
+.css-1qd61ut {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: block;
+	padding-bottom: 2px;
+}
+
+.css-1dry2r1 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	max-height: 58px;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: normal;
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	display: inline-block;
+    width: 250px;
+}
+
+.css-1wejlc3 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding-top: 4px;
+	font-size: 12px;
+	color: rgb(153, 153, 153);
+	line-height: 18px;
+	letter-spacing: normal;
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.css-1tl7659 {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding-top: 8px;
+}
+
+.dimmed-price {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	white-space: nowrap;
+	font-size: 14px;
+	color: rgb(181, 181, 181);
+	text-decoration: line-through;
+}
+
+.discount-price {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding-top: 8px;
+}
+
+.dimmed-price {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	white-space: nowrap;
+	font-size: 14px;
+	color: rgb(181, 181, 181);
+	text-decoration: line-through;
+}
+
+.discount {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.css-19lkxd2 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	color: rgb(250, 98, 47);
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 24px;
+	white-space: nowrap;
+	letter-spacing: -0.5px;
+	margin-right: 7px;
+}
+
+.sales-price {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	color: rgb(51, 51, 51);
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 24px;
+	white-space: nowrap;
+	letter-spacing: -0.5px;
+}
+
+.css-xezqwk {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	padding-top: 8px;
+	font-weight: 500;
+	font-size: 13px;
+	color: rgb(153, 153, 153);
+	line-height: 17px;
+}
+
+.css-mz5g71 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 13px;
+	color: rgb(153, 153, 153);
+	line-height: 17px;
+	padding: 0;
+	box-sizing: border-box;
+	width: 15px;
+	height: 15px;
+	margin: 1px -1px 0px 0px;
+}
+
+.css-l610kl {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	font-size: 13px;
+	color: rgb(153, 153, 153);
+	line-height: 17px;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding-left: 3px;
+	font-weight: 400;
+}
+
+.css-18tpqqq2 {
+	-webkit-text-size-adjust: 100%;
+	font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum,
+		sans-serif; -
+	-swiper-theme-color: #007aff;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	white-space: nowrap;
+	display: block;
+	padding-top: 2px;
+	color: rgb(181, 181, 181);
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	text-decoration: line-through;
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}
+.
+{
+}

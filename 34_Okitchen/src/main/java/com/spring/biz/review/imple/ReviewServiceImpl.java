@@ -95,7 +95,7 @@ public class ReviewServiceImpl implements ReviewService{
 	
 	//해당 상품의 후기 총 개수
 	@Override
-	public Double reviewCount(ReviewVO vo) {
+	public String reviewCount(ReviewVO vo) {
 		System.out.println("문의수정 implement조회");
 		return  reviewDAO.reviewCount(vo);
 	}

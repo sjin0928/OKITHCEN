@@ -1,0 +1,90 @@
+.orderCheckoutContainer {
+	margin: 50px;
+}
+
+.orderTitle {
+	text-align: center;
+}
+
+.orderUser {
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+.orderDelieveryInfo, .orderMethod, .orderTotal {
+	margin-bottom: 70px;
+}
+
+.titleOrderDelievery {
+	margin-right: 94px;
+	float: left;
+}
+
+.contentOrderDelievery {
+	display: inline-block;
+	margin-bottom: 50px;
+}
+
+.changBtn {
+	border: 1px solid rgb(200, 200, 200);
+	background-color: white;
+	border-radius: 3px;
+	width: 60px;
+}
+
+.requestTitle {
+	float: left;
+}
+
+.contentRequest {
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.editBtn {
+	margin-top: 15px;
+	border: 1px solid rgb(200, 200, 200);
+	background-color: white;
+	border-radius: 3px;
+	width: 60px;
+}
+
+.receiverContent, .receiverPhoneNum, .receiverEmail {
+	margin-bottom: 15px;
+}
+
+#kgInicis, #tossPay {
+	display: flex;
+	margin-top: 10px;
+	width: 100%;
+	justify-content: height: 48px;
+	border: 1px solid rgb(226, 226, 226);
+}
+
+#kgInicis {
+	background-color: rgb(239, 239, 239);
+}
+
+#tossPay {
+	background-color: rgb(239, 239, 239);
+}
+
+.kgInicisButton {
+	width: 100px;
+	margin-left: 47%;
+}
+
+.tossPaymentsButton {
+	height: 50px;
+	margin-left: 45%;
+}
+
+#totalPayment {
+	text-align: center;
+	font-size: 30px;
+}
+
+.productCnt {
+	padding-left: 150px;
+	padding-right: 150px;
+}

@@ -10,8 +10,6 @@
 
 	<context:component-scan base-package="com.spring.biz.view" />
 	
-	
-	
 	<!-- 어노테이션 설정 방식을 사용 + 기타 다양한 객체 생성 -->
 	<mvc:annotation-driven />
 	
@@ -19,14 +17,8 @@
 		Resolver 명칭이 있는 객체명은 대체로 정해져 있음 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="10000000"></property>
+		<property name="maxUploadSize" value="20000000"></property>
 	</bean>	
-	
-	<!-- 정적 데이터 사용 위치 설정 (주소를 축약하여 사용) -->
-	<mvc:resources location="/resources/" mapping="/resources/**" />
-	<mvc:resources location="/resources/images/" mapping="/imgs/**" />
-	<mvc:resources location="/resources/css/" mapping="/css/**" />
-	<mvc:resources location="/resources/js/" mapping="/js/**" />
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

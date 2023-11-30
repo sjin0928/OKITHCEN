@@ -22,7 +22,7 @@
 	</div>
 
     <div class="container" style="display: block;">
-	<nav class="navbar navbar-expand-lg bg-light border-0" data-bs-theme="light">
+	<nav class="navbar navbar-expand-lg  border-0" data-bs-theme="light" id="navBar_container">
   <div>
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarColor03">
       <ul class="navbar-nav">
@@ -31,9 +31,6 @@
           <div class="dropdown-menu">
             <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList.do">상품목록</a>
             <a class="dropdown-item" href="${pageContext.request.contextPath}/product/registerProduct.do">상품등록</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
           </div>
         </li>
         <li class="nav-item dropdown" style="margin-right: 50px;">

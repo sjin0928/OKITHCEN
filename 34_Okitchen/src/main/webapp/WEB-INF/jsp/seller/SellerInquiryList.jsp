@@ -6,10 +6,15 @@
 <meta charset="UTF-8">
 <title>관리자페이지-[답변대기]상품문의</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<%
-    String seller = "seller1"; // 임의 아이디 넣기
-    session.setAttribute("seller", seller);
-%>
+<script>
+	window.onload = function() {
+		if("${sellerVO.sellerId}" === ("") ||"${sellerVO.sellerId}" === (null)){
+			alert("세션만료 : 다시 로그인 해주세요.")
+			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
+		}
+	}
+</script>
+
 <script>
 //문의 리스트 함수 호출
 $(document).ready(function () {
@@ -170,7 +175,7 @@ $(document).on("click", ".reply_button", function(e) {
  	// 데이터 속성으로 설정한 주문 아이디 가져오기
     const inqId = $(this).data("inqid");
     
-    let popWidth = 900; // 수정: 팝업 창 너비를 800으로 설정
+    let popWidth = 800; // 수정: 팝업 창 너비를 800으로 설정
     let popHeight = window.innerHeight; // 브라우저 높이와 동일하게 설정
 
     // 화면 중앙에 위치하도록 계산
@@ -187,7 +192,7 @@ $(document).on("click", ".reply_button", function(e) {
 //문의 업데이트버튼동작 : 문의수정
  function handleInquiryUpdate(inqId, productId) {
 
-    let popWidth = 900; // 수정: 팝업 창 너비를 800으로 설정
+    let popWidth = 800; // 수정: 팝업 창 너비를 800으로 설정
     let popHeight = window.innerHeight; // 브라우저 높이와 동일하게 설정
 
     // 화면 중앙에 위치하도록 계산

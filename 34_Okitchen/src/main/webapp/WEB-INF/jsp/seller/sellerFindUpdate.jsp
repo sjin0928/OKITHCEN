@@ -14,50 +14,59 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	function passwordCheck(){
-		if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
+		var regexPw= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+$/;
+		
+		if (!regexPw.test($("#sellerPassword").val())){
+			$("#pwCheckMessage").removeClass("Omessage");
+			$("#pwCheckMessage").html("비밀번호는 영어, 숫자, 특수문자를 모두 포함해야 합니다.");
+			$("#pwCheckMessage").addClass("Xmessage");
+			$("#sellerPassword").prop("readonly", false);
+			
+		} else if($("#sellerPassword").val() == "" || $("#confirmPassword").val() == ""){
 			$("#pwCheckMessage").html("비밀번호, 비밀번호 확인을 입력해주세요");
 			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").addClass("Xmessage");
-			$("#sellerPassword").prop("disabled", false);
+			$("#sellerPassword").prop("readonly", false);
 			
 		} else if ($("#sellerPassword").val().length < 8){
 			$("#pwCheckMessage").html("비밀번호는 8자리 이상 입력해주세요.(최대 20자)");
 			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").addClass("Xmessage");
-			$("#sellerPassword").prop("disabled", false);
+			$("#sellerPassword").prop("readonly", false);
 			
 		} else if ($("#sellerPassword").val().length > 20){
 			$("#pwCheckMessage").html("비밀번호는 20자리 이하 입력해주세요.");
 			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").addClass("Xmessage");
-			$("#sellerPassword").prop("disabled", false);
+			$("#sellerPassword").prop("readonly", false);
 			
 		} else if ($("#sellerPassword").val() === $("#confirmPassword").val()){
 			$("#pwCheckMessage").html("비밀번호가 일치합니다.");
 			$("#pwCheckMessage").removeClass("Xmessage");
 			$("#pwCheckMessage").addClass("Omessage");
-			$("#sellerPassword").prop("disabled", true);
+			$("#sellerPassword").prop("readonly", true);
 			
 		} else if ($("#sellerPassword").val() != $("#confirmPassword").val()){
 			$("#pwCheckMessage").html("비밀번호가 일치하지않습니다.");
 			$("#pwCheckMessage").removeClass("Omessage");
 			$("#pwCheckMessage").addClass("Xmessage");
-			$("#sellerPassword").prop("disabled", false);
+			$("#sellerPassword").prop("readonly", false);
 		}
 	}
-	
-	function check() {
-		if ($("#sellerPassword").val() == "") {
-			alert("비밀번호를 입력해주세요.");
+
+	function validateForm() {
+		var regexPw= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+$/;
+		
+		if (!regexPw.test($("#sellerPassword").val())) {
+			alert("비밀번호는 영어, 숫자, 특수문자를 혼합하여 입력해주세요.(8~20자)");
+			return false;
 		} else if($("#pwCheckMessage").html() != "비밀번호가 일치합니다.") {
 			alert ("비밀번호 확인 버튼을 클릭해주세요.");
+			return false;
 		} else {
-			$("#sellerPassword").prop("disabled", false);
-			$("#registNum").prop("disabled", false);
-			$("#passwordUpdate").submit();
+			return true;
 		}
-			
-	}	
+	}
 
 </script>
 </head>
@@ -71,31 +80,33 @@
 	<br><br>
 	<div>
 		
-		<form id="passwordUpdate" method="post" action="sellerPwUpdate.do">
+		<form id="passwordUpdate" method="post" action="sellerPwUpdate.do" onsubmit="return validateForm()">
 			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
 				<span class="input-group-text signIn-text">&nbsp아이디</span>
 				</div>
-			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${findVO.sellerId }" disabled>
+			<input type="text" class="form-control SignIninputBox" id="sellerId"name="sellerId" value="${findVO.sellerId }" readonly>
 			</div>
 			<p>변경하실 비밀번호를 입력해주세요</p>
 			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" id="sellerPassword" name="sellerPassword" >
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 입력해주세요(8~20자)" 
+					id="sellerPassword" name="sellerPassword" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+" required>
 			</div>
 			<div class="input-group mb-3 SLinput">
 				<div class="input-group-prepend">
 					<span class="input-group-text signIn-text">&nbsp비밀번호 확인</span>
 				</div>
-				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요" name="confirmPassword"  id="confirmPassword">
+				<input type="password" class="form-control SignIninputBox" placeholder="비밀번호를 확인해주세요"
+					name="confirmPassword"  id="confirmPassword" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]+" required>
 				<button class="btn" id="sellerPwConfirmBtn" type="button" onclick="passwordCheck()">확인</button>
 			</div>
 			<div id="messageBox">
 				<span id="pwCheckMessage"></span>
 			</div>
-			<input type="button" class="btn" id="sellerSigninBtn" onclick="check()" value="변경">
+			<input type="submit" class="btn" id="sellerSigninBtn" value="변경">
 		</form>
 		<hr>
 		<div id="sellerCancleBox">

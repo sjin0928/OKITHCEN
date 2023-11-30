@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderDetail">
+	<!-- 주문 테이블에 insert -->
+	<insert id="insertOrderDetail" parameterType="orderDetail">
+		INSERT INTO ORDER_DETAIL (ORDER_DETAIL_ID, ORDER_ID, QUANTITY, PRODUCT_PRICE, PRODUCT_ID, OPTION_ID, REVIEW_STATUS,USER_ID )
+	VALUES ((SELECT NVL(MAX(ORDER_DETAIL_ID) + 1,0) FROM ORDER_DETAIL), #{orderId}, #{quantity}, #{productPrice}, #{productId}, #{optionId}, #{reviewStatus},#{userId})
+	</insert>
+
+	<!-- 주문상세 내용 조회 -->
+	<select id="getOrderDetail" parameterType="string" resultType="orderDetail">
+	SELECT OD.*, P.* FROM ORDER_DETAIL OD JOIN PRODUCT P
+	ON OD.PRODUCT_ID = P.PRODUCT_ID WHERE OD.ORDER_ID = #{orderId}
+	</select>
+	
+	<!-- 재고 수량 - 수량만큼 -->
+	<update id="updateStock" parameterType="orderDetail">
+		UPDATE PRODUCT SET STOCK = STOCK - 
+			(SELECT QUANTITY FROM ORDER_DETAIL WHERE ORDER_ID = #{orderId} AND PRODUCT_ID = #{productId} )
+			WHERE PRODUCT_ID = #{productId}
+	</update>
+	
+	<!-- 주문완료 후 결제 완료 된것 카트에서 삭제 -->
+	<delete id="deleteCartAfterPay" parameterType="orderDetail">
+		DELETE FROM CART WHERE PRODUCT_ID IN 
+		(SELECT PRODUCT_ID FROM ORDER_DETAIL WHERE
+		ORDER_ID = #{orderId})
+	</delete>
+</mapper>

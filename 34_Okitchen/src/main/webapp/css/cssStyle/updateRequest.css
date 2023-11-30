@@ -1,0 +1,115 @@
+.requestTitle {
+	padding: 20px;
+}
+
+.receiverRequest {
+	padding-bottom: 25px;
+}
+
+.receiverInfo {
+	font-weight: 500;
+	font-size: 14px;
+	padding: 0px 0px 8px;
+	color: rgb(51, 51, 51);
+}
+
+.receiverName, .receiverPhone {
+	position: relative;
+	height: 44px;
+	width: 449px;
+	border: 1px solid rgb(220, 220, 220);
+	padding-left: 30px;
+	border-radius: 3px;
+}
+
+#deliveryForm {
+	margin: 30px;
+}
+
+.receiverPlace {
+	margin-top: 20px;
+}
+
+.doorLocation {
+	margin-bottom: 15px;
+}
+
+.resetRequest {
+	width: 50%;
+	text-align: center;
+	overflow: hidden;
+	padding: 10px 10px;
+	border-radius: 3px;
+	background-color: white;
+	border: 1px solid rgb(221, 221, 221);
+}
+
+.saveRequest {
+	width: 45%;
+	text-align: center;
+	overflow: hidden;
+	padding: 10px 10px;
+	border-radius: 3px;
+	background-color: rgb(231, 129, 17);
+	border: 1px solid rgb(231, 129, 17);
+	color: white;
+	font-weight: bold;
+}
+
+.entryPublic, .freeEntry, .callSecurity {
+	margin: 0px 0px 10px 0px;
+}
+
+.otherLocations textarea {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 15px 16px;
+	font-size: 16px;
+	line-height: 21px;
+	word-break: break-all; 2-:;
+	background: none;
+	background: n;
+	border-radius: 4px;
+	color: rgb(51, 51, 51);
+	outline: none;
+	resize: none;
+	border: 1px solid rgb(221, 221, 221);
+	margin-top: 20px;
+}
+
+.entryMehthodCall textarea {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 15px 16px;
+	font-size: 16px;
+	line-height: 21px;
+	word-break: break-all; 2-:;
+	background: none;
+	background: n;
+	border-radius: 4px;
+	color: rgb(51, 51, 51);
+	outline: none;
+	resize: none;
+	border: 1px solid rgb(221, 221, 221);
+	margin-top: 20px;
+}
+
+.otherEntryMethods textarea {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 15px 16px;
+	font-size: 16px;
+	line-height: 21px;
+	word-break: break-all; 2-:;
+	background: none;
+	background: n;
+	border-radius: 4px;
+	color: rgb(51, 51, 51);
+	outline: none;
+	resize: none;
+	border: 1px solid rgb(221, 221, 221);
+	margin-top: 20px;
+}

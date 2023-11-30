@@ -61,7 +61,7 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="/productList.jsp"
+	    	location.href="../product/productList.do";
 	    });
 	});
 </script>

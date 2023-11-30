@@ -17,7 +17,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	window.onload = function() {
-		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+		if("${sellerVO.sellerId}" === ("") ||"${sellerVO.sellerId}" === (null)){
 			alert("세션만료 : 다시 로그인 해주세요.")
 			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
 		}

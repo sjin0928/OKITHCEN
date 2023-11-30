@@ -1,186 +1,187 @@
 @charset "UTF-8";
-	#footer {
-	    display: flex;
-	    justify-content: center;
-	}
-	.footerInBox{
-		margin: 0px 50px;
-		min-width: 500px;
-	}
-	
-	/* 기타 seller css 하단에 추가 */
-	.sellerSignIn {
-		text-align: left;
-		border: 2px solid rgb(231, 129, 17, 0.5);
-		border-radius: 10px;
-		padding: 20px 40px;
-		margin: 0px 50px 10px;
-	}
-	#sellerSignInfirstBox {
-		margin-top: 10px;
-	}
-	/* 
-	.SignIninputBox {
-		max-width: 530px; 
-		color: #c0c0c023112917;
-	} */
+   #footer {
+       display: flex;
+       justify-content: center;
+   }
+   .footerInBox{
+      margin: 0px 50px;
+      min-width: 500px;
+   }
+   
+   /* 기타 seller css 하단에 추가 */
+   .sellerSignIn {
+      text-align: left;
+      border: 2px solid rgb(231, 129, 17, 0.5);
+      border-radius: 10px;
+      padding: 20px 40px;
+      margin: 0px 50px 10px;
+   }
+   #sellerSignInfirstBox {
+      margin-top: 10px;
+   }
+   /* 
+   .SignIninputBox {
+      max-width: 530px; 
+      color: #c0c0c023112917;
+   } */
 
-	.signIn-text {
-		height:45px;
-		width: 170px;
-	}
-	.login-text {
-		height:45px;
-		width: 130px;
-	}
-	.login-text {
-		height:45px;
-		width: 130px;
-	}
-	#sellerLoginBtn {
-		background-color: rgb(231, 129, 17); 
-		color: white; 
-		width: 150px;
-		border-radius: 5px;
-	}
+   .signIn-text {
+      height:45px;
+      width: 170px;
+   }
+   .login-text {
+      height:45px;
+      width: 130px;
+   }
+   .login-text {
+      height:45px;
+      width: 130px;
+   }
+   #sellerLoginBtn {
+      background-color: rgb(231, 129, 17); 
+      color: white; 
+      width: 150px;
+      border-radius: 5px;
+   }
 
-	#loginBox, #sellerSignContainer, #sellerFindContainer {
-		padding: 61px 0px 20px;
-		text-align:center;
-		
-	}
-	.SLinput {
-		justify-content: center;
-		padding: 0px 290px;
-	}
-	.SIinput {
-		justify-content: center;
-		padding: 0px 200px;
-	}
-	#sellerSignIn, #sellerFind {
-		background-color: rgb(231, 129, 17);
-		color: white;
-		width: 200px;
-		display: inline;
-		margin: 0px 20px 20px 20px;
-		border-radius: 5px;
-	}
-	#sellerSignInBox {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+   #loginBox, #sellerSignContainer, #sellerFindContainer {
+      padding: 61px 0px 20px;
+      text-align:center;
+      
+   }
+   .SLinput {
+      justify-content: center;
+      padding: 0px 290px;
+   }
+   .SIinput {
+      justify-content: center;
+      padding: 0px 200px;
+   }
+   #sellerSignIn, #sellerFind {
+      background-color: rgb(231, 129, 17);
+      color: white;
+      width: 200px;
+      display: inline;
+      margin: 0px 20px 20px 20px;
+      border-radius: 5px;
+   }
+   #sellerSignInBox {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+   }
 
-	.sellerTypeBox {
-		justify-content: flex-start;
-	}
-	
-	#sellerIdConfirmBtn, #sellerPwConfirmBtn, #sellerRegistConfirmBtn {
-		background-color: rgb(231, 129, 17); 
-		color: white; 
-		height: 45px;
-		width: 101px;
-		border-radius: 15x;
-	}
-	.typeLabel {
-		font-size: 15px;
-		margin: 0px 10px 0px 20px;
-		padding-top: 13px;
-	}
-	#corporation, #individual{
-		max-width:18px;		 
-	}
-	.Xmessage {color: #d20000;}
-	.Omessage {color: #0000d0;}
-	
-	#messageBox{
-		text-align: left;
-	}
-	
-	.mb-3 {
-		margin-top: 1rem !important;
-	}
+   .sellerTypeBox {
+      justify-content: flex-start;
+   }
+   
+   #sellerIdConfirmBtn, #sellerPwConfirmBtn, #sellerRegistConfirmBtn, #updateBtn, #statusUpdateBtn {
+      background-color: rgb(231, 129, 17); 
+      color: white; 
+      height: 45px;
+      width: 101px;
+      border-radius: 15x;
+      bor
+   }
+   .typeLabel {
+      font-size: 15px;
+      margin: 0px 10px 0px 20px;
+      padding-top: 13px;
+   }
+   #corporation, #individual{
+      max-width:18px;       
+   }
+   .Xmessage {color: #d20000;}
+   .Omessage {color: #0000d0;}
 
-	#sellerSigninBtn, #sellerCancle, #prodUpdateBtn{
-		background-color: rgb(231, 129, 17); 
-		color: white; 
-		width: 150px;
-		margin: 20px 10px; 
-		border-radius: 5px;
-	}
-	#sellerCancleBox {
-		display: flex;
-		justify-content: flex-end;
-		margin-right: 50px;
-	}
-	#findInputComName, #findInputEmail, #findInputRegistNum, #findInputId {
-		padding: 0px;
-	}
-	.findInput {
-		justify-content: center;
-	}
-	#pageContainer, #pageNumContainer, #center{
-		display: flex;
-		justify-content: center;
-	}
-	#categoryBox {
-		display: flex;
-		justify-content: center;
-	}
-	.countText {
-		text-align: right;
-		font-size: 0.9em;
-	}
-	#imgInput {
-		display: flex;
-		align-items: center;
-	}
-	#title-path {
-		text-align: left;
-	}
-	#priceBox, #stockBox {
-		background-color: #f7f7f9;
-	    background-clip: padding-box;
-	    border: 0px solid #ced4da;
-	    color: #55595c;
-		width: 240px;
-		padding: 12px 24px;
-	}
-	.inputTitle {
-		width: 150px;
-		text-align:center;
-	}
+   
+   .mb-3 {
+      margin-top: 1rem !important;
+   }
 
-	#stock, #stockBox {
-		margin-bottom : 16px;
-	}
-	.ladioBox {
-		padding: 12px 24px;
-		margin : 
-	}
-	.selectBox, #categoryName {
-		max-width: 170px;
-	}
-	#stockBox, #priceBox, #discountRate, #discountedPrice {
-		max-width: 240px;
-	}
-	.prodImg, .detailImg {
-		width: 170px;
-		margin-right: 0px;
-		border-style: none;
-	}
-	#imageFile:hover, #content-path:hover {
-		cursor: pointer;
-	}
-	.modalImg {
-		max-width: 100%;
-	}
-	#sellerFindIdGoBox {
-		display: flex;
-		justify-content: flex-end;
-		color : blue;
-		padding: 0px 290px;
-	}
-	#sellerFindIdGoBox > a {
-		color : #ff8040;
-	}
+   #sellerSigninBtn, #sellerCancle, #prodUpdateBtn{
+      background-color: rgb(231, 129, 17); 
+      color: white; 
+      width: 150px;
+      margin: 20px 10px; 
+      border-radius: 5px;
+   }
+   #sellerCancleBox {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 50px;
+   }
+   #findInputComName, #findInputEmail, #findInputRegistNum, #findInputId {
+      padding: 0px;
+   }
+   .findInput {
+      justify-content: center;
+   }
+   #pageContainer, #pageNumContainer, #center{
+      display: flex;
+      justify-content: center;
+   }
+   #categoryBox {
+      display: flex;
+      justify-content: center;
+   }
+   .countText {
+      text-align: right;
+      font-size: 0.9em;
+   }
+   #imgInput {
+      display: flex;
+      align-items: center;
+   }
+   #title-path {
+      text-align: left;
+   }
+   #priceBox, #stockBox {
+      background-color: #f7f7f9;
+       background-clip: padding-box;
+       border: 0px solid #ced4da;
+       color: #55595c;
+      width: 240px;
+      padding: 12px 24px;
+   }
+   .inputTitle {
+      width: 150px;
+      text-align:center;
+   }
+
+   #stock, #stockBox {
+      margin-bottom : 16px;
+   }
+   .ladioBox {
+      padding: 12px 24px;
+      margin : 
+   }
+   .selectBox, #categoryName {
+      max-width: 170px;
+   }
+   #stockBox, #priceBox, #discountRate, #discountedPrice {
+      max-width: 240px;
+   }
+   .prodImg, .detailImg {
+      width: 170px;
+      margin-right: 0px;
+      border-style: none;
+   }
+   #imageFile:hover, #content-path:hover {
+      cursor: pointer;
+   }
+   .modalImg {
+      max-width: 100%;
+   }
+   #sellerFindIdGoBox {
+      display: flex;
+      justify-content: flex-end;
+      color : blue;
+      padding: 0px 290px;
+   }
+   #sellerFindIdGoBox > a {
+      color : #ff8040;
+   }
+   #navBar_container{
+    background-color :white; 
+   }

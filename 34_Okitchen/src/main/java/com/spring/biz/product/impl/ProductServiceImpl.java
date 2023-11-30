@@ -69,6 +69,37 @@ public class ProductServiceImpl implements ProductService{
 	public List<RegisterProdVO> selectDiscList() throws Exception {
 		return productDAO.selectDiscList();
 	}
+	
+	//리뷰 순으로 조회
+	@Override
+	public List<RegisterProdVO> selectReviewList() throws Exception {
+		return productDAO.selectReviewList();
+	}
+	
+	//판매량 순으로 조회
+	@Override
+	public List<RegisterProdVO> selectBestList() throws Exception {
+		return productDAO.selectBestList();
+	}
+	
+	// 통합 검색-----------------------
+	@Override
+	public List<RegisterProdVO> selectSearchList(String keyword) {
+		return productDAO.selectSearchList(keyword);
+	}
+	// -----------------------
+	
+	//리뷰 수 카운트
+	@Override
+	public String reviewCount(RegisterProdVO vo) throws Exception {
+		return productDAO.reviewCount(vo);
+	}
+	
+	//카테고리별 상품조회
+	@Override
+	public List<RegisterProdVO> selectCategoryList(String category) {
+		return productDAO.selectCategoryList(category);
+	}
 
 	@Override
 	public void sellerUpdateProduct(RegisterProdVO inProdVO) throws Exception  {
@@ -92,6 +123,10 @@ public class ProductServiceImpl implements ProductService{
 	public void productStatusUpdate(RegisterProdVO vo) {
 		productDAO.productStatusUpdate(vo);
 	}
+
+
+	
+	
 
 	
 }

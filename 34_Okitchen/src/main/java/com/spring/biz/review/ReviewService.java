@@ -23,5 +23,5 @@ public interface ReviewService {
 	ReviewVO reviewUpdateView(ReviewVO vo); //리뷰수정 시 전에 작성했던 내용을 나타내주기
 	void reviewUpdate(ReviewVO vo);
 	InquiryVO inquiryUpdateView(InquiryVO ivo); //문의수정 시 작성했던 내용조회
-	Double reviewCount(ReviewVO vo); //해당 상품의 총개수 구하기
+	String reviewCount(ReviewVO vo); //해당 상품의 총개수 구하기
 }

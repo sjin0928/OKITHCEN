@@ -12,16 +12,15 @@
 			, EXPIRATION_DATE, CAUTION, NOTIFICATION, CATEGORY_NAME, STOCK
 			, DISCOUNTED_PRICE)
 		VALUES (
-			<!-- 판매자 임시데이터 사용 (추후 수정해야됨) -->
-			PRODUCT_SEQ.NEXTVAL, #{sellerId}, #{brand}, #{title}, #{image}
+			(SELECT NVL(MAX(PRODUCT_ID), 0) + 1 FROM PRODUCT)
+			, #{sellerId}, #{brand}, #{title}, #{image}
 			, #{price}, #{discountRate}, #{content}, '승인대기'
 			, '비전시', SYSDATE, #{optionCheck}, #{origin}, #{manufacturingDate}
 			, #{expirationDate}, #{caution}, #{notification}, #{categoryName}, #{stock}
 			, #{discountedPrice})
 	<selectKey keyProperty="productId" resultType="int" order="AFTER">
-		SELECT PRODUCT_SEQ.CURRVAL FROM DUAL
+		SELECT MAX(PRODUCT_ID) FROM PRODUCT ORDER BY PRODUCT_ID DESC
 	</selectKey>
-	
 	</insert>
 	
 	<!-- 상품사진테이블에 추가하기 -->

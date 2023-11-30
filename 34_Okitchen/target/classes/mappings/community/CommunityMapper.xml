@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="communityRecipeDAO"> <!-- recipeInfo -->
+	
+	
+	<!-- 게시물 하나 작성하기 ( selectKey값 주는 방식이 더 널리 통용된다. )-->
+	<insert id="insertCommunity" parameterType="communityRecipe" >
+    	INSERT INTO COMMUNITY (COMMUNITY_ID, USER_ID, COMM_HIT, COMM_DATE, COMM_IMAGE, PRODUCT_ID, COMM_CONTENT, TITLE)
+    	VALUES (COMMUNITY_SEQ.NEXTVAL, #{userId}, 0, SYSDATE, #{commImage}, #{productId}, #{commContent}, #{title})
+    	<selectKey keyProperty="communityId" order="AFTER" resultType="int">
+        SELECT COMMUNITY_SEQ.CURRVAL FROM DUAL
+    	</selectKey>
+	</insert>
+	
+	<!-- 기타 사진 DB저장하기 -->
+	<insert id="insertRecipePhoto" parameterType="communityRecipe">
+		INSERT INTO RECIPE_INFO (
+		    PIC_ID, COMMUNITY_ID, RECIPE_PHOTO)
+		VALUES (
+		    RECIPE_INFO_SEQ.NEXTVAL, #{communityId}, #{recipePhoto})
+	</insert>
+	
+	
+	<!-- 게시물 하나 상세 조회 : COMMUNITY 테이블 것만-->
+	<select id="getCommunityOne" parameterType="communityRecipe" resultType="communityRecipe">
+		SELECT *
+		FROM COMMUNITY 
+		WHERE COMMUNITY_ID = #{communityId}
+	</select>
+	
+	<!-- 게시물 하나 상세 조회 : 상품 id, 상품이름, 이미지-->
+	<select id="getCommunityProduct" parameterType="communityRecipe" resultType="registerProd">
+		SELECT P.PRODUCT_ID, P.TITLE, P.IMAGE
+		FROM PRODUCT P
+		INNER JOIN COMMUNITY C ON P.PRODUCT_ID = C.PRODUCT_ID
+		WHERE C.COMMUNITY_ID = #{communityId}
+	</select>
+	
+	
+	<!-- 상품 이름으로 검색 조회 (파라미터를 string으로 해야하나?)-->
+	<select id="selectProductByName" parameterType="string" resultType="product" >
+		SELECT *
+		FROM PRODUCT 
+		WHERE TITLE LIKE '%'|| #{searchKeyword} ||'%'
+		ORDER BY PRODUCT_ID
+	</select>
+	
+	
+	<!-- 게시물 전체 조회 -->
+	<select id="getcommunityList" resultType="community"> 
+		SELECT COMMUNITY_ID, USER_ID, COMM_HIT, COMM_DATE, COMM_IMAGE, PRODUCT_ID, COMM_CONTENT, TITLE
+		FROM COMMUNITY
+		ORDER BY COMMUNITY_ID DESC
+	</select>
+	
+	<!-- 게시물 전체 날짜순 조회 -->
+	<select id="getCommunityListByDate" resultType="communityRecipe"> 
+		SELECT COMMUNITY_ID, USER_ID, COMM_HIT, COMM_DATE, COMM_IMAGE, PRODUCT_ID, COMM_CONTENT, TITLE
+		FROM COMMUNITY
+		ORDER BY COMM_DATE DESC
+	</select>
+	
+	<!-- 게시물 수정 --> <!-- 복잡. 시간 있을 때 따로 고민해볼 것 -->
+	<update id="updateCommunity" parameterType="community">
+    	<!-- 커뮤니티쪽 수정 -->
+	    UPDATE COMMUNITY
+	    SET COMM_IMAGE = #{commImage}
+	    	PRODUCT_ID = #{productId}
+	    	COMM_CONTENT = #{commContent}
+	    	TITLE = #{title}
+	    WHERE COMMUNITY_ID = #{communityId};
+    
+   		<!-- 기타 이미지 수정 -->
+	    UPDATE RECIPE_INFO
+	    SET PRODUCT_PHOTO = #{productPhoto}
+	    WHERE COMMUNITY_ID = #{communityId};
+	    
+	    <!-- 상품쪽 정보 수정 -->
+	</update>
+	
+	
+	
+	
+	<!-- 게시물 삭제 -->
+	<delete id="deleteCommunity" parameterType="community">
+		DELETE FROM COMMUNITY
+		WHERE COMMUNITY_ID = ${communityId}
+	</delete>
+	
+	
+	<!-- 기타 사진들 가져오기 -->
+	<select id="getRecipePhoto" parameterType="community" resultType="recipeInfo">
+		SELECT PIC_ID, RECIPE_PHOTO
+		FROM RECIPE_INFO R
+		WHERE R.COMMUNITY_ID = #{communityId}
+	</select>
+	
+	<!-- 대표 사진 가져오기 -->
+	<select id="getCommunityPhoto" parameterType="community" resultType="community">
+		SELECT COMM_IMAGE
+		FROM COMMUNITY C
+		WHERE C.COMMUNITY_ID = #{communityId}
+	</select>
+	
+	<!-- 게시물 조회수 증가 -->
+	<update id="viewCount" parameterType="community" >
+		UPDATE COMMUNITY
+		SET COMM_HIT = COMM_HIT + 1
+		WHERE COMMUNITY_ID = #{communityID}
+	</update>
+	
+	
+	<!-- 북마크 추가 -->
+	<insert id="communityPick" parameterType="communityPicked">
+		INSERT INTO COMMUNITY_PICKED (
+		    COMM_PICK_ID, COMMUNITY_ID, USER_ID)
+		VALUES (
+		    COMMUNITY_PICKED_SEQ.NEXTVAL, #{communityId}, #{userId}
+		)
+	</insert>
+	<!-- 북마크 삭제 -->
+	<delete id="communityPickDelete" parameterType="communityPicked" >
+		DELETE FROM COMMUNITY_PICKED
+		WHERE USER_ID = #{userId}
+		AND COMMUNITY_ID = #{communityId}
+	</delete>
+	
+	<!-- 북마크 본인확인 CSS -->
+	<select id="communityPickCheck" parameterType="int" resultType="communityRecipe">
+		SELECT USER_ID
+		FROM COMMUNITY_PICKED
+		WHERE COMMUNITY_ID = #{communityId}
+	</select>
+	
+	<!-- 내가 북마크한 게시물 가져오기 -->
+	<select id="myPickedCommunity" parameterType="communityRecipe" resultType="communityRecipe">
+		SELECT C.COMMUNITY_ID, C.USER_ID, C.COMM_HIT, C.COMM_DATE, C.COMM_IMAGE, C.PRODUCT_ID, C.COMM_CONTENT, C.TITLE
+		FROM COMMUNITY C
+		INNER JOIN COMMUNITY_PICKED CP
+		ON C.COMMUNITY_ID = CP.COMMUNITY_ID
+		WHERE CP.USER_ID = #{userId}
+	</select>
+	
+	
+	<!-- 내가 쓴 게시물 가져오기 -->
+	<select id="getMyCommunity" parameterType="community" resultType="community">
+		SELECT COMMUNITY_ID, USER_ID, COMM_HIT, COMM_DATE, COMM_IMAGE, PRODUCT_ID, COMM_CONTENT, TITLE
+		FROM COMMUNITY 
+		WHERE USER_ID = #{userId}
+	</select>
+		
+	
+</mapper>

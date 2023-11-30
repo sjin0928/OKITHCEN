@@ -128,6 +128,12 @@ public class InquiryDAO {
 		return mybatis.selectOne("inquiryDAO.inquiryCount", vo); 
 	}
 
+	//문의삭제시 상태 업데이트
+	public void inqAnsweredUpdate(InquiryVO vo) {
+		mybatis.update("sellerDAO.inqAnsweredUpdate", vo);
+		
+	}
+
 
 
 

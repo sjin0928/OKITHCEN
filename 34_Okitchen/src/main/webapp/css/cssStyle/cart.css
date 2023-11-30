@@ -1,0 +1,167 @@
+.cartTitle {
+	margin-top: 30px;
+}
+
+#orderForm {
+	margin-top: 50px;
+}
+
+.cartMyContent {
+	display: inline-block;
+	width: 1000px;
+    /* float: inline-start; */
+}
+
+.cartMyproduct {
+	margin-right: 30px;
+}
+
+.cart_receipt {
+	display: inline-block;
+	padding: 30px;
+	border: 1px solid rgba(200, 200, 200, 0.8);
+	border-radius: 3px;
+	margin-left: 50px;
+    position: sticky;
+    text-align: center;
+    font-weight: 350;
+}
+
+.cartTitle h2 {
+	text-align: center;
+}
+
+.cartContent {
+	justify-content: space-around;
+	padding-bottom: 50px;
+	margin-left:350px;
+}
+
+.cartProductHide {
+	display: none;
+}
+
+.allCheckbox {
+	border-radius: 50%;
+}
+
+.cartSelectReset {
+	margin-left: 30px;
+	border: none;
+}
+
+.bi-chevron-up {
+	float: right;
+}
+
+.cartProductImg img {
+	width: 100px;
+	height: 100px;
+}
+
+ul {
+	list-style: none;
+}
+
+.checkboxBtn {
+	display: inline-block;
+}
+
+.checkProductBtn {
+	display: inline-block;
+}
+
+#deleteCartItem {
+	border: none;
+	background-color: white;
+	color: darkgrey;
+	margin-left:20px;
+}
+
+.receiptPrice span {
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.delieveryChange {
+	margin-bottom: 10px;
+}
+
+.paymentBtn {
+	margin-top: 10px;
+}
+
+.cartProductName, .cartProductCnt, .productPrice, .cart_checkbox, .count
+	{
+	display: inline-block;
+}
+
+.productPrice {
+	margin-left: 20px;
+}
+
+.cartProductCnt {
+	margin: 20px;
+}
+
+#decreaseBtn {
+	border: none;
+	background-color: white;
+	font-size: 25px;
+}
+
+#increaseBtn {
+	border: none;
+	background-color: white;
+	font-size: 20px;
+}
+
+.checkboxContainer {
+	display: inline-block;
+	position: relative;
+}
+
+.checkboxBtn, .checkProductBtn {
+	cursor: pointer;
+}
+
+.checkboxBtn svg {
+	pointer-events: none;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+
+th, td {
+	text-align: left;
+	padding-right: 20px
+}
+
+.delieveryChange {
+	border: 1px solid rgba(231, 129, 17, 1.0);
+	width: 200px;
+	background-color: white;
+	color: rgba(231, 129, 17, 1.0);
+	border-radius: 3px;
+}
+
+.receiptPrice {
+	background-color: rgb(250, 250, 250);
+	padding: 19px 18px 18px 20px;
+}
+
+.paymentBtn {
+	width: 200px;
+	padding: 15px;
+	background-color: rgb(231, 129, 17);
+	border: rgb(231, 129, 17);
+	color: white;
+	font-weight: 700;
+}
+
+.cartProductName {
+	margin-left: 30px;
+	font-weight: bold;
+}

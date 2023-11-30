@@ -13,7 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	window.onload = function() {
-		if("${sellerVO}" == ("") ||"${sellerVO}" == (null)){
+		if("${sellerVO.sellerId}" === ("") ||"${sellerVO.sellerId}" === (null)){
 			alert("세션만료 : 다시 로그인 해주세요.")
 			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
 		}
@@ -27,41 +27,67 @@
 	#error {
 		color: red;
 	}
+	
+	#container {
+    margin: auto; /* 수평 가운데 정렬을 위해 margin을 auto로 설정합니다. */
+    width: 50%; /* 필요에 따라 적절한 너비를 지정할 수 있습니다. */
+}
+
+/* 아래의 스타일은 선택적으로 적용할 수 있습니다. */
+#regi_form {
+    max-width: 100%; /* 폼의 최대 너비를 지정합니다. */
+    margin: 0 auto; /* 폼을 수평으로 가운데 정렬합니다. */
+    padding: 40px; /* 내용 주위에 간격을 만듭니다. */
+    border: 1px solid #ddd; /* 폼 주위에 테두리를 추가합니다. */
+    border-radius: 8px; /* 테두리의 모서리를 둥글게 만듭니다. */
+}
+	
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* 두 div 사이의 간격을 조절할 수 있는 값입니다. */
+}
+
+.input-label {
+    margin-right: 10px; /* 레이블과 선택 상자 사이의 간격 조정 */
+}
+
+.input-box.category {
+    flex: 0.5; /* 카테고리 박스가 남은 공간을 차지하도록 설정 */
+}
+.input-group-text {
+    flex: 0.07;
+}
+
+.button-container {
+        text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    }
+
+    .reg-confirm {
+        margin-top: 10px; /* 위쪽 여백을 조절하여 버튼을 조금 아래로 이동시킵니다. */
+    }
+.input-group .form-control {
+        width: 100%;
+    }
+
+   .text_cnt {
+       margin-top: 15px; /* 필요한 만큼의 간격을 설정하세요 */
+   }
+    
+.date-group {
+	display: inline-flex;
+}    
+.date-group .input-line{
+	margin-right: 20px;
+}    
+
 </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
 	$(document).ready(function(){
-		
-		/* //옵션 라디오 버튼 변경 이벤트 리스너
-		$('input[name="optionCheck"]').change(function() {
-			var selectedOption = $('input[name="optionCheck"]:checked').val();
-			var additionalInfoName = $('input[name="optionName"]');
-			var additionalInfoStock = $('input[name="optionStock"]');
-			var additionalInfoPrice = $('input[name="optionPrice"]');
-			
-			if (selectedOption === 'Y') {
-				// 옵션이 있는 경우, 추가정보를 입력할 수 있는 input 표시
-				alert("옵션에 대한 추가정보를 입력합니다.");
-				$('#optionInfoContainer').show();
-				additionalInfoName.val('');
-				additionalInfoStock.val('');
-                additionalInfoPrice.val('');
-			} else {
-				// 옵션이 없는 경우, 추가 정보 input을 숨김
-				$('#optionInfoContainer').hide();
-				
-				// 입력됐던 값 초기화
-                additionalInfoName.val('null');
-                additionalInfoStock.val(-1); //int
-                additionalInfoPrice.val(-1); //int
-                // 빈문자열로 초기화하는데 int값으로 저장되어야하니까 추후 오류발생할 수도 있음
-                // 오류 발생하는 경우 유효한 기본값 '-1'로 설정. 서버에서 처리해주면 될듯  
-			}
-		}); */
-			
 		//할인 라디오 버튼 변경 이벤트 리스너
 		$('input[name="discount"]').change(function(){
-			alert("버튼 클릭됨");
 			var selectedOption = $('input[name="discount"]:checked').val();		
 			var additionalInfoDisc = $('input[name="discountRate"]');
 			
@@ -103,16 +129,6 @@
                 alert("작성 가능 문자수를 초과하셨습니다")
             }
         })
-        
-        /* //옵션상품명
-		$('#optionName').on('keyup', function() {
-            $('#optionName_text_cnt').html("("+$(this).val().length+" / 25)");
-            if($(this).val().length > 25) {
-                $(this).val($(this).val().substring(0, 25));
-                $('#optionName_text_cnt').html("(25 / 25)");
-                alert("작성 가능 문자수를 초과하셨습니다")
-            }
-        }) */
         
 		//주의사항
 		$('#caution').on('keyup', function() {
@@ -210,14 +226,14 @@
 	
 </script>
 </head>
-
 <body>
-<!-- header -->
-<%@ include file="../../../../css/headerFooter/sellerLogoutHeader.jsp" %>
+
+	<!-- header -->
+	<%@ include file="/css/headerFooter/sellerLogoutHeader.jsp" %>
+
 	<div id="container">
-		<h1>상품등록 [registerProduct.jsp]</h1>
 		<hr>
-		<form class="regi-form" action="insertProduct.do" method="post"
+		<form class="regi-form" action="insertProduct.do" method="post" id="regi_form"
 			enctype="multipart/form-data">
 			<div class="input-line">
 				<div class="input-label">
@@ -225,87 +241,56 @@
 				</div>
 				<div class="input-box category">
 					<div class="input" id="input2">
-						<select name="categoryName" id="categoryName">
+						<select class="form-select" id="categoryName" name="categoryName">
 							<option disabled selected>선택</option>
 							<option value="vege">채소</option>
 							<option value="fruit">과일</option>
 							<option value="meat">정육/계란</option>
 							<option value="seafood">해산물</option>
 							<option value="snack">간식/디저트</option>
-							<option value="bakary">베이커리</option>
+							<option value="bakery">베이커리</option>
 							<option value="seasoning">조미료</option>
 							<option value="drink">생수/음료</option>
 							<option value="mealkit">간편식/샐러드</option>
 						</select>
+						
 					</div>
 				</div>
 			</div>
 			<div class="input-line">
-				<div class="input-label">
-					<label>브랜드명</label>
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="brand" id="basic-addon1">브랜드명</label>
+				  <input type="text" class="form-control" id="brand" name="brand" placeholder="브랜드명을 입력해주세요." required>
+				  <div id="brand_text_cnt" class="text_cnt">(0 / 25)</div>
 				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="text" name="brand" id="brand"
-							placeholder="브랜드명을 입력해주세요." required>
-					</div>
-					<div id="brand_text_cnt" class="text_cnt">(0 / 25)</div>
-					<div class="error-msg title"></div>
-				</div>
-				<div class="btn-space"></div>
 			</div>
  			<div class="input-line">
-				<div class="input-label">
-					<label>상품명</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="text" name="title" id="title"
-							placeholder="상품명을 입력해주세요." required>
-					</div>
-					<div id="title_text_cnt" class="text_cnt">(0 / 50)</div>
-					<div class="error-msg title"></div>
-				</div>
-				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>상품설명</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<textarea name="content" id="content" rows="10" cols="40"
-							placeholder="상품에 대한 설명을 입력해주세요." required></textarea>
-					</div>
-					<div id="content_text_cnt" class="text_cnt">(0 / 500)</div>
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="brand" id="basic-addon1">상품명</label>
+				  <input type="text" class="form-control" name="title" id="title" placeholder="상품명을 입력해주세요." required>
+				  <div id="title_text_cnt" class="text_cnt">(0 / 50)</div>
 				</div>
 			</div>
 			<div class="input-line">
-				<div class="input-label">
-					<label>상품가격</label>
+				<div class="input-group">
+				  <span class="input-group-text">상품설명</span>
+				  <textarea name="content" id="content" rows="10" cols="40"
+				  	class="form-control" placeholder="상품에 대한 설명을 입력해주세요." required></textarea>
+				  <div id="content_text_cnt" class="text_cnt" style="margin-top: 235px;" >(0 / 500)</div>	
 				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="number" name="price" id="input"
-							placeholder="가격을 입력해주세요." required>
-					</div>
-					<div class="error-msg price"></div>
-				</div>
-				<div class="btn-space"></div>
 			</div>
 			<div class="input-line">
-				<div class="input-label">
-					<label>대표이미지</label>
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="brand" id="basic-addon1">상품가격</label>
+				  <input type="number" name="price" id="input" placeholder="가격을 입력해주세요." required
+				  	class="form-control">
 				</div>
-				<div class="input-box">
-					<div class="input">
-						<div class="upload-input repr-path">
-							<input type="file" name="imageFile" id="title-path" required>
-						</div>
-					</div>
-					<div class="error-msg file"></div>
+			</div>
+			<div class="input-line">
+				<div class="input-group mb-3">
+					<label class="input-group-text" for="" id="basic-addon1">대표이미지</label>
+				  <input type="file" name="imageFile" id="title-path" class="form-control" required>
 				</div>
-				<div class="btn-space"></div>
 			</div>
 			<div class="input-line">
 				<div class="input-label">
@@ -341,105 +326,82 @@
 			<h3>상품상세정보</h3>
 
 			<div class="input-line">
-				<div class="input-label">
-					<label>원산지</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="text" name="origin" id="origin"
-							placeholder="원산지를 입력해주세요.">
-					</div>
-					<div class="error-msg origin"></div>
-					<div id="origin_text_cnt" class="text_cnt">(0 / 15)</div>
-				</div>
-				<div class="btn-space"></div>
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="brand" id="basic-addon1">원산지</label>
+				  <input type="text" class="form-control" name="origin" id="origin" placeholder="원산지를 입력해주세요." required>
+				  <div id="origin_text_cnt" class="text_cnt">(0 / 15)</div>
+				</div>				
 			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>제조일자</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="date" name="manufacturingDate" required>
+			<div class="date-group">
+				<div class="input-line">
+					<div class="input-label">
+						<label>제조일자</label>
 					</div>
-					<div class="error-msg manufact"></div>
-				</div>
-				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>유통기한</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="date" name="expirationDate" required>
-					</div>
-					<div class="error-msg expire"></div>
-				</div>
-				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>상품재고수량</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<input type="number" name="stock" placeholder="재고를 입력해주세요." required>
-					</div>
-					<div class="error-msg stock"></div>
-				</div>
-				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>주의사항</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<textarea name="caution" id="caution" rows="10" cols="40"
-							placeholder="상품 관련 주의사항을 입력해주세요." required></textarea>
-					</div>
-					<div class="error-msg caution"></div>
-					<div id="caution_text_cnt" class="text_cnt">(0 / 500)</div>
-				</div>
-				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>안내사항</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<textarea name="notification" id="notification" rows="10"
-							cols="40" placeholder="상품 안내사항을 입력해주세요." required></textarea>
-					</div>
-					<div class="error-msg noti"></div>
-					<div id="notification_text_cnt" class="text_cnt">(0 / 1500)</div>
-				</div>
-				<div class="btn-space"></div>
-			</div>
-			<div class="input-line">
-				<div class="input-label">
-					<label>상세이미지</label>
-				</div>
-				<div class="input-box">
-					<div class="input">
-						<div class="upload-input repr-path">
-							<input type="file" name="productPhotoFiles" id="content-path" multiple required>
+					<div class="input-box">
+						<div class="input">
+							<input type="date" name="manufacturingDate" required>
 						</div>
+						<div class="error-msg manufact"></div>
 					</div>
-					<div class="error-msg contentFile"></div>
+					<div class="btn-space"></div>
 				</div>
-				<div class="btn-space"></div>
+				<div class="input-line">
+					<div class="input-label">
+						<label>유통기한</label>
+					</div>
+					<div class="input-box">
+						<div class="input">
+							<input type="date" name="expirationDate" required>
+						</div>
+						<div class="error-msg expire"></div>
+					</div>
+					<div class="btn-space"></div>
+				</div>
+			</div>
+			<div class="input-line">
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="brand" id="basic-addon1">상품재고수량</label>
+				  <input type="number" class="form-control"  name="stock" placeholder="재고를 입력해주세요." required>
+				</div>
+			</div>
+			<div class="input-line">
+				<div class="input-group">
+				  <span class="input-group-text">주의사항</span>
+				  <textarea name="caution" id="caution" rows="10" cols="40"
+				  	class="form-control" placeholder="상품 주의사항을 입력해주세요." required></textarea>
+				  <div id="caution_text_cnt" class="text_cnt" style="margin-top: 235px;">
+				  	(0 / 500)
+			  	  </div>	
+				</div>				
+			</div>
+			
+			
+			<div class="input-line">
+				<div class="input-group">
+				  <span class="input-group-text">안내사항</span>
+				  <textarea name="notification" id="notification"  rows="10" cols="40"
+				  	class="form-control" placeholder="상품 안내사항을 입력해주세요." required></textarea>
+				  <div id="notification_text_cnt" class="text_cnt" style="margin-top: 235px;">
+				  	(0 / 1500)
+		  		  </div>	
+				</div>				
+			</div>
+			<div class="input-line">
+				<div class="input-group mb-3">
+					<label class="input-group-text" for="" id="basic-addon1">상세이미지</label>
+				  <input type="file" name="productPhotoFiles" id="content-path" multiple required class="form-control">
+				</div>				
 			</div> 
-            <input type="submit" class="reg-confirm" value="등록하기" onclick="submitForm()">
+			<div class="button-container">
+            	<input type="submit" class="reg-confirm btn btn-outline-warning" 
+            		style="--bs-btn-hover-color: white;"
+            		value="등록하기" onclick="submitForm()">
+           	</div>
 		</form>
-
 	</div>
 
-
 <!-- footer -->
-	<%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>
+<%@ include file="../../../../css/headerFooter/sellerFooter.jsp" %>
 
 </body>
 </html>

@@ -17,7 +17,7 @@
 
 <script>
 	window.onload = function() {
-		if("${sellerVO}" == ("") || "${sellerVO}" == (null)){
+		if("${sellerVO.sellerId}" === ("") ||"${sellerVO.sellerId}" === (null)){
 			alert("세션만료 : 다시 로그인 해주세요.")
 			location.href="${pageContext.request.contextPath}/sellerLogin.jsp";
 		}
@@ -458,7 +458,7 @@
 <script>
 	$(document).ready(function() {
 	    $("#sellerCancle").on("click", function() {
-	    	location.href="${pageContext.request.contextPath}/product/prodDetail.do?productId=${prodVO.productId}";
+	    	location.href="${pageContext.request.contextPath}/product/prodDetailSeller.do?productId=${prodVO.productId}";
 	    });
 	});
 </script>

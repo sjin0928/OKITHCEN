@@ -1,6 +1,7 @@
 package com.spring.biz.review.imple;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -88,7 +89,7 @@ public class ReviewDAO {
 		mybatis.insert("reviewDAO.updateReviewStatus", vo);
 	}
 	//해당 상품의 총 후기 개수
-	public Double reviewCount(ReviewVO vo) {
+	public String reviewCount(ReviewVO vo) {
 		System.out.println("===> MyBatis JDBC로 reviewCount() 실행");
 		return mybatis.selectOne("reviewDAO.reviewCount", vo);
 	}

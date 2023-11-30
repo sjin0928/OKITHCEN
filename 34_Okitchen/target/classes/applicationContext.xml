@@ -8,8 +8,6 @@
 
 	<context:component-scan base-package="com.spring.biz" />
 	
-	<!-- 암호화 -->
-	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 	
 		<!-- === Spring JDBC 관련 설정 ==== -->
 	<!-- DataSource 설정 -->
@@ -35,10 +33,11 @@
 		<property name="mapperLocations" value="classpath:mappings/**/*Mapper.xml"/>
 	</bean>
 	
- 	<bean class="org.mybatis.spring.SqlSessionTemplate">
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 	
 </beans>
 

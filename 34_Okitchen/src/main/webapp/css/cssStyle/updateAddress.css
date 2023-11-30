@@ -1,0 +1,73 @@
+.editDelieveryContainer {
+	margin: 30px;
+}
+
+.editDelieveryDetail {
+	padding: 20px;
+}
+
+.addressDiv {
+	margin-top: 20px;
+}
+
+#addressInputBtn {
+	border: 1px solid rgba(221, 221, 221, 0.8);
+	background-color: white;
+	padding: 5px 10px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	transform: translate(366px, 95px);
+}
+
+#sample6_address, #sample6_detailAddress {
+	display: flex;
+	width: 300px;
+	padding: 5px 10px;
+}
+
+.editDelieveryContent span {
+	color: rgb(102, 102, 102);
+	height: 22px;
+	padding: 1px 8px 0px;
+	margin-bottom: 11px;
+	border-radius: 11px;
+	font-weight: 500px;
+	font-size: 12px;
+	line-height: 22px;
+	display: inline-block;
+	background-color: rgb(247, 247, 247);
+	vertical-align: top
+}
+
+.editReceiver {
+	margin-top: 161px;
+}
+
+.editDelieveryDetail, .editReceiver, .editPhoneNum {
+	padding-bottom: 24px;
+}
+
+.addressDetailInfo {
+	padding-top: 0px;
+	font-size: 14px;
+}
+
+.addressDiv {
+	position: relative;
+	height: 44px
+}
+
+#saveUpdateAddressBtn {
+	border: 1px solid rgb(231, 129, 17);
+	background-color: rgb(231, 129, 17);
+	color: white;
+	width: 100%;
+	padding: 20px;
+	border-radius: 3px;
+}
+
+.editDelieveryDetail {
+	background-color: rgba(250, 250, 250, 0.8);
+	margin-bottom: 20px;
+	border-radius: 5px;
+}

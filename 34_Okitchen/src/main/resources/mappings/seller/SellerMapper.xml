@@ -137,4 +137,11 @@
 		WHERE INQ_ID = #{inqId}
 	</delete>
 	
+	   <!-- 문의답변 삭제시 상태변경 -->
+   <delete id="inqAnsweredUpdate" parameterType="inquiry">
+       UPDATE INQUIRY
+      SET INQ_ANSWERED = '답변대기'
+      WHERE INQ_ID = #{inqId}
+   </delete>
+	
 </mapper>
