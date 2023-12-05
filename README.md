@@ -428,75 +428,75 @@
   </tbody></tr>
   <thead><tr>
     <td>구매자 : 장바구니</td>
-    <td>구매자 : </td>
+    <td>구매자 : 주문페이지(상)</td>
   </thead></tr>  
     <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e9ffdc7d-f7a0-4463-b2bd-4a9de293a89a"</td>
-    <td><img width="400" src=""</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>구매자 : 주문페이지(상)</td>
-    <td>구매자 : 주문페이지(하)</td>
-  </thead></tr>
-    <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/06b319bc-4bfe-4627-bb91-13660158ab81"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f47a11fa-fd7b-44d7-8fb6-7ffd673facfe"</td>
   </tbody></tr>
   <thead><tr>
+    <td>구매자 : 주문페이지(하)</td>
     <td>구매자 : 주문내역</td>
-    <td>구매자 : 상품 후기 작성 대기 목록</td>
   </thead></tr>
-  <tbody><tr>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f47a11fa-fd7b-44d7-8fb6-7ffd673facfe"</td>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/a2f9b577-c002-4fb0-856b-4cf53963c55a"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 상품후기 작성대기 목록</td>
+    <td>구매자 : 상품후기 작성</td>
+  </thead></tr>
+  <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/6b0bfecd-3905-4da9-a2b0-ad41d96bb325"</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>구매자 : 상품 후기 작성</td>
-    <td>구매자 : 상품 후기 작성 완료</td>
-  </thead></tr>
-    <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/24d38f89-e834-4a23-bb42-5532f3085732"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e49a4643-be78-4b26-b762-8b54e2b9805f"</td>
   </tbody></tr>
   <thead><tr>
+    <td>구매자 : 상품후기 작성 완료</td>
     <td>구매자 : 공지사항 조회</td>
-    <td>구매자 : 공지사항 상세 조회</td>
-  </thead></tr>
-  <tbody><tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/5219c536-859e-4c47-b1f1-9c033370be65"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/53545711-46e6-46c9-8aff-618ee7413d7a"</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>구매자 : 자주 묻는 질문</td>
-    <td>구매자 : 회원정보수정_비밀번호 확인</td>
-  </thead></tr>
-  <tbody><tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f0620bab-1701-4658-be91-b7b6e668e019"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9da05425-b90f-4208-99c2-5b054333adc6"</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>구매자 : 회원정보수정</td>
-    <td>구매자 : 회원탈퇴</td>
-  </thead></tr>
-  <tbody><tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c780f2c4-ac47-40a9-ac15-c1c91c4c4596"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/0a85f8e6-3677-40ca-acf9-c76984d9f0d5"</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>구매자 : 회원탈퇴 완료</td>
-    <td>구매자 : 커뮤니티 목록</td>
-  </thead></tr>
-  <tbody><tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e3960fab-8b0c-45bd-8988-b44689407ca1"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/630ff2fd-003d-4eff-a668-b8740931348e"</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>구매자 : 커뮤니티 게시물 상세 조회</td>
-    <td>구매자 : 커뮤니티 게시물 작성</td>
   </thead></tr>
     <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e49a4643-be78-4b26-b762-8b54e2b9805f"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/5219c536-859e-4c47-b1f1-9c033370be65"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 공지사항 상세 조회</td>
+    <td>구매자 : 자주 묻는 질문</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/53545711-46e6-46c9-8aff-618ee7413d7a"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f0620bab-1701-4658-be91-b7b6e668e019"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 회원정보수정_비밀번호 확인</td>
+    <td>구매자 : 회원정보수정</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9da05425-b90f-4208-99c2-5b054333adc6"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c780f2c4-ac47-40a9-ac15-c1c91c4c4596"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 회원탈퇴</td>
+    <td>구매자 : 회원탈퇴 완료</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/0a85f8e6-3677-40ca-acf9-c76984d9f0d5"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e3960fab-8b0c-45bd-8988-b44689407ca1"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 커뮤니티 게시물 목록</td>
+    <td>구매자 : 커뮤니티 게시물 상세 조회</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/630ff2fd-003d-4eff-a668-b8740931348e"</td>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/058e5033-fd4a-4393-86c4-f266c67d31e5"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 커뮤니티 게시물 작성</td>
+    <td></td>
+  </thead></tr>
+    <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/4d63752f-c932-43c4-89a5-ff991d7f198f"</td>
+    <td></td>
   </tbody></tr>
   </table>
   
@@ -507,83 +507,115 @@
     <td>판매자 : 회원가입(상)</td>
   </thead></tr>
   <tbody><tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/111dfacf-c7fa-4931-b165-2b01bac941ee"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/3029b860-fa78-4f5e-b34d-c8d9f2f3b700"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/ba30e8a0-efe3-40b7-a3fb-90ecc8ebe58e"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/00a225ab-bba5-42f2-8c9d-415e0dbba697"</td>
+  </tbody></tr>
+    <thead><tr>
+    <td>판매자 : 회원가입(하)</td>
+    <td>판매자 : 아이디 찾기</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/6f59a30d-3460-46ca-9ff6-8c5f0185d787"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/654d1a0b-14aa-4829-93ba-79519ab21627"</td>
   </tbody></tr>
   <thead><tr>
-    <td>판매자 : 아이디 찾기</td>
+    <td>판매자 : 아이디 찾기 결과</td>
     <td>판매자 : 비밀번호 찾기</td>
   </thead></tr>
     <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/b1eddf33-a5ba-4327-b652-355da16cebf5"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c133fd01-1ac1-464b-a67c-86d1af735031"</td>
   </tbody></tr>
   <thead><tr>
-    <td>판매자 : 회원 정보 수정</td>
-    <td>판매자 : 회원 탈퇴</td>
+    <td>판매자 : 비밀번호 찾기 결과</td>
+    <td>판매자 : 상품등록(상)</td>
   </thead></tr>
-  <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c28032b1-0bdd-4525-83f5-b10de9a3620f"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/99e0988a-3bb5-4779-bea4-1a7a1564523d"</td>
   </tbody></tr>
   <thead><tr>
-    <td>판매자 : 상품 문의 답변</td>
-    <td>판매자 : 상품 목록 조회</td>
+    <td>판매자 : 상품등록(하)</td>
+    <td>판매자 : 상품문의 조회</td>
   </thead></tr>
   <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/18ce9ff6-8cff-4076-bd27-413eafc0b076"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/138e5786-076c-4db7-9cc1-887a742fd0d5"</td>
   </tbody></tr>
   <thead><tr>
-    <td>판매자 : 상품 등록</td>
-    <td>판매자 : 상품 수정</td>
+    <td>판매자 : 상품문의 답변작성</td>
+    <td>판매자 : 상품문의 답변수정</td>
   </thead></tr>
   <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/107dbbda-5e4a-4062-a065-1855470309f6"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/1761f2a7-9a1b-4a71-b8be-f72549da0fd8"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>판매자 : 상품문의 답변조회</td>
+    <td>판매자 : 회원정보수정_비밀번호 확인</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/4b3b95ec-9e3e-4c84-af02-616767d96418"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/cd71f53a-2b33-432d-a508-50acce7d2fd1"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>판매자 : 회원정보수정</td>
+    <td>판매자 : 회원탈퇴</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/1e5a5f40-fdf7-465a-b4e5-5917092c091b"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/b53b88f0-bce4-4be5-bac3-4466973513f4"</td>
   </tbody></tr>
 </table>
 <h4>(3) 관리자 페이지</h4>
   <table>
   <thead><tr>
-    <td>관리자 : 메인페이지</td> 
-    <td>관리자 : 주문 내역 조회</td>
+    <td>관리자 : 상품전체목록</td> 
+    <td>관리자 : 상품승인대기목록</td>
   </thead></tr>
   <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/8cbb0ede-8fa0-4dcd-8fdb-74bc969c3113"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/a5636f7e-0e3e-4a30-99d4-2560a82e8959"</td>
   </tbody></tr>
   <thead><tr>
-    <td>관리자 : 배송 현황 수정</td>
-    <td>관리자 : 매출 조회</td>
-  </tbody></tr>
-  <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
-  </tbody></tr>
-  <thead><tr>
-    <td>관리자 : 판매 통계</td>
-    <td>관리자 : 등록 상품 조회</td>
+    <td>관리자 : 상품승인 상세(상)</td> 
+    <td>관리자 : 상품승인 상세(하)</td>
   </thead></tr>
   <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
-  </tbody></tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e6de9d2e-19a4-41a1-beb1-35eef9b04cb7"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/3b8a8e30-e190-4446-a506-bba9d5250ca3"</td>
+  </tbody></tr>  
   <thead><tr>
-    <td>관리자 : 승인 대기 상품 조회</td>
-    <td>관리자 : 상품 승인 반려</td>
+    <td>관리자 : 회원목록</td>
+    <td>관리자 : 파트너목록</td>
   </tbody></tr>
   <tbody><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/40d8e12c-06b7-4ed2-9438-0d351508d521"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/0ceeba79-49b7-4f55-9c61-48a36bdf8b48"</td>
   </tbody></tr>
   <thead><tr>
-    <td>관리자 : 공지사항 등록</td>
-    <td></td>
+    <td>관리자 : 주문내역</td>
+    <td>관리자 : 공지사항목록</td>
   </thead></tr>
-    <thead><tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
-    <td></td>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/92c02756-b034-4433-8d49-ef090516b655"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/17dc32ab-2d54-42a5-b1c9-4713833bd47e"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>관리자 : 공지사항상세</td>
+    <td>관리자 : 공지사항수정</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/bf639112-3378-4f47-84d9-2ddd1b3624c7"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/598a22c5-3882-4859-8399-8fa03543ecc1"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>관리자 : </td>
+    <td>관리자 : </td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9ebdcadd-4979-4a67-bab2-56932342aad4"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/b3cba6a6-7549-4d1a-abff-cc9589434588)"</td>
   </tbody></tr>
 </table>
 <hr>
