@@ -4,7 +4,6 @@
 <!-- 방문자수 --!>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fqkrtn0928@naver.com%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a><br>
 
-
 <h1>프로젝트명 : O KITCHEN</h1>
 <h3>개발기간 : 2023.11.06 ~ 2023.11.29</h3>
 <h3>프로젝트 소개 : 국비교육기간에 진행한 SPRING 활용을 위한 프로젝트입니다. </h3>
@@ -103,188 +102,188 @@
 <h4>3) 화면구현</h4>
   
 <h4>(1) 구매자 회원 페이지</h4>
-<table style="text-align:center">
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/qvejmFof5ck4PMsUosHZQu.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/dV22dxoLnyV8y4s9k3g3aX.png"</td>
-  </tr>
-  <tr>
+<table style="text-align:center;">
+ <thead><tr>
     <td>구매자 : 메인페이지</td>
     <td>구매자 : 상품 목록</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/hQhgzN4KPQTA9773HpcEtx.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/21y8CG7jdEbLEuW3UZF5hN.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/qvejmFof5ck4PMsUosHZQu.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/dV22dxoLnyV8y4s9k3g3aX.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품 상세</td>
     <td>구매자 : 로그인</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/kuApZGsCD2jgLtevF7VF1V.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/e3CNEPMwwjPWZ6znKme2Hw.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/hQhgzN4KPQTA9773HpcEtx.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/21y8CG7jdEbLEuW3UZF5hN.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 회원가입</td>
     <td>구매자 : 개인정보 수정</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/uz8WwBGwCF1Kbb9ZkpzkZG.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/sq1FQbBbNZFjnvyB9wY3mH.png"</td>
-  </tr>
-  <tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/kuApZGsCD2jgLtevF7VF1V.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/e3CNEPMwwjPWZ6znKme2Hw.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 주문내역</td>
     <td>구매자 : 찜 목록</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/8afoPPVDyNniXg33zdo6DU.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/hFM4fhd9Lw2up8EmvBqsAc.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/uz8WwBGwCF1Kbb9ZkpzkZG.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/sq1FQbBbNZFjnvyB9wY3mH.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품 후기</td>
     <td>구매자 : 장바구니</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/nSSgbL9gx4SWSYVwM78EiF.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/9MJBB96REK8H1DhsRkuV3S.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/8afoPPVDyNniXg33zdo6DU.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/hFM4fhd9Lw2up8EmvBqsAc.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 주문페이지</td>
     <td>구매자 : 배송 현황 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/x4hbPRijXeW9Jiwskcrthy.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/gf8sME6fDbvu4RffKbp7SX.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/nSSgbL9gx4SWSYVwM78EiF.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/9MJBB96REK8H1DhsRkuV3S.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품문의</td>
     <td>구매자 : 상품문의 입력</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/wp4z7z1h33Erbn6JDQTR3n.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/unRYaaZU5etdfHXqFjhFyC.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/x4hbPRijXeW9Jiwskcrthy.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/gf8sME6fDbvu4RffKbp7SX.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품 후기</td>
     <td>구매자 : 상품 후기 등록</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/3J88yhdH7wFd6ApNci4HnR.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/6BTPB1iyvyrRSqrAmkANRv.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/wp4z7z1h33Erbn6JDQTR3n.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/unRYaaZU5etdfHXqFjhFyC.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 공지사항 조회</td>
     <td>구매자 : 공지사항 상세 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/ryisj6NRGoqc4PudhbMFrw.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/3J88yhdH7wFd6ApNci4HnR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/6BTPB1iyvyrRSqrAmkANRv.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 1:1문의</td>
     <td>구매자 : 자주 묻는 질문</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/94d8331d-4de2-4ab6-b9f1-13be4088b286"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/hSkg9VhAHKrugBQ1MBXYKt.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/ryisj6NRGoqc4PudhbMFrw.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 커뮤니티 게시물 목록 조회</td>
     <td>구매자 : 커뮤니티 게시물 상세 조회</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/4xrKJgCfyRmzN7tg86DvFd.png"</td>
-    <td></td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/94d8331d-4de2-4ab6-b9f1-13be4088b286"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/hSkg9VhAHKrugBQ1MBXYKt.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 커뮤니티 게시물 작성</td>
     <td></td>
-  </tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/4xrKJgCfyRmzN7tg86DvFd.png"</td>
+    <td></td>
+  </tbody></tr>
   </table>
   <h4>(2) 판매자 페이지</h4>
   <table>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/wfChnHZsZDMPCRhsmX3qZe.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/bQpVpmt2hamUsuwEExuA2F.png"</td>
-  </tr>
-  <tr>
+  <thead><tr>
     <td>판매자 : 로그인</td>
     <td>판매자 : 회원가입</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/wfChnHZsZDMPCRhsmX3qZe.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/bQpVpmt2hamUsuwEExuA2F.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 아이디 찾기</td>
     <td>판매자 : 비밀번호 찾기</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 회원 정보 수정</td>
     <td>판매자 : 회원 탈퇴</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 상품 문의 답변</td>
     <td>판매자 : 상품 목록 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 상품 등록</td>
     <td>판매자 : 상품 수정</td>
-  </tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
+  </tbody></tr>
 </table>
 <h4>(3) 관리자 페이지</h4>
   <table>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
-  </tr>
-  <tr>
+  <thead><tr>
     <td>관리자 : 메인페이지</td> 
     <td>관리자 : 주문 내역 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 배송 현황 수정</td>
     <td>관리자 : 매출 조회</td>
-  </tr>  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 판매 통계</td>
     <td>관리자 : 등록 상품 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
-  </tr>
-  <tr>
+  </tbody></tr>  
+  <thead><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 승인 대기 상품 조회</td>
     <td>관리자 : 상품 승인 반려</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
-    <td></td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 공지사항 등록</td>
     <td></td>
-  </tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
+    <td></td>
+  </tbody></tr>
 </table>
 
 </div>
@@ -379,213 +378,213 @@
   
 <h4>(1) 구매자 회원 페이지</h4>
 <table style="text-align:center">
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/33a8151a-7dd2-43b0-9e06-f3ad048cee94"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9345d811-1569-42c4-8fee-718a0b095f31"</td>
-  </tr>
-  <tr>
+  <thead><tr>
     <td>구매자 : 메인페이지</td>
     <td>구매자 : 상품 목록</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/a993393c-9aac-4518-8b44-778b06ddfcdb"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e81530f4-63da-4459-a84b-c3a2bed360d3"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/33a8151a-7dd2-43b0-9e06-f3ad048cee94"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9345d811-1569-42c4-8fee-718a0b095f31"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품 상세</td>
     <td>구매자 : 상품 상세_문의 목록</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/fc0ec1cf-94fa-45c4-b445-f5644dd9bcd1"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c5e707c8-0032-4bae-9ca1-d50efa44f399"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/a993393c-9aac-4518-8b44-778b06ddfcdb"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e81530f4-63da-4459-a84b-c3a2bed360d3"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품 상세_문의 작성</td>
     <td>구매자 : 상품 상세_후기 목록</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/41b7c9d5-4800-4a48-af1e-8131dfe90e3e"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/d0ecff1c-3995-4247-8f15-59a61079aecd"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/fc0ec1cf-94fa-45c4-b445-f5644dd9bcd1"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c5e707c8-0032-4bae-9ca1-d50efa44f399"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 회원가입(상)</td>
     <td>구매자 : 회원가입(하)</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/7a06eeef-d587-4853-965b-1b4816631701"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/7855051b-a710-470d-a9d2-1d05d1fe5067"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/41b7c9d5-4800-4a48-af1e-8131dfe90e3e"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/d0ecff1c-3995-4247-8f15-59a61079aecd"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 아이디 찾기</td>
     <td>구매자 : 비밀번호 재설정</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/352f3e4e-7725-46b8-85ef-9586d781bc41"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/edc7879f-72dd-4595-b22c-9cc18473d0ff"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/7a06eeef-d587-4853-965b-1b4816631701"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/7855051b-a710-470d-a9d2-1d05d1fe5067"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 로그인</td>
     <td>구매자 : 찜 목록</td>
-  </tr>
-  
-    <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e9ffdc7d-f7a0-4463-b2bd-4a9de293a89a"</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
+  </thead></tr>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/352f3e4e-7725-46b8-85ef-9586d781bc41"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/edc7879f-72dd-4595-b22c-9cc18473d0ff"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 장바구니</td>
     <td>구매자 : </td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/06b319bc-4bfe-4627-bb91-13660158ab81"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f47a11fa-fd7b-44d7-8fb6-7ffd673facfe"</td>
-  </tr>
-  <tr>
+  </thead></tr>  
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e9ffdc7d-f7a0-4463-b2bd-4a9de293a89a"</td>
+    <td><img width="400" src=""</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 주문페이지(상)</td>
     <td>구매자 : 주문페이지(하)</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/a2f9b577-c002-4fb0-856b-4cf53963c55a"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/6b0bfecd-3905-4da9-a2b0-ad41d96bb325"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/06b319bc-4bfe-4627-bb91-13660158ab81"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f47a11fa-fd7b-44d7-8fb6-7ffd673facfe"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 주문내역</td>
     <td>구매자 : 상품 후기 작성 대기 목록</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/24d38f89-e834-4a23-bb42-5532f3085732"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e49a4643-be78-4b26-b762-8b54e2b9805f"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/a2f9b577-c002-4fb0-856b-4cf53963c55a"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/6b0bfecd-3905-4da9-a2b0-ad41d96bb325"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 상품 후기 작성</td>
     <td>구매자 : 상품 후기 작성 완료</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/5219c536-859e-4c47-b1f1-9c033370be65"</td>
-    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/53545711-46e6-46c9-8aff-618ee7413d7a"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/24d38f89-e834-4a23-bb42-5532f3085732"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e49a4643-be78-4b26-b762-8b54e2b9805f"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 공지사항 조회</td>
     <td>구매자 : 공지사항 상세 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/5219c536-859e-4c47-b1f1-9c033370be65"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/53545711-46e6-46c9-8aff-618ee7413d7a"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 자주 묻는 질문</td>
-    <td>구매자 : </td>
-  </tr>
-
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/qSJ1JxKLMSiNGJK5qzRFRr.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/hSkg9VhAHKrugBQ1MBXYKt.png"</td>
-  </tr>
-  <tr>
-    <td>구매자 : 커뮤니티 게시물 목록 조회</td>
+    <td>구매자 : 회원정보수정_비밀번호 확인</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/f0620bab-1701-4658-be91-b7b6e668e019"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9da05425-b90f-4208-99c2-5b054333adc6"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 회원정보수정</td>
+    <td>구매자 : 회원탈퇴</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/c780f2c4-ac47-40a9-ac15-c1c91c4c4596"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/0a85f8e6-3677-40ca-acf9-c76984d9f0d5"</td>
+  </tbody></tr>
+  <thead><tr>
+    <td>구매자 : 회원탈퇴 완료</td>
+    <td>구매자 : 커뮤니티 목록</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/e3960fab-8b0c-45bd-8988-b44689407ca1"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/630ff2fd-003d-4eff-a668-b8740931348e"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>구매자 : 커뮤니티 게시물 상세 조회</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/4xrKJgCfyRmzN7tg86DvFd.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
-  </tr>
-  <tr>
     <td>구매자 : 커뮤니티 게시물 작성</td>
-    <td>구매자 : 자주 묻는 질문</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/ryisj6NRGoqc4PudhbMFrw.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
-  </tr>
-  <tr>
-    <td>구매자 : 1:1문의</td>
-    <td>구매자 : 자주 묻는 질문</td>
-  </tr>
+  </thead></tr>
+    <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/058e5033-fd4a-4393-86c4-f266c67d31e5"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/4d63752f-c932-43c4-89a5-ff991d7f198f"</td>
+  </tbody></tr>
   </table>
+  
   <h4>(2) 판매자 페이지</h4>
   <table>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/wfChnHZsZDMPCRhsmX3qZe.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/bQpVpmt2hamUsuwEExuA2F.png"</td>
-  </tr>
-  <tr>
+  <thead><tr>
     <td>판매자 : 로그인</td>
-    <td>판매자 : 회원가입</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
-  </tr>
-  <tr>
+    <td>판매자 : 회원가입(상)</td>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/111dfacf-c7fa-4931-b165-2b01bac941ee"</td>
+    <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/3029b860-fa78-4f5e-b34d-c8d9f2f3b700"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 아이디 찾기</td>
     <td>판매자 : 비밀번호 찾기</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+    <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 회원 정보 수정</td>
     <td>판매자 : 회원 탈퇴</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 상품 문의 답변</td>
     <td>판매자 : 상품 목록 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>판매자 : 상품 등록</td>
     <td>판매자 : 상품 수정</td>
-  </tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
+  </tbody></tr>
 </table>
 <h4>(3) 관리자 페이지</h4>
   <table>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
-  </tr>
-  <tr>
+  <thead><tr>
     <td>관리자 : 메인페이지</td> 
     <td>관리자 : 주문 내역 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 배송 현황 수정</td>
     <td>관리자 : 매출 조회</td>
-  </tr>  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
-  </tr>
-  <tr>
+  </tbody></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 판매 통계</td>
     <td>관리자 : 등록 상품 조회</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
-    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
-  </tr>
-  <tr>
+  </thead></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 승인 대기 상품 조회</td>
     <td>관리자 : 상품 승인 반려</td>
-  </tr>
-    <tr>
-    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
-    <td></td>
-  </tr>
-  <tr>
+  </tbody></tr>
+  <tbody><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
+  </tbody></tr>
+  <thead><tr>
     <td>관리자 : 공지사항 등록</td>
     <td></td>
-  </tr>
+  </thead></tr>
+    <thead><tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
+    <td></td>
+  </tbody></tr>
 </table>
 <hr>
 
