@@ -98,7 +98,7 @@
   &nbsp&nbsp<a href="https://pricey-fear-6c4.notion.site/0b9ef0b509c64d38b4ddc3a8bcf0c213?v=679a92d45227451da8c8962d65142576&pvs=4">요구사항 명세서</a>
   
   <h4>2) ERD</h4>
-  &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/550afeb2-2885-4874-8053-b4ff03165594">
+  &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/4a36ccef-45d9-4cba-b99b-5741089c2031">
   
   <h4>3) 화면구현</h4>
   
@@ -106,6 +106,278 @@
 <table style="text-align:center">
   <tr>
     <td><img width="400" src="https://share.balsamiq.com/c/qvejmFof5ck4PMsUosHZQu.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/dV22dxoLnyV8y4s9k3g3aX.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 메인페이지</td>
+    <td>구매자 : 상품 목록</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/hQhgzN4KPQTA9773HpcEtx.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/21y8CG7jdEbLEuW3UZF5hN.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품 상세</td>
+    <td>구매자 : 로그인</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/kuApZGsCD2jgLtevF7VF1V.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/e3CNEPMwwjPWZ6znKme2Hw.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 회원가입</td>
+    <td>구매자 : 개인정보 수정</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/uz8WwBGwCF1Kbb9ZkpzkZG.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/sq1FQbBbNZFjnvyB9wY3mH.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 주문내역</td>
+    <td>구매자 : 찜 목록</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/8afoPPVDyNniXg33zdo6DU.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/hFM4fhd9Lw2up8EmvBqsAc.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품 후기</td>
+    <td>구매자 : 장바구니</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/nSSgbL9gx4SWSYVwM78EiF.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/9MJBB96REK8H1DhsRkuV3S.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 주문페이지</td>
+    <td>구매자 : 배송 현황 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/x4hbPRijXeW9Jiwskcrthy.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/gf8sME6fDbvu4RffKbp7SX.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품문의</td>
+    <td>구매자 : 상품문의 입력</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/wp4z7z1h33Erbn6JDQTR3n.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/unRYaaZU5etdfHXqFjhFyC.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 상품 후기</td>
+    <td>구매자 : 상품 후기 등록</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/3J88yhdH7wFd6ApNci4HnR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/6BTPB1iyvyrRSqrAmkANRv.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 공지사항 조회</td>
+    <td>구매자 : 공지사항 상세 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/ryisj6NRGoqc4PudhbMFrw.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/1xksVvHTa4moYH7cjYbhfG.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 1:1문의</td>
+    <td>구매자 : 자주 묻는 질문</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/qSJ1JxKLMSiNGJK5qzRFRr.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/hSkg9VhAHKrugBQ1MBXYKt.png"</td>
+  </tr>
+  <tr>
+    <td>구매자 : 커뮤니티 게시물 목록 조회</td>
+    <td>구매자 : 커뮤니티 게시물 상세 조회</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/4xrKJgCfyRmzN7tg86DvFd.png"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>구매자 : 커뮤니티 게시물 작성</td>
+    <td></td>
+  </tr>
+  </table>
+  <h4>(2) 판매자 페이지</h4>
+  <table>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/wfChnHZsZDMPCRhsmX3qZe.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/bQpVpmt2hamUsuwEExuA2F.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 로그인</td>
+    <td>판매자 : 회원가입</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/pB1hdG3p23XF62ysgZHsxZ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/jAeH9F71rm7EVr57axV7ja.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 아이디 찾기</td>
+    <td>판매자 : 비밀번호 찾기</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/7NdddriR5B2vrCkmKQE2aX.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/uBdb3eeCWWz57pWpnALRSx.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 회원 정보 수정</td>
+    <td>판매자 : 회원 탈퇴</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/1dfGEkHUyvtQkQ2LyhHwaQ.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/7N727uRYT9VmjJnoJqxiaz.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 상품 문의 답변</td>
+    <td>판매자 : 상품 목록 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/rxb1MsLkXCmtnZmNXr49Ab.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/tLeCuhWTcsRyJ2c87MX188.png"</td>
+  </tr>
+  <tr>
+    <td>판매자 : 상품 등록</td>
+    <td>판매자 : 상품 수정</td>
+  </tr>
+</table>
+<h4>(3) 관리자 페이지</h4>
+  <table>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/aPV9QyHz3moJ36UdaHZjZR.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/29TovdJ7KKbyamp1nFZPDy.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 메인페이지</td> 
+    <td>관리자 : 주문 내역 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/5JhBL7zVNtJme53QyVwRDj.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/obVrVtcTMqJXCWnPDHxh2v.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 배송 현황 수정</td>
+    <td>관리자 : 매출 조회</td>
+  </tr>  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/dv6Zo7vXXx9vmNQpe9ttXN.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/emr8nuY8aS7KwZuRZo4WN8.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 판매 통계</td>
+    <td>관리자 : 등록 상품 조회</td>
+  </tr>
+  <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/bS4d8awe47X4CDuQXRFFsv.png"</td>
+    <td><img width="400" src="https://share.balsamiq.com/c/wymRX4R7FnSRhFDtP6M4U3.png"</td>
+  </tr>
+  <tr>
+    <td>관리자 : 승인 대기 상품 조회</td>
+    <td>관리자 : 상품 승인 반려</td>
+  </tr>
+    <tr>
+    <td><img width="400" src="https://share.balsamiq.com/c/iVRH28BR1sXUif88xZixmM.png"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>관리자 : 공지사항 등록</td>
+    <td></td>
+  </tr>
+</table>
+
+</div>
+<hr>
+<h3>5. 기능 설명</h3>
+
+<h4>1) 구매자 회원 기능</h4>
+&nbsp;(1) CREATE<br>
+&emsp;- 회원가입 기능<br>
+&emsp;- 상품을 장바구니에 담는 기능<br>
+&emsp;- 장바구니에 담은 상품을 주문 및 결제하는 기능<br>
+&emsp;- 상품 문의, 후기를 등록하는 기능<br>
+&nbsp;(2) READ<br>
+&emsp;- 가입한 아이디로 로그인하는 기능<br>
+&emsp;- 아이디와 비밀번호를 찾는 기능<br>
+&emsp;- 상품을 조회하는 기능<br>
+&emsp;- 주문한 상품을 조회하는 기능<br>
+&emsp;- 상품 문의는 작성한 회원만 조회할 수 있는 기능<br>
+&emsp;- 공지사항을 조회하는 기능<br>
+&nbsp;(3) UPDATE<br>
+&emsp;- 비밀번호 찾기 시 비밀번호 수정하는 기능<br>
+&emsp;- 회원 정보를 수정하는 기능<br>
+&emsp;- 회원 탈퇴시 회원 상태를 정지로 수정하는 기능<br>
+&emsp;- 상품 문의, 후기를 수정하는 기능<br>
+&emsp;- 장바구니에 담긴 상품의 개수를 수정하는 기능<br>
+&emsp;- 문의 게시글을 수정하는 기능<br>
+&nbsp;(4) DELETE<br>
+&emsp;- 장바구니에 담긴 상품을 삭제하는 기능<br>
+&emsp;- 상품 문의, 후기를 삭제하는 기능<br>
+&nbsp;(5) LIST (ALL)<br>
+&emsp;- 상품의 전체 목록을 조회하는 기능<br>
+&emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
+&emsp;- 상품 문의, 후기를 조회하는 기능<br>
+&nbsp;(6) LIST (SEARCH)<br>
+&emsp;- 키워드(상품명, 브랜드)로 검색된 상품 목록을 조회하는 기능<br>
+&emsp;- 제목으로 검색된 공지사항 목록을 조회하는 기능<br>
+<hr>
+<h4>2) 판매자 회원 기능</h4>
+&nbsp;(1) CREATE<br>
+&emsp;- 회원가입 기능<br>
+&emsp;- 상품을 등록하는 기능<br>
+&emsp;- 상품 문의에 대한 답변을 등록하는 기능<br>
+&nbsp;(2) READ<br>
+&emsp;- 가입한 아이디로 로그인하는 기능<br>
+&emsp;- 아이디와 비밀번호를 찾는 기능<br>
+&emsp;- 등록한 상품을 조회하는 기능<br>
+&emsp;- 상품에 등록된 문의를 조회할 수 있는 기능<br>
+&nbsp;(3) UPDATE<br>
+&emsp;- 비밀번호 찾기 시 비밀번호 수정하는 기능<br>
+&emsp;- 회원 정보를 수정하는 기능<br>
+&emsp;- 회원 탈퇴시 회원 상태를 정지로 수정하는 기능<br>
+&emsp;- 상품에 대한 정보를 수정하는 기능<br>
+&emsp;- 상품의 판매 상태를 수정하는 기능<br>
+&emsp;- 상품 문의에 대한 답변을 수정하는 기능<br>
+&nbsp;(4) DELETE<br>
+&emsp;- 상품 수정시 기존에 등록된 상세이미지를 삭제하는 기능<br>
+&emsp;- 상품 문의에 대한 답변을 삭제하는 기능<br>
+&nbsp;(5) LIST (ALL)<br>
+&emsp;- 등록한 상품 목록을 조회하는 기능<br>
+&emsp;- 상품 문의 목록을 조회하는 기능<br>
+<hr>
+
+<h4>3) 사이트 관리자 기능</h4>
+&nbsp;(1) CREATE<br>
+&emsp;- 공지사항을 등록하는 기능<br>
+&nbsp;(2) READ<br>
+&emsp;- 상품을 조회하는 기능<br>
+&emsp;- 승인 대기 상품을 조회하는 기능<br>
+&emsp;- 공지사항을 조회하는 기능<br>
+&emsp;- 가입 된 구매자, 판매자 회원을 조회하는 기능<br>
+&emsp;- 커뮤니티 게시글을 조회하는 기능<br>
+&nbsp;(3) UPDATE<br>
+&emsp;- 상품을 수정하는 기능<br>
+&emsp;- 공지사항을 수정하는 기능<br>
+&nbsp;(4) DELETE<br>
+&emsp;- 상품을 삭제하는 기능<br>
+&emsp;- 공지사항을 삭제하는 기능<br>
+&emsp;- 커뮤니티 게시글을 삭제하는 기능<br>
+&nbsp;(5) LIST (ALL)<br>
+&emsp;- 상품의 전체 목록을 조회하는 기능<br>
+&emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
+&emsp;- 주문 현황 목록을 조회하는 기능<br>
+&emsp;- 문의게시글의 전체 목록을 조회하는 기능<br>
+&nbsp;(6) LIST (SEARCH)<br>
+&emsp;- 상품을 이름으로 검색하여 조회하는 기능<br>
+&emsp;- 키워드(작성자, 제목, 상품명)로 검색된 문의게시글 목록을 조회하는 기능<br>
+
+<h3>6. 화면구성</h3>
+<h4>(1) 구매자 회원 페이지</h4>
+<table style="text-align:center">
+  <tr>
+    <td><img width="400" src="![KakaoTalk_20231130_150408977](https://github.com/sjin0928/OKITHCEN/assets/143140370/7c04cd94-39b6-42a0-97c0-155ecf06fa6c)
+"</td>
     <td><img width="400" src="https://share.balsamiq.com/c/dV22dxoLnyV8y4s9k3g3aX.png"</td>
   </tr>
   <tr>
@@ -294,222 +566,6 @@
     <td></td>
   </tr>
 </table>
-
-</div>
-<hr>
-<h3>5. 기능 설명</h3>
-
-<h4>1) 구매자 회원 기능</h4>
-&nbsp;(1) CREATE<br>
-&emsp;- 회원가입 기능<br>
-&emsp;- 상품을 장바구니에 담는 기능<br>
-&emsp;- 장바구니에 담은 상품을 주문 및 결제하는 기능<br>
-&emsp;- 상품 문의, 후기를 등록하는 기능<br>
-&nbsp;(2) READ<br>
-&emsp;- 가입한 아이디로 로그인하는 기능<br>
-&emsp;- 아이디와 비밀번호를 찾는 기능<br>
-&emsp;- 상품을 조회하는 기능<br>
-&emsp;- 주문한 상품을 조회하는 기능<br>
-&emsp;- 상품 문의는 작성한 회원만 조회할 수 있는 기능<br>
-&emsp;- 공지사항을 조회하는 기능<br>
-&nbsp;(3) UPDATE<br>
-&emsp;- 비밀번호 찾기 시 비밀번호 수정하는 기능<br>
-&emsp;- 회원 정보를 수정하는 기능<br>
-&emsp;- 회원 탈퇴시 회원 상태를 정지로 수정하는 기능<br>
-&emsp;- 상품 문의, 후기를 수정하는 기능<br>
-&emsp;- 장바구니에 담긴 상품의 개수를 수정하는 기능<br>
-&emsp;- 문의 게시글을 수정하는 기능<br>
-&nbsp;(4) DELETE<br>
-&emsp;- 장바구니에 담긴 상품을 삭제하는 기능<br>
-&emsp;- 상품 문의, 후기를 삭제하는 기능<br>
-&nbsp;(5) LIST (ALL)<br>
-&emsp;- 상품의 전체 목록을 조회하는 기능<br>
-&emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
-&emsp;- 상품 문의, 후기를 조회하는 기능<br>
-&nbsp;(6) LIST (SEARCH)<br>
-&emsp;- 키워드(상품명, 브랜드)로 검색된 상품 목록을 조회하는 기능<br>
-&emsp;- 제목으로 검색된 공지사항 목록을 조회하는 기능<br>
-<hr>
-<h4>2) 판매자 회원 기능</h4>
-&nbsp;(1) CREATE<br>
-&emsp;- 회원가입 기능<br>
-&emsp;- 상품을 등록하는 기능<br>
-&emsp;- 상품 문의에 대한 답변을 등록하는 기능<br>
-&nbsp;(2) READ<br>
-&emsp;- 가입한 아이디로 로그인하는 기능<br>
-&emsp;- 아이디와 비밀번호를 찾는 기능<br>
-&emsp;- 등록한 상품을 조회하는 기능<br>
-&emsp;- 상품에 등록된 문의를 조회할 수 있는 기능<br>
-&nbsp;(3) UPDATE<br>
-&emsp;- 비밀번호 찾기 시 비밀번호 수정하는 기능<br>
-&emsp;- 회원 정보를 수정하는 기능<br>
-&emsp;- 회원 탈퇴시 회원 상태를 정지로 수정하는 기능<br>
-&emsp;- 상품에 대한 정보를 수정하는 기능<br>
-&emsp;- 상품의 판매 상태를 수정하는 기능<br>
-&emsp;- 상품 문의에 대한 답변을 수정하는 기능<br>
-&nbsp;(4) DELETE<br>
-&emsp;- 상품 수정시 기존에 등록된 상세이미지를 삭제하는 기능<br>
-&emsp;- 상품 문의에 대한 답변을 삭제하는 기능<br>
-&nbsp;(5) LIST (ALL)<br>
-&emsp;- 등록한 상품 목록을 조회하는 기능<br>
-&emsp;- 상품 문의 목록을 조회하는 기능<br>
-<hr>
-
-<h4>3) 사이트 관리자 기능</h4>
-&nbsp;(1) CREATE<br>
-&emsp;- 공지사항을 등록하는 기능<br>
-&nbsp;(2) READ<br>
-&emsp;- 상품을 조회하는 기능<br>
-&emsp;- 승인 대기 상품을 조회하는 기능<br>
-&emsp;- 공지사항을 조회하는 기능<br>
-&emsp;- 가입 된 구매자, 판매자 회원을 조회하는 기능<br>
-&emsp;- 커뮤니티 게시글을 조회하는 기능<br>
-&nbsp;(3) UPDATE<br>
-&emsp;- 상품을 수정하는 기능<br>
-&emsp;- 공지사항을 수정하는 기능<br>
-&nbsp;(4) DELETE<br>
-&emsp;- 상품을 삭제하는 기능<br>
-&emsp;- 공지사항을 삭제하는 기능<br>
-&emsp;- 커뮤니티 게시글을 삭제하는 기능<br>
-&nbsp;(5) LIST (ALL)<br>
-&emsp;- 상품의 전체 목록을 조회하는 기능<br>
-&emsp;- 공지사항의 전체 목록을 조회하는 기능<br>
-&emsp;- 주문 현황 목록을 조회하는 기능<br>
-&emsp;- 문의게시글의 전체 목록을 조회하는 기능<br>
-&nbsp;(6) LIST (SEARCH)<br>
-&emsp;- 상품을 이름으로 검색하여 조회하는 기능<br>
-&emsp;- 키워드(작성자, 제목, 상품명)로 검색된 문의게시글 목록을 조회하는 기능<br>
-
-<h3>6. 화면구성</h3>
-<h4>1) 일반 회원 페이지</h4>
-<h2>--- 프로젝트 종료 후 추가 예정 ---<h2>
-<!-- -
-<table style="text-align:center">
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>메인페이지(상)</td>
-    <td>메인페이지(하)</td>
-  </tr>
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>회원가입</td>
-    <td>로그인</td>
-  </tr>
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>아이디 찾기</td>
-    <td>아이디찾기 결과</td>
-  </tr>
-    <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>마이페이지</td>
-    <td>회원_정보수정</td>
-  </tr>
-    <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>상품상세</td>
-    <td>장바구니</td>
-  </tr>
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>주문페이지</td>
-    <td>결제완료</td>
-  </tr>
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>주문완료</td>
-    <td>게시판_메인</td>
-  </tr>
-  <tr>
-    <td><img width="400" src=""</td>
-    <td><img width="400" src=""</td>
-  </tr>
-  <tr>
-    <td>게시판_공지_리스트</td>
-    <td>게시판_공지_상세</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/397551df-f4c0-48ae-b1bc-6aa54d10de0d"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/69916248-6bb8-404d-b104-ab4ad0748654"</td>
-  </tr>
-  <tr>
-    <td>게시판_문의_리스트</td>
-    <td>게시판_문의_상세</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/49af9930-31a4-4a43-af24-0eecef055792"</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>게시판_문의_수정</td>
-    <td></td>
-  </tr>
-  </table>
-  <h4>2) 관리자 페이지</h4>
-  <table>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/76e47582-061a-4c67-a9df-8aa738970925"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/1dbc6bf6-de7b-4a60-977c-f5d51cb80b12"</td>
-  </tr>
-  <tr>
-    <td>관리자_회원관리</td>
-    <td>관리자_게시판_상품관리</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/1afa63aa-9b65-429e-8b3b-6bfe62c84939"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/f8a60063-1dd0-4fe0-aca1-013724fdabb1"</td>
-  </tr>
-  <tr>
-    <td>관리자_게시판_상품관리_상세</td>
-    <td>관리자_게시판_상품등록</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/7e99a47d-9138-451c-a84f-faae4d1774fc"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/c67c3a46-accb-48d6-8adc-62dfeb7c1baf"</td>
-  </tr>
-  <tr>
-    <td>관리자_게시판_공지_리스트</td>
-    <td>관리자_게시판_공지_상세</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/d46e71d8-79c7-41ef-8c9b-5b248c5b7111"</td>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/239b04e8-0a28-44f5-b48c-07819ebeadb3"</td>
-  </tr>
-  <tr>
-    <td>관리자_게시판_공지_수정</td>
-    <td>관리자_게시판_문의_리스트</td>
-  </tr>
-  <tr>
-    <td><img width="400" src="https://github.com/sjin0928/SHOES-MARKET/assets/143140370/6094751c-1c26-4361-8679-57678bb2dc98"</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>관리자_게시판_문의_상세</td>
-    <td></td>
-  </tr>
-</table>
-->
 <hr>
 
 <h3>7.참고자료</h3>
