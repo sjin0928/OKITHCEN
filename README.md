@@ -97,9 +97,10 @@
   &nbsp&nbsp<a href="https://pricey-fear-6c4.notion.site/0b9ef0b509c64d38b4ddc3a8bcf0c213?v=679a92d45227451da8c8962d65142576&pvs=4">요구사항 명세서</a>
   
   <h4>2) ERD</h4>
+  &nbsp&nbsp<a href="https://github.com/sjin0928/OKITHCEN/files/13574377/Relational_2.pdf">ERD.pdf</a><br>
   &nbsp&nbsp<img width="500" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/4a36ccef-45d9-4cba-b99b-5741089c2031">
   
-<h4>3) 화면구현</h4>
+<h4>3) 화면구성</h4>
   
 <h4>(1) 구매자 회원 페이지</h4>
 <table style="text-align:center;">
@@ -371,11 +372,7 @@
 &emsp;- 상품을 이름으로 검색하여 조회하는 기능<br>
 &emsp;- 키워드(작성자, 제목, 상품명)로 검색된 문의게시글 목록을 조회하는 기능<br>
 
-<h3>6. 화면구성</h3>
-<h4>(1) 구매자 회원 페이지</h4>
-<table style="text-align:center">
-  <h4>3) 화면구현</h4>
-  
+<h3>6. 화면구현</h3>
 <h4>(1) 구매자 회원 페이지</h4>
 <table style="text-align:center">
   <thead><tr>
@@ -570,8 +567,8 @@
 <h4>(3) 관리자 페이지</h4>
   <table>
   <thead><tr>
-    <td>관리자 : 상품전체목록</td> 
-    <td>관리자 : 상품승인대기목록</td>
+    <td>관리자 : 상품전체관리</td> 
+    <td>관리자 : 상품승인대기관리</td>
   </tr></thead>
   <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/8cbb0ede-8fa0-4dcd-8fdb-74bc969c3113"</td>
@@ -586,16 +583,16 @@
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/3b8a8e30-e190-4446-a506-bba9d5250ca3"</td>
   </tr></tbody>  
   <thead><tr>
-    <td>관리자 : 회원목록</td>
-    <td>관리자 : 파트너목록</td>
+    <td>관리자 : 회원관리</td>
+    <td>관리자 : 파트너관리</td>
   </tr></tbody>
   <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/40d8e12c-06b7-4ed2-9438-0d351508d521"</td>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/0ceeba79-49b7-4f55-9c61-48a36bdf8b48"</td>
   </tr></tbody>
   <thead><tr>
-    <td>관리자 : 주문내역</td>
-    <td>관리자 : 공지사항목록</td>
+    <td>관리자 : 주문관리</td>
+    <td>관리자 : 공지사항관리</td>
   </tr></thead>
   <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/92c02756-b034-4433-8d49-ef090516b655"</td>
@@ -610,8 +607,8 @@
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/598a22c5-3882-4859-8399-8fa03543ecc1"</td>
   </tr></tbody>
   <thead><tr>
-    <td>관리자 : </td>
-    <td>관리자 : </td>
+    <td>관리자 : 공지사항삭제</td>
+    <td>관리자 : 커뮤니티관리</td>
   </tr></thead>
   <tbody><tr>
     <td><img width="400" src="https://github.com/sjin0928/OKITHCEN/assets/143140370/9ebdcadd-4979-4a67-bab2-56932342aad4"</td>
